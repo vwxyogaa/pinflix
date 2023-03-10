@@ -115,6 +115,80 @@
 			path = MyMovie;
 			sourceTree = "<group>";
 		};
+		BC79A54A29BB2C4E00A76CC4 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				BC89442329BB1F6400468B97 /* AppDelegate.swift */,
+				BC89442529BB1F6400468B97 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		BC79A54B29BB2C5D00A76CC4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BC89442F29BB1F6500468B97 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BC79A54C29BB2C6C00A76CC4 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				BC79A54D29BB2C7400A76CC4 /* BaseScene */,
+				BC79A54E29BB2C7B00A76CC4 /* pinflixScene */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		BC79A54D29BB2C7400A76CC4 /* BaseScene */ = {
+			isa = PBXGroup;
+			children = (
+				BC79A53929BB231C00A76CC4 /* TabBarViewController.swift */,
+			);
+			path = BaseScene;
+			sourceTree = "<group>";
+		};
+		BC79A54E29BB2C7B00A76CC4 /* pinflixScene */ = {
+			isa = PBXGroup;
+			children = (
+				BC79A53F29BB23B000A76CC4 /* Dashboard */,
+				BC79A54429BB23E000A76CC4 /* Upcoming */,
+				BC79A54929BB246100A76CC4 /* MyMovie */,
+			);
+			path = pinflixScene;
+			sourceTree = "<group>";
+		};
+		BC79A54F29BB2C9200A76CC4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		BC79A55029BB2C9700A76CC4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BC79A55229BB2CCE00A76CC4 /* PersistentStorage */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		BC79A55129BB2CA700A76CC4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		BC79A55229BB2CCE00A76CC4 /* PersistentStorage */ = {
+			isa = PBXGroup;
+			children = (
+				BC89442C29BB1F6400468B97 /* pinflix.xcdatamodeld */,
+			);
+			path = PersistentStorage;
+			sourceTree = "<group>";
+		};
 		BC89441729BB1F6400468B97 = {
 			isa = PBXGroup;
 			children = (
@@ -138,16 +212,14 @@
 		BC89442229BB1F6400468B97 /* pinflix */ = {
 			isa = PBXGroup;
 			children = (
-				BC89442329BB1F6400468B97 /* AppDelegate.swift */,
-				BC89442529BB1F6400468B97 /* SceneDelegate.swift */,
-				BC89442F29BB1F6500468B97 /* Assets.xcassets */,
+				BC79A54A29BB2C4E00A76CC4 /* Application */,
+				BC79A54F29BB2C9200A76CC4 /* Domain */,
+				BC79A54C29BB2C6C00A76CC4 /* Presentation */,
+				BC79A55029BB2C9700A76CC4 /* Data */,
+				BC79A55129BB2CA700A76CC4 /* Utilities */,
+				BC79A54B29BB2C5D00A76CC4 /* Supporting Files */,
 				BC89443129BB1F6500468B97 /* LaunchScreen.storyboard */,
 				BC89443429BB1F6500468B97 /* Info.plist */,
-				BC89442C29BB1F6400468B97 /* pinflix.xcdatamodeld */,
-				BC79A53929BB231C00A76CC4 /* TabBarViewController.swift */,
-				BC79A53F29BB23B000A76CC4 /* Dashboard */,
-				BC79A54429BB23E000A76CC4 /* Upcoming */,
-				BC79A54929BB246100A76CC4 /* MyMovie */,
 			);
 			path = pinflix;
 			sourceTree = "<group>";
