@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC79A53A29BB231C00A76CC4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC79A53929BB231C00A76CC4 /* TabBarViewController.swift */; };
+		BC79A53D29BB23AC00A76CC4 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC79A53B29BB23AC00A76CC4 /* DashboardViewController.swift */; };
+		BC79A53E29BB23AC00A76CC4 /* DashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC79A53C29BB23AC00A76CC4 /* DashboardViewController.xib */; };
+		BC79A54229BB23DD00A76CC4 /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC79A54029BB23DD00A76CC4 /* UpcomingViewController.swift */; };
+		BC79A54329BB23DD00A76CC4 /* UpcomingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC79A54129BB23DD00A76CC4 /* UpcomingViewController.xib */; };
+		BC79A54729BB245F00A76CC4 /* MyMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC79A54529BB245F00A76CC4 /* MyMovieViewController.swift */; };
+		BC79A54829BB245F00A76CC4 /* MyMovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC79A54629BB245F00A76CC4 /* MyMovieViewController.xib */; };
 		BC89442429BB1F6400468B97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC89442329BB1F6400468B97 /* AppDelegate.swift */; };
 		BC89442629BB1F6400468B97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC89442529BB1F6400468B97 /* SceneDelegate.swift */; };
 		BC89442E29BB1F6400468B97 /* pinflix.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC89442C29BB1F6400468B97 /* pinflix.xcdatamodeld */; };
@@ -35,6 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC79A53929BB231C00A76CC4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		BC79A53B29BB23AC00A76CC4 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		BC79A53C29BB23AC00A76CC4 /* DashboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardViewController.xib; sourceTree = "<group>"; };
+		BC79A54029BB23DD00A76CC4 /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
+		BC79A54129BB23DD00A76CC4 /* UpcomingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingViewController.xib; sourceTree = "<group>"; };
+		BC79A54529BB245F00A76CC4 /* MyMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMovieViewController.swift; sourceTree = "<group>"; };
+		BC79A54629BB245F00A76CC4 /* MyMovieViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyMovieViewController.xib; sourceTree = "<group>"; };
 		BC89442029BB1F6400468B97 /* pinflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pinflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC89442329BB1F6400468B97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC89442529BB1F6400468B97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +88,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC79A53F29BB23B000A76CC4 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				BC79A53B29BB23AC00A76CC4 /* DashboardViewController.swift */,
+				BC79A53C29BB23AC00A76CC4 /* DashboardViewController.xib */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		BC79A54429BB23E000A76CC4 /* Upcoming */ = {
+			isa = PBXGroup;
+			children = (
+				BC79A54029BB23DD00A76CC4 /* UpcomingViewController.swift */,
+				BC79A54129BB23DD00A76CC4 /* UpcomingViewController.xib */,
+			);
+			path = Upcoming;
+			sourceTree = "<group>";
+		};
+		BC79A54929BB246100A76CC4 /* MyMovie */ = {
+			isa = PBXGroup;
+			children = (
+				BC79A54529BB245F00A76CC4 /* MyMovieViewController.swift */,
+				BC79A54629BB245F00A76CC4 /* MyMovieViewController.xib */,
+			);
+			path = MyMovie;
+			sourceTree = "<group>";
+		};
 		BC89441729BB1F6400468B97 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +144,10 @@
 				BC89443129BB1F6500468B97 /* LaunchScreen.storyboard */,
 				BC89443429BB1F6500468B97 /* Info.plist */,
 				BC89442C29BB1F6400468B97 /* pinflix.xcdatamodeld */,
+				BC79A53929BB231C00A76CC4 /* TabBarViewController.swift */,
+				BC79A53F29BB23B000A76CC4 /* Dashboard */,
+				BC79A54429BB23E000A76CC4 /* Upcoming */,
+				BC79A54929BB246100A76CC4 /* MyMovie */,
 			);
 			path = pinflix;
 			sourceTree = "<group>";
@@ -228,8 +273,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC79A54329BB23DD00A76CC4 /* UpcomingViewController.xib in Resources */,
+				BC79A54829BB245F00A76CC4 /* MyMovieViewController.xib in Resources */,
 				BC89443329BB1F6500468B97 /* LaunchScreen.storyboard in Resources */,
 				BC89443029BB1F6500468B97 /* Assets.xcassets in Resources */,
+				BC79A53E29BB23AC00A76CC4 /* DashboardViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,8 +302,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC79A54229BB23DD00A76CC4 /* UpcomingViewController.swift in Sources */,
+				BC79A53A29BB231C00A76CC4 /* TabBarViewController.swift in Sources */,
 				BC89442429BB1F6400468B97 /* AppDelegate.swift in Sources */,
+				BC79A53D29BB23AC00A76CC4 /* DashboardViewController.swift in Sources */,
 				BC89442E29BB1F6400468B97 /* pinflix.xcdatamodeld in Sources */,
+				BC79A54729BB245F00A76CC4 /* MyMovieViewController.swift in Sources */,
 				BC89442629BB1F6400468B97 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,9 +482,8 @@
 				INFOPLIST_FILE = pinflix/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -459,9 +510,8 @@
 				INFOPLIST_FILE = pinflix/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
