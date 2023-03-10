@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		BC89442429BB1F6400468B97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC89442329BB1F6400468B97 /* AppDelegate.swift */; };
 		BC89442629BB1F6400468B97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC89442529BB1F6400468B97 /* SceneDelegate.swift */; };
-		BC89442829BB1F6400468B97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC89442729BB1F6400468B97 /* ViewController.swift */; };
-		BC89442B29BB1F6400468B97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC89442929BB1F6400468B97 /* Main.storyboard */; };
 		BC89442E29BB1F6400468B97 /* pinflix.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC89442C29BB1F6400468B97 /* pinflix.xcdatamodeld */; };
 		BC89443029BB1F6500468B97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC89442F29BB1F6500468B97 /* Assets.xcassets */; };
 		BC89443329BB1F6500468B97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC89443129BB1F6500468B97 /* LaunchScreen.storyboard */; };
@@ -40,8 +38,6 @@
 		BC89442029BB1F6400468B97 /* pinflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pinflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC89442329BB1F6400468B97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC89442529BB1F6400468B97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BC89442729BB1F6400468B97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BC89442A29BB1F6400468B97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BC89442D29BB1F6400468B97 /* pinflix.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = pinflix.xcdatamodel; sourceTree = "<group>"; };
 		BC89442F29BB1F6500468B97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC89443229BB1F6500468B97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,8 +99,6 @@
 			children = (
 				BC89442329BB1F6400468B97 /* AppDelegate.swift */,
 				BC89442529BB1F6400468B97 /* SceneDelegate.swift */,
-				BC89442729BB1F6400468B97 /* ViewController.swift */,
-				BC89442929BB1F6400468B97 /* Main.storyboard */,
 				BC89442F29BB1F6500468B97 /* Assets.xcassets */,
 				BC89443129BB1F6500468B97 /* LaunchScreen.storyboard */,
 				BC89443429BB1F6500468B97 /* Info.plist */,
@@ -236,7 +230,6 @@
 			files = (
 				BC89443329BB1F6500468B97 /* LaunchScreen.storyboard in Resources */,
 				BC89443029BB1F6500468B97 /* Assets.xcassets in Resources */,
-				BC89442B29BB1F6400468B97 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,7 +254,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC89442829BB1F6400468B97 /* ViewController.swift in Sources */,
 				BC89442429BB1F6400468B97 /* AppDelegate.swift in Sources */,
 				BC89442E29BB1F6400468B97 /* pinflix.xcdatamodeld in Sources */,
 				BC89442629BB1F6400468B97 /* SceneDelegate.swift in Sources */,
@@ -301,14 +293,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BC89442929BB1F6400468B97 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BC89442A29BB1F6400468B97 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BC89443129BB1F6500468B97 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
