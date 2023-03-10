@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="NowPlayingCollectionViewCell" customModule="pinflix" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="361" height="500"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="361" height="500"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDr-Zq-qKW">
+                        <rect key="frame" x="0.0" y="0.0" width="361" height="500"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3LF-gd-Bfw">
+                                <rect key="frame" x="0.0" y="0.0" width="361" height="500"/>
+                                <color key="backgroundColor" name="GrayTabBarColor"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="GrayBgColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3LF-gd-Bfw" secondAttribute="trailing" id="0bb-iv-lbu"/>
+                            <constraint firstItem="3LF-gd-Bfw" firstAttribute="leading" secondItem="mDr-Zq-qKW" secondAttribute="leading" id="1gc-E1-XER"/>
+                            <constraint firstAttribute="bottom" secondItem="3LF-gd-Bfw" secondAttribute="bottom" id="40Y-2o-S0G"/>
+                            <constraint firstItem="3LF-gd-Bfw" firstAttribute="top" secondItem="mDr-Zq-qKW" secondAttribute="top" id="wAZ-C4-dm9"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="mDr-Zq-qKW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fAg-bI-rQe"/>
+                <constraint firstAttribute="bottom" secondItem="mDr-Zq-qKW" secondAttribute="bottom" id="jtI-y1-np4"/>
+                <constraint firstAttribute="trailing" secondItem="mDr-Zq-qKW" secondAttribute="trailing" id="wTX-7M-3v3"/>
+                <constraint firstItem="mDr-Zq-qKW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="zUn-Ou-d55"/>
+            </constraints>
+            <size key="customSize" width="360" height="689"/>
+            <connections>
+                <outlet property="containerView" destination="mDr-Zq-qKW" id="cHR-ey-L2E"/>
+            </connections>
+            <point key="canvasLocation" x="366.41221374045801" y="155.98591549295776"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="GrayBgColor">
+            <color red="0.16470588235294117" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="GrayTabBarColor">
+            <color red="0.37254901960784315" green="0.37254901960784315" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -14,6 +14,10 @@
 		BC79A54329BB23DD00A76CC4 /* UpcomingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC79A54129BB23DD00A76CC4 /* UpcomingViewController.xib */; };
 		BC79A54729BB245F00A76CC4 /* MyMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC79A54529BB245F00A76CC4 /* MyMovieViewController.swift */; };
 		BC79A54829BB245F00A76CC4 /* MyMovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC79A54629BB245F00A76CC4 /* MyMovieViewController.xib */; };
+		BC79A55529BB411400A76CC4 /* NowPlayingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC79A55329BB411400A76CC4 /* NowPlayingCollectionViewCell.swift */; };
+		BC79A55629BB411400A76CC4 /* NowPlayingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC79A55429BB411400A76CC4 /* NowPlayingCollectionViewCell.xib */; };
+		BC79A55A29BB591B00A76CC4 /* CardMovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC79A55829BB591B00A76CC4 /* CardMovieCollectionViewCell.swift */; };
+		BC79A55B29BB591B00A76CC4 /* CardMovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC79A55929BB591B00A76CC4 /* CardMovieCollectionViewCell.xib */; };
 		BC89442429BB1F6400468B97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC89442329BB1F6400468B97 /* AppDelegate.swift */; };
 		BC89442629BB1F6400468B97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC89442529BB1F6400468B97 /* SceneDelegate.swift */; };
 		BC89442E29BB1F6400468B97 /* pinflix.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC89442C29BB1F6400468B97 /* pinflix.xcdatamodeld */; };
@@ -49,6 +53,10 @@
 		BC79A54129BB23DD00A76CC4 /* UpcomingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingViewController.xib; sourceTree = "<group>"; };
 		BC79A54529BB245F00A76CC4 /* MyMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMovieViewController.swift; sourceTree = "<group>"; };
 		BC79A54629BB245F00A76CC4 /* MyMovieViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyMovieViewController.xib; sourceTree = "<group>"; };
+		BC79A55329BB411400A76CC4 /* NowPlayingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingCollectionViewCell.swift; sourceTree = "<group>"; };
+		BC79A55429BB411400A76CC4 /* NowPlayingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NowPlayingCollectionViewCell.xib; sourceTree = "<group>"; };
+		BC79A55829BB591B00A76CC4 /* CardMovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardMovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		BC79A55929BB591B00A76CC4 /* CardMovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardMovieCollectionViewCell.xib; sourceTree = "<group>"; };
 		BC89442029BB1F6400468B97 /* pinflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pinflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC89442329BB1F6400468B97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC89442529BB1F6400468B97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +99,7 @@
 		BC79A53F29BB23B000A76CC4 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				BC79A55729BB411F00A76CC4 /* Cell */,
 				BC79A53B29BB23AC00A76CC4 /* DashboardViewController.swift */,
 				BC79A53C29BB23AC00A76CC4 /* DashboardViewController.xib */,
 			);
@@ -187,6 +196,17 @@
 				BC89442C29BB1F6400468B97 /* pinflix.xcdatamodeld */,
 			);
 			path = PersistentStorage;
+			sourceTree = "<group>";
+		};
+		BC79A55729BB411F00A76CC4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BC79A55329BB411400A76CC4 /* NowPlayingCollectionViewCell.swift */,
+				BC79A55429BB411400A76CC4 /* NowPlayingCollectionViewCell.xib */,
+				BC79A55829BB591B00A76CC4 /* CardMovieCollectionViewCell.swift */,
+				BC79A55929BB591B00A76CC4 /* CardMovieCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		BC89441729BB1F6400468B97 = {
@@ -345,8 +365,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC79A55B29BB591B00A76CC4 /* CardMovieCollectionViewCell.xib in Resources */,
 				BC79A54329BB23DD00A76CC4 /* UpcomingViewController.xib in Resources */,
 				BC79A54829BB245F00A76CC4 /* MyMovieViewController.xib in Resources */,
+				BC79A55629BB411400A76CC4 /* NowPlayingCollectionViewCell.xib in Resources */,
 				BC89443329BB1F6500468B97 /* LaunchScreen.storyboard in Resources */,
 				BC89443029BB1F6500468B97 /* Assets.xcassets in Resources */,
 				BC79A53E29BB23AC00A76CC4 /* DashboardViewController.xib in Resources */,
@@ -375,9 +397,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC79A54229BB23DD00A76CC4 /* UpcomingViewController.swift in Sources */,
+				BC79A55A29BB591B00A76CC4 /* CardMovieCollectionViewCell.swift in Sources */,
 				BC79A53A29BB231C00A76CC4 /* TabBarViewController.swift in Sources */,
 				BC89442429BB1F6400468B97 /* AppDelegate.swift in Sources */,
 				BC79A53D29BB23AC00A76CC4 /* DashboardViewController.swift in Sources */,
+				BC79A55529BB411400A76CC4 /* NowPlayingCollectionViewCell.swift in Sources */,
 				BC89442E29BB1F6400468B97 /* pinflix.xcdatamodeld in Sources */,
 				BC79A54729BB245F00A76CC4 /* MyMovieViewController.swift in Sources */,
 				BC89442629BB1F6400468B97 /* SceneDelegate.swift in Sources */,
