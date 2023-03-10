@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DashboardViewController" customModule="pinflix" customModuleProvider="target">
             <connections>
+                <outlet property="searchMovieTextField" destination="fKR-oe-bcZ" id="mYL-yt-Qxw"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,7 +23,23 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DkW-Ev-VSW">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fKR-oe-bcZ">
+                            <rect key="frame" x="16" y="75" width="361" height="42"/>
+                            <color key="backgroundColor" name="GrayBgColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="kfB-0N-O6Z"/>
+                            </constraints>
+                            <color key="textColor" name="WhiteColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
                     <color key="backgroundColor" name="BlackColor"/>
+                    <constraints>
+                        <constraint firstItem="fKR-oe-bcZ" firstAttribute="leading" secondItem="DkW-Ev-VSW" secondAttribute="leading" constant="16" id="4fp-uf-ZZm"/>
+                        <constraint firstAttribute="trailing" secondItem="fKR-oe-bcZ" secondAttribute="trailing" constant="16" id="pQh-W2-73a"/>
+                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -31,6 +48,7 @@
                 <constraint firstAttribute="trailing" secondItem="DkW-Ev-VSW" secondAttribute="trailing" id="9vB-Sj-iEU"/>
                 <constraint firstItem="DkW-Ev-VSW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="H9z-Po-fQy"/>
                 <constraint firstItem="DkW-Ev-VSW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="d4R-wI-x01"/>
+                <constraint firstItem="fKR-oe-bcZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="flH-ia-LHO"/>
                 <constraint firstAttribute="bottom" secondItem="DkW-Ev-VSW" secondAttribute="bottom" id="vcF-yr-7tb"/>
             </constraints>
             <point key="canvasLocation" x="121" y="-11"/>
@@ -39,6 +57,12 @@
     <resources>
         <namedColor name="BlackColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="GrayBgColor">
+            <color red="0.16470588235294117" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="WhiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
