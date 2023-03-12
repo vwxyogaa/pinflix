@@ -15,7 +15,9 @@ struct TMDB: Codable {
     let totalResults: Int
     
     enum CodingKeys: String, CodingKey {
-        case dates, page, results
+        case dates
+        case page
+        case results
         case totalPages = "total_pages"
         case totalResults = "total_results"
     }
@@ -42,13 +44,18 @@ struct TMDB: Codable {
         let voteCount: Int
         
         enum CodingKeys: String, CodingKey {
-            case adult, id, overview, popularity, title, video
+            case adult
             case backdropPath = "backdrop_path"
             case genreIds = "genre_ids"
+            case id
             case originalLanguage = "original_language"
             case originalTitle = "original_title"
+            case overview
+            case popularity
             case posterPath = "poster_path"
             case releaseDate = "release_date"
+            case title
+            case video
             case voteAverage = "vote_average"
             case voteCount = "vote_count"
         }

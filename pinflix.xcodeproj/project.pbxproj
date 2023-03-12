@@ -33,6 +33,16 @@
 		BC89444A29BB1F6600468B97 /* pinflixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC89444929BB1F6600468B97 /* pinflixUITestsLaunchTests.swift */; };
 		E116145E29BDAEB500001182 /* TMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116145D29BDAEB500001182 /* TMDB.swift */; };
 		E116146029BDB08300001182 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116145F29BDB08300001182 /* Movie.swift */; };
+		E116146329BDB92D00001182 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116146229BDB92D00001182 /* APIManager.swift */; };
+		E116146529BDB94C00001182 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116146429BDB94C00001182 /* BaseViewModel.swift */; };
+		E116146929BDB98200001182 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116146829BDB98200001182 /* RemoteDataSource.swift */; };
+		E116146C29BDBA6E00001182 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116146B29BDBA6E00001182 /* Repository.swift */; };
+		E116146F29BDBB7700001182 /* DashboardUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116146E29BDBB7700001182 /* DashboardUseCase.swift */; };
+		E116147229BDBBCE00001182 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116147129BDBBCE00001182 /* Injection.swift */; };
+		E116147529BDD0BE00001182 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116147429BDD0BE00001182 /* DashboardViewModel.swift */; };
+		E116147829BDD2A500001182 /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116147729BDD2A500001182 /* CollectionExtension.swift */; };
+		E116147A29BDD60500001182 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116147929BDD60500001182 /* UIImageViewExtension.swift */; };
+		E116147C29BDD63D00001182 /* UIIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116147B29BDD63D00001182 /* UIIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +88,16 @@
 		BC89444929BB1F6600468B97 /* pinflixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pinflixUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E116145D29BDAEB500001182 /* TMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB.swift; sourceTree = "<group>"; };
 		E116145F29BDB08300001182 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		E116146229BDB92D00001182 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		E116146429BDB94C00001182 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		E116146829BDB98200001182 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
+		E116146B29BDBA6E00001182 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		E116146E29BDBB7700001182 /* DashboardUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardUseCase.swift; sourceTree = "<group>"; };
+		E116147129BDBBCE00001182 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
+		E116147429BDD0BE00001182 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		E116147729BDD2A500001182 /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionExtension.swift; path = pinflix/Presentation/pinflixScene/Dashboard/ViewModel/CollectionExtension.swift; sourceTree = SOURCE_ROOT; };
+		E116147929BDD60500001182 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIImageViewExtension.swift; path = pinflix/Presentation/pinflixScene/Dashboard/ViewModel/UIImageViewExtension.swift; sourceTree = SOURCE_ROOT; };
+		E116147B29BDD63D00001182 /* UIIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIIViewExtension.swift; path = pinflix/Presentation/pinflixScene/Dashboard/ViewModel/UIIViewExtension.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +133,7 @@
 		BC79A53F29BB23B000A76CC4 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				E116147329BDD0B300001182 /* ViewModel */,
 				BC79A55729BB411F00A76CC4 /* Cell */,
 				BC79A53B29BB23AC00A76CC4 /* DashboardViewController.swift */,
 				BC79A53C29BB23AC00A76CC4 /* DashboardViewController.xib */,
@@ -185,6 +206,7 @@
 		BC79A54F29BB2C9200A76CC4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				E116146D29BDBB6A00001182 /* UseCase */,
 				E116145C29BDA97E00001182 /* Entities */,
 			);
 			path = Domain;
@@ -193,7 +215,12 @@
 		BC79A55029BB2C9700A76CC4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				E116147029BDBBC800001182 /* DI */,
+				E116146A29BDBA6700001182 /* Repository */,
+				E116146629BDB96D00001182 /* DataSource */,
+				E116146129BDB91600001182 /* Network */,
 				BC79A55229BB2CCE00A76CC4 /* PersistentStorage */,
+				E116146429BDB94C00001182 /* BaseViewModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -201,6 +228,7 @@
 		BC79A55129BB2CA700A76CC4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				E116147629BDD29B00001182 /* Extension */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -283,6 +311,73 @@
 				E116145F29BDB08300001182 /* Movie.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		E116146129BDB91600001182 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E116146229BDB92D00001182 /* APIManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E116146629BDB96D00001182 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				E116146729BDB97700001182 /* Remote */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		E116146729BDB97700001182 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				E116146829BDB98200001182 /* RemoteDataSource.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		E116146A29BDBA6700001182 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				E116146B29BDBA6E00001182 /* Repository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		E116146D29BDBB6A00001182 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				E116146E29BDBB7700001182 /* DashboardUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		E116147029BDBBC800001182 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				E116147129BDBBCE00001182 /* Injection.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		E116147329BDD0B300001182 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E116147429BDD0BE00001182 /* DashboardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E116147629BDD29B00001182 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E116147729BDD2A500001182 /* CollectionExtension.swift */,
+				E116147929BDD60500001182 /* UIImageViewExtension.swift */,
+				E116147B29BDD63D00001182 /* UIIViewExtension.swift */,
+			);
+			name = Extension;
+			path = pinflix/Utilities/Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,17 +528,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E116146329BDB92D00001182 /* APIManager.swift in Sources */,
 				BC79A54229BB23DD00A76CC4 /* UpcomingViewController.swift in Sources */,
+				E116146F29BDBB7700001182 /* DashboardUseCase.swift in Sources */,
+				E116147529BDD0BE00001182 /* DashboardViewModel.swift in Sources */,
+				E116147829BDD2A500001182 /* CollectionExtension.swift in Sources */,
+				E116146C29BDBA6E00001182 /* Repository.swift in Sources */,
 				BC79A55A29BB591B00A76CC4 /* CardMovieCollectionViewCell.swift in Sources */,
 				E116145E29BDAEB500001182 /* TMDB.swift in Sources */,
 				BC79A53A29BB231C00A76CC4 /* TabBarViewController.swift in Sources */,
 				BC89442429BB1F6400468B97 /* AppDelegate.swift in Sources */,
+				E116147A29BDD60500001182 /* UIImageViewExtension.swift in Sources */,
 				BC79A53D29BB23AC00A76CC4 /* DashboardViewController.swift in Sources */,
+				E116146529BDB94C00001182 /* BaseViewModel.swift in Sources */,
+				E116146929BDB98200001182 /* RemoteDataSource.swift in Sources */,
 				BC79A55529BB411400A76CC4 /* NowPlayingCollectionViewCell.swift in Sources */,
 				BC89442E29BB1F6400468B97 /* pinflix.xcdatamodeld in Sources */,
 				BC79A54729BB245F00A76CC4 /* MyMovieViewController.swift in Sources */,
 				E116146029BDB08300001182 /* Movie.swift in Sources */,
+				E116147229BDBBCE00001182 /* Injection.swift in Sources */,
 				BC89442629BB1F6400468B97 /* SceneDelegate.swift in Sources */,
+				E116147C29BDD63D00001182 /* UIIViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

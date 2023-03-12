@@ -9,6 +9,7 @@ import UIKit
 
 class NowPlayingCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var nowPlayingImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,5 +19,10 @@ class NowPlayingCollectionViewCell: UICollectionViewCell {
     private func configureViews() {
         self.containerView.layer.cornerRadius = 20
         self.containerView.layer.masksToBounds = true
+    }
+    
+    func configureContent(nowPlaying: TMDB.Results?) {
+        let imageUrl = "https://image.tmdb.org/t/p/original\(nowPlaying?.posterPath ?? "")"
+        self.nowPlayingImageView.loadImage(uri: imageUrl)
     }
 }

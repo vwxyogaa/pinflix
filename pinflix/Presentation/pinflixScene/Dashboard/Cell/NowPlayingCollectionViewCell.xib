@@ -46,6 +46,7 @@
             <size key="customSize" width="360" height="689"/>
             <connections>
                 <outlet property="containerView" destination="mDr-Zq-qKW" id="cHR-ey-L2E"/>
+                <outlet property="nowPlayingImageView" destination="3LF-gd-Bfw" id="Ymp-cw-Ckn"/>
             </connections>
             <point key="canvasLocation" x="366.41221374045801" y="155.98591549295776"/>
         </collectionViewCell>
