@@ -31,6 +31,8 @@
 		BC89443E29BB1F6500468B97 /* pinflixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC89443D29BB1F6500468B97 /* pinflixTests.swift */; };
 		BC89444829BB1F6600468B97 /* pinflixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC89444729BB1F6600468B97 /* pinflixUITests.swift */; };
 		BC89444A29BB1F6600468B97 /* pinflixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC89444929BB1F6600468B97 /* pinflixUITestsLaunchTests.swift */; };
+		E116145E29BDAEB500001182 /* TMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116145D29BDAEB500001182 /* TMDB.swift */; };
+		E116146029BDB08300001182 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116145F29BDB08300001182 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		BC89444329BB1F6600468B97 /* pinflixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pinflixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC89444729BB1F6600468B97 /* pinflixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pinflixUITests.swift; sourceTree = "<group>"; };
 		BC89444929BB1F6600468B97 /* pinflixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pinflixUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E116145D29BDAEB500001182 /* TMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB.swift; sourceTree = "<group>"; };
+		E116145F29BDB08300001182 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +185,7 @@
 		BC79A54F29BB2C9200A76CC4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				E116145C29BDA97E00001182 /* Entities */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -269,6 +274,15 @@
 				BC89444929BB1F6600468B97 /* pinflixUITestsLaunchTests.swift */,
 			);
 			path = pinflixUITests;
+			sourceTree = "<group>";
+		};
+		E116145C29BDA97E00001182 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				E116145D29BDAEB500001182 /* TMDB.swift */,
+				E116145F29BDB08300001182 /* Movie.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -421,12 +435,14 @@
 			files = (
 				BC79A54229BB23DD00A76CC4 /* UpcomingViewController.swift in Sources */,
 				BC79A55A29BB591B00A76CC4 /* CardMovieCollectionViewCell.swift in Sources */,
+				E116145E29BDAEB500001182 /* TMDB.swift in Sources */,
 				BC79A53A29BB231C00A76CC4 /* TabBarViewController.swift in Sources */,
 				BC89442429BB1F6400468B97 /* AppDelegate.swift in Sources */,
 				BC79A53D29BB23AC00A76CC4 /* DashboardViewController.swift in Sources */,
 				BC79A55529BB411400A76CC4 /* NowPlayingCollectionViewCell.swift in Sources */,
 				BC89442E29BB1F6400468B97 /* pinflix.xcdatamodeld in Sources */,
 				BC79A54729BB245F00A76CC4 /* MyMovieViewController.swift in Sources */,
+				E116146029BDB08300001182 /* Movie.swift in Sources */,
 				BC89442629BB1F6400468B97 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
