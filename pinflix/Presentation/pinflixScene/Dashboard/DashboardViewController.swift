@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class DashboardViewController: UIViewController {
     @IBOutlet weak var searchMovieTextField: UITextField!
@@ -14,10 +15,14 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var topRatedCollectionView: UICollectionView!
     @IBOutlet weak var latestCollectionView: UICollectionView!
     
+    private let disposeBag = DisposeBag()
+    var viewModel: DashboardViewModel!
+    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
+        initObserver()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,6 +43,12 @@ class DashboardViewController: UIViewController {
     private func configureViews() {
         configureSearchTextField()
         configureCollectionViews()
+    }
+    
+    private func initObserver() {
+        viewModel.nowPlayings.drive(onNext: {[weak self] nowPlaying in
+            self?.nowPlayingCollectionView.reloadData()
+        }).disposed(by: disposeBag)
     }
     
     private func configureSearchTextField() {
@@ -72,7 +83,7 @@ extension DashboardViewController: UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case nowPlayingCollectionView:
-            return 3
+            return viewModel.nowPlayingCount
         case popularCollectionView:
             return 10
         case topRatedCollectionView:
@@ -88,6 +99,8 @@ extension DashboardViewController: UICollectionViewDataSource, UICollectionViewD
         switch collectionView {
         case nowPlayingCollectionView:
             guard let cell = nowPlayingCollectionView.dequeueReusableCell(withReuseIdentifier: "NowPlayingCollectionViewCell", for: indexPath) as? NowPlayingCollectionViewCell else { return UICollectionViewCell() }
+            let nowPlaying = viewModel.nowPlaying(at: indexPath.row)
+            cell.configureContent(nowPlaying: nowPlaying)
             return cell
         case popularCollectionView:
             guard let cell = popularCollectionView.dequeueReusableCell(withReuseIdentifier: "CardMovieCollectionViewCell", for: indexPath) as? CardMovieCollectionViewCell else { return UICollectionViewCell() }
