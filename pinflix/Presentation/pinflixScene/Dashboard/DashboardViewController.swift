@@ -13,7 +13,6 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var nowPlayingCollectionView: UICollectionView!
     @IBOutlet weak var popularCollectionView: UICollectionView!
     @IBOutlet weak var topRatedCollectionView: UICollectionView!
-    @IBOutlet weak var latestCollectionView: UICollectionView!
     
     private let disposeBag = DisposeBag()
     var viewModel: DashboardViewModel!
@@ -79,10 +78,6 @@ class DashboardViewController: UIViewController {
         topRatedCollectionView.register(UINib(nibName: "CardMovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CardMovieCollectionViewCell")
         topRatedCollectionView.dataSource = self
         topRatedCollectionView.delegate = self
-        
-        latestCollectionView.register(UINib(nibName: "CardMovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CardMovieCollectionViewCell")
-        latestCollectionView.dataSource = self
-        latestCollectionView.delegate = self
     }
 }
 
@@ -96,8 +91,6 @@ extension DashboardViewController: UICollectionViewDataSource, UICollectionViewD
             return viewModel.popularCount
         case topRatedCollectionView:
             return viewModel.topRatedCount
-        case latestCollectionView:
-            return 10
         default:
             return 0
         }
@@ -120,9 +113,6 @@ extension DashboardViewController: UICollectionViewDataSource, UICollectionViewD
             let topRated = viewModel.topRated(at: indexPath.row)
             cell.configureContent(content: topRated)
             return cell
-        case latestCollectionView:
-            guard let cell = popularCollectionView.dequeueReusableCell(withReuseIdentifier: "CardMovieCollectionViewCell", for: indexPath) as? CardMovieCollectionViewCell else { return UICollectionViewCell() }
-            return cell
         default:
             return UICollectionViewCell()
         }
@@ -135,8 +125,6 @@ extension DashboardViewController: UICollectionViewDataSource, UICollectionViewD
         case popularCollectionView:
             return CGSize(width: 100, height: 150)
         case topRatedCollectionView:
-            return CGSize(width: 100, height: 150)
-        case latestCollectionView:
             return CGSize(width: 100, height: 150)
         default:
             return CGSize(width: 0, height: 0)
@@ -151,8 +139,6 @@ extension DashboardViewController: UICollectionViewDataSource, UICollectionViewD
             return 8
         case topRatedCollectionView:
             return 8
-        case latestCollectionView:
-            return 8
         default:
             return 0
         }
@@ -165,8 +151,6 @@ extension DashboardViewController: UICollectionViewDataSource, UICollectionViewD
         case popularCollectionView:
             return 0
         case topRatedCollectionView:
-            return 0
-        case latestCollectionView:
             return 0
         default:
             return 0

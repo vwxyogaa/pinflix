@@ -12,7 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DashboardViewController" customModule="pinflix" customModuleProvider="target">
             <connections>
-                <outlet property="latestCollectionView" destination="vRV-Pa-NPV" id="6kG-mB-bDC"/>
                 <outlet property="nowPlayingCollectionView" destination="2w1-Xd-j96" id="Q7r-Dx-eWp"/>
                 <outlet property="popularCollectionView" destination="5Ng-dJ-wTS" id="t1e-5E-6pe"/>
                 <outlet property="searchMovieTextField" destination="fKR-oe-bcZ" id="mYL-yt-Qxw"/>
@@ -45,7 +44,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="727"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="yhp-1y-YfR">
-                                            <rect key="frame" x="16" y="8" width="361" height="1073"/>
+                                            <rect key="frame" x="16" y="8" width="361" height="882"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="2w1-Xd-j96">
                                                     <rect key="frame" x="0.0" y="0.0" width="361" height="500"/>
@@ -61,7 +60,7 @@
                                                     </collectionViewFlowLayout>
                                                 </collectionView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Qr4-N0-7WO">
-                                                    <rect key="frame" x="0.0" y="516" width="361" height="557"/>
+                                                    <rect key="frame" x="0.0" y="516" width="361" height="366"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hE7-tO-jj3">
                                                             <rect key="frame" x="0.0" y="0.0" width="361" height="175"/>
@@ -103,30 +102,6 @@
                                                                         <constraint firstAttribute="height" constant="150" id="V3i-0H-0vk"/>
                                                                     </constraints>
                                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AfL-C6-Hj4">
-                                                                        <size key="itemSize" width="128" height="128"/>
-                                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                                    </collectionViewFlowLayout>
-                                                                </collectionView>
-                                                            </subviews>
-                                                        </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jW5-P9-Xlk">
-                                                            <rect key="frame" x="0.0" y="382" width="361" height="175"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latest" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdl-oh-NBL">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="17"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                                    <color key="textColor" name="WhiteColor"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                </label>
-                                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="vRV-Pa-NPV">
-                                                                    <rect key="frame" x="0.0" y="25" width="361" height="150"/>
-                                                                    <color key="backgroundColor" name="BlackColor"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="150" id="NwR-nZ-OZc"/>
-                                                                    </constraints>
-                                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="w1m-6h-mjV">
                                                                         <size key="itemSize" width="128" height="128"/>
                                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
