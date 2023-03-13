@@ -31,6 +31,8 @@
 		BC89443E29BB1F6500468B97 /* pinflixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC89443D29BB1F6500468B97 /* pinflixTests.swift */; };
 		BC89444829BB1F6600468B97 /* pinflixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC89444729BB1F6600468B97 /* pinflixUITests.swift */; };
 		BC89444A29BB1F6600468B97 /* pinflixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC89444929BB1F6600468B97 /* pinflixUITestsLaunchTests.swift */; };
+		BC8E636329BF2054004274D4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E636129BF2054004274D4 /* DetailViewController.swift */; };
+		BC8E636429BF2054004274D4 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8E636229BF2054004274D4 /* DetailViewController.xib */; };
 		E116145E29BDAEB500001182 /* TMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116145D29BDAEB500001182 /* TMDB.swift */; };
 		E116146029BDB08300001182 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116145F29BDB08300001182 /* Movie.swift */; };
 		E116146329BDB92D00001182 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116146229BDB92D00001182 /* APIManager.swift */; };
@@ -86,6 +88,8 @@
 		BC89444329BB1F6600468B97 /* pinflixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pinflixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC89444729BB1F6600468B97 /* pinflixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pinflixUITests.swift; sourceTree = "<group>"; };
 		BC89444929BB1F6600468B97 /* pinflixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pinflixUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BC8E636129BF2054004274D4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BC8E636229BF2054004274D4 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		E116145D29BDAEB500001182 /* TMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB.swift; sourceTree = "<group>"; };
 		E116145F29BDB08300001182 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		E116146229BDB92D00001182 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				BC79A53F29BB23B000A76CC4 /* Dashboard */,
+				BC8E636029BF2045004274D4 /* Detail */,
 				BC79A54429BB23E000A76CC4 /* Upcoming */,
 				BC79A54929BB246100A76CC4 /* MyMovie */,
 			);
@@ -302,6 +307,15 @@
 				BC89444929BB1F6600468B97 /* pinflixUITestsLaunchTests.swift */,
 			);
 			path = pinflixUITests;
+			sourceTree = "<group>";
+		};
+		BC8E636029BF2045004274D4 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BC8E636129BF2054004274D4 /* DetailViewController.swift */,
+				BC8E636229BF2054004274D4 /* DetailViewController.xib */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		E116145C29BDA97E00001182 /* Entities */ = {
@@ -500,6 +514,7 @@
 				BC79A55B29BB591B00A76CC4 /* CardMovieCollectionViewCell.xib in Resources */,
 				BC79A54329BB23DD00A76CC4 /* UpcomingViewController.xib in Resources */,
 				BC79A54829BB245F00A76CC4 /* MyMovieViewController.xib in Resources */,
+				BC8E636429BF2054004274D4 /* DetailViewController.xib in Resources */,
 				BC79A55629BB411400A76CC4 /* NowPlayingCollectionViewCell.xib in Resources */,
 				BC89443329BB1F6500468B97 /* LaunchScreen.storyboard in Resources */,
 				BC89443029BB1F6500468B97 /* Assets.xcassets in Resources */,
@@ -539,6 +554,7 @@
 				BC79A53A29BB231C00A76CC4 /* TabBarViewController.swift in Sources */,
 				BC89442429BB1F6400468B97 /* AppDelegate.swift in Sources */,
 				E116147A29BDD60500001182 /* UIImageViewExtension.swift in Sources */,
+				BC8E636329BF2054004274D4 /* DetailViewController.swift in Sources */,
 				BC79A53D29BB23AC00A76CC4 /* DashboardViewController.swift in Sources */,
 				E116146529BDB94C00001182 /* BaseViewModel.swift in Sources */,
 				E116146929BDB98200001182 /* RemoteDataSource.swift in Sources */,
