@@ -11,6 +11,7 @@ import RxSwift
 protocol DashboardUseCaseProtocol {
     func getNowPlaying() -> Observable<TMDB>
     func getPopular() -> Observable<TMDB>
+    func getTopRated() -> Observable<TMDB>
 }
 
 final class DashboardUseCase: DashboardUseCaseProtocol {
@@ -26,5 +27,9 @@ final class DashboardUseCase: DashboardUseCaseProtocol {
     
     func getPopular() -> Observable<TMDB> {
         return self.repository.getPopular()
+    }
+    
+    func getTopRated() -> Observable<TMDB> {
+        return self.repository.getTopRated()
     }
 }

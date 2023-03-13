@@ -53,6 +53,10 @@ class DashboardViewController: UIViewController {
         viewModel.populars.drive(onNext: { [weak self] popular in
             self?.popularCollectionView.reloadData()
         }).disposed(by: disposeBag)
+        
+        viewModel.topRateds.drive(onNext: { [weak self] topRated in
+            self?.topRatedCollectionView.reloadData()
+        }).disposed(by: disposeBag)
     }
     
     private func configureSearchTextField() {
@@ -91,7 +95,7 @@ extension DashboardViewController: UICollectionViewDataSource, UICollectionViewD
         case popularCollectionView:
             return viewModel.popularCount
         case topRatedCollectionView:
-            return 10
+            return viewModel.topRatedCount
         case latestCollectionView:
             return 10
         default:
@@ -113,6 +117,8 @@ extension DashboardViewController: UICollectionViewDataSource, UICollectionViewD
             return cell
         case topRatedCollectionView:
             guard let cell = popularCollectionView.dequeueReusableCell(withReuseIdentifier: "CardMovieCollectionViewCell", for: indexPath) as? CardMovieCollectionViewCell else { return UICollectionViewCell() }
+            let topRated = viewModel.topRated(at: indexPath.row)
+            cell.configureContent(content: topRated)
             return cell
         case latestCollectionView:
             guard let cell = popularCollectionView.dequeueReusableCell(withReuseIdentifier: "CardMovieCollectionViewCell", for: indexPath) as? CardMovieCollectionViewCell else { return UICollectionViewCell() }
