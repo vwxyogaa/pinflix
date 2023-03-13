@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC73F87F29BF343E002C5FE7 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC73F87E29BF343E002C5FE7 /* UIViewControllerExtension.swift */; };
+		BC73F88229BF3471002C5FE7 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC73F88129BF3471002C5FE7 /* Toast.swift */; };
 		BC79A53A29BB231C00A76CC4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC79A53929BB231C00A76CC4 /* TabBarViewController.swift */; };
 		BC79A53D29BB23AC00A76CC4 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC79A53B29BB23AC00A76CC4 /* DashboardViewController.swift */; };
 		BC79A53E29BB23AC00A76CC4 /* DashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC79A53C29BB23AC00A76CC4 /* DashboardViewController.xib */; };
@@ -67,6 +69,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC73F87E29BF343E002C5FE7 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = pinflix/Presentation/pinflixScene/Detail/ViewModel/UIViewControllerExtension.swift; sourceTree = SOURCE_ROOT; };
+		BC73F88129BF3471002C5FE7 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		BC79A53929BB231C00A76CC4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		BC79A53B29BB23AC00A76CC4 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		BC79A53C29BB23AC00A76CC4 /* DashboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardViewController.xib; sourceTree = "<group>"; };
@@ -138,6 +142,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC73F88029BF3462002C5FE7 /* LibraryThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				BC73F88129BF3471002C5FE7 /* Toast.swift */,
+			);
+			path = LibraryThirdParty;
+			sourceTree = "<group>";
+		};
 		BC79A53F29BB23B000A76CC4 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +249,7 @@
 		BC79A55129BB2CA700A76CC4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BC73F88029BF3462002C5FE7 /* LibraryThirdParty */,
 				E116147629BDD29B00001182 /* Extension */,
 			);
 			path = Utilities;
@@ -403,6 +416,7 @@
 				E116147729BDD2A500001182 /* CollectionExtension.swift */,
 				E116147929BDD60500001182 /* UIImageViewExtension.swift */,
 				E116147B29BDD63D00001182 /* UIIViewExtension.swift */,
+				BC73F87E29BF343E002C5FE7 /* UIViewControllerExtension.swift */,
 			);
 			name = Extension;
 			path = pinflix/Utilities/Extension;
@@ -559,6 +573,7 @@
 			files = (
 				BC8E636629BF256E004274D4 /* DetailUseCase.swift in Sources */,
 				E116146329BDB92D00001182 /* APIManager.swift in Sources */,
+				BC73F87F29BF343E002C5FE7 /* UIViewControllerExtension.swift in Sources */,
 				BC79A54229BB23DD00A76CC4 /* UpcomingViewController.swift in Sources */,
 				E116146F29BDBB7700001182 /* DashboardUseCase.swift in Sources */,
 				E116147529BDD0BE00001182 /* DashboardViewModel.swift in Sources */,
@@ -569,6 +584,7 @@
 				E116145E29BDAEB500001182 /* TMDB.swift in Sources */,
 				BC79A53A29BB231C00A76CC4 /* TabBarViewController.swift in Sources */,
 				BC89442429BB1F6400468B97 /* AppDelegate.swift in Sources */,
+				BC73F88229BF3471002C5FE7 /* Toast.swift in Sources */,
 				E116147A29BDD60500001182 /* UIImageViewExtension.swift in Sources */,
 				BC8E636329BF2054004274D4 /* DetailViewController.swift in Sources */,
 				BC79A53D29BB23AC00A76CC4 /* DashboardViewController.swift in Sources */,

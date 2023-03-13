@@ -78,9 +78,11 @@ extension DashboardViewModel {
     }
     
     func getNowPlaying() {
+        self._isLoading.accept(true)
         dashboardUseCase.getNowPlaying(page: nowPlayingPage)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
+                self._isLoading.accept(false)
                 self.nowPlayingResults.append(contentsOf: result.results)
                 self.nowPlayingResultsCount += result.results.count
                 if self.nowPlayingResults.count == self.nowPlayingResultsCount {
@@ -120,9 +122,11 @@ extension DashboardViewModel {
     }
     
     func getPopular() {
+        self._isLoading.accept(true)
         dashboardUseCase.getPopular(page: popularPage)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
+                self._isLoading.accept(false)
                 self.popularResults.append(contentsOf: result.results)
                 self.popularResultsCount += result.results.count
                 if self.popularResults.count == self.popularResultsCount {
@@ -161,9 +165,11 @@ extension DashboardViewModel {
     }
     
     func getTopRated() {
+        self._isLoading.accept(true)
         dashboardUseCase.getTopRated(page: topRatedPage)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
+                self._isLoading.accept(false)
                 self.topRatedResults.append(contentsOf: result.results)
                 self.topRatedResultsCount += result.results.count
                 if self.topRatedResults.count == self.topRatedResultsCount {

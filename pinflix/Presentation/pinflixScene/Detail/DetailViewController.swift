@@ -61,6 +61,10 @@ class DetailViewController: UIViewController {
         viewModel.movie.drive(onNext: { [weak self] movie in
             self?.configureContent(movie: movie)
         }).disposed(by: disposeBag)
+        
+        viewModel.isLoading.drive(onNext: { [weak self] isLoading in
+            self?.manageLoadingActivity(isLoading: isLoading)
+        }).disposed(by: disposeBag)
     }
     
     private func configureContent(movie: Movie?) {

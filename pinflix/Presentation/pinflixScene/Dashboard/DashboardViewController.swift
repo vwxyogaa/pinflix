@@ -52,6 +52,10 @@ class DashboardViewController: UIViewController {
     }
     
     private func initObserver() {
+        viewModel.isLoading.drive(onNext: { [weak self] isLoading in
+            self?.manageLoadingActivity(isLoading: isLoading)
+        }).disposed(by: disposeBag)
+        
         viewModel.nowPlayings.drive(onNext: { [weak self] nowPlaying in
             self?.nowPlayingCollectionView.reloadData()
         }).disposed(by: disposeBag)

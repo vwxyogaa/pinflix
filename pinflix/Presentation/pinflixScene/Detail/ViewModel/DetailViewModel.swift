@@ -25,9 +25,11 @@ class DetailViewModel: BaseViewModel {
     }
     
     func getDetail(id: Int) {
+        self._isLoading.accept(true)
         detailUseCase.getDetail(id: id)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
+                self._isLoading.accept(false)
                 self._movie.accept(result)
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
