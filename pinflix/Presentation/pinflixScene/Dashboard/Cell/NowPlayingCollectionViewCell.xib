@@ -21,17 +21,17 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDr-Zq-qKW">
                         <rect key="frame" x="0.0" y="0.0" width="361" height="500"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3LF-gd-Bfw">
-                                <rect key="frame" x="0.0" y="0.0" width="361" height="500"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3LF-gd-Bfw">
+                                <rect key="frame" x="8" y="8" width="345" height="484"/>
                                 <color key="backgroundColor" name="GrayTabBarColor"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" name="GrayBgColor"/>
+                        <color key="backgroundColor" name="BlackColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="3LF-gd-Bfw" secondAttribute="trailing" id="0bb-iv-lbu"/>
-                            <constraint firstItem="3LF-gd-Bfw" firstAttribute="leading" secondItem="mDr-Zq-qKW" secondAttribute="leading" id="1gc-E1-XER"/>
-                            <constraint firstAttribute="bottom" secondItem="3LF-gd-Bfw" secondAttribute="bottom" id="40Y-2o-S0G"/>
-                            <constraint firstItem="3LF-gd-Bfw" firstAttribute="top" secondItem="mDr-Zq-qKW" secondAttribute="top" id="wAZ-C4-dm9"/>
+                            <constraint firstAttribute="trailing" secondItem="3LF-gd-Bfw" secondAttribute="trailing" constant="8" id="0bb-iv-lbu"/>
+                            <constraint firstItem="3LF-gd-Bfw" firstAttribute="leading" secondItem="mDr-Zq-qKW" secondAttribute="leading" constant="8" id="1gc-E1-XER"/>
+                            <constraint firstAttribute="bottom" secondItem="3LF-gd-Bfw" secondAttribute="bottom" constant="8" id="40Y-2o-S0G"/>
+                            <constraint firstItem="3LF-gd-Bfw" firstAttribute="top" secondItem="mDr-Zq-qKW" secondAttribute="top" constant="8" id="wAZ-C4-dm9"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -52,8 +52,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <namedColor name="GrayBgColor">
-            <color red="0.16470588235294117" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="BlackColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="GrayTabBarColor">
             <color red="0.37254901960784315" green="0.37254901960784315" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

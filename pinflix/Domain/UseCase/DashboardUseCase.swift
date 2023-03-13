@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 protocol DashboardUseCaseProtocol {
-    func getNowPlaying() -> Observable<[TMDB.Results]>
+    func getNowPlaying() -> Observable<TMDB>
 }
 
 final class DashboardUseCase: DashboardUseCaseProtocol {
@@ -19,7 +19,7 @@ final class DashboardUseCase: DashboardUseCaseProtocol {
         self.repository = repository
     }
     
-    func getNowPlaying() -> Observable<[TMDB.Results]> {
+    func getNowPlaying() -> Observable<TMDB> {
         return self.repository.getNowPlaying()
     }
 }

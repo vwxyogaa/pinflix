@@ -19,6 +19,9 @@ class NowPlayingCollectionViewCell: UICollectionViewCell {
     private func configureViews() {
         self.containerView.layer.cornerRadius = 20
         self.containerView.layer.masksToBounds = true
+        
+        self.nowPlayingImageView.layer.cornerRadius = 20
+        self.nowPlayingImageView.layer.masksToBounds = true
     }
     
     func configureContent(nowPlaying: TMDB.Results?) {

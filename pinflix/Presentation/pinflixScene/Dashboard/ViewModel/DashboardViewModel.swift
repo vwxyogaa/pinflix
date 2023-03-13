@@ -13,7 +13,7 @@ class DashboardViewModel: BaseViewModel {
     private let disposeBag = DisposeBag()
     private let dashboardUseCase: DashboardUseCaseProtocol
     
-    private let _nowPlayings = BehaviorRelay<[TMDB.Results]>(value: [])
+    private let _nowPlayings = BehaviorRelay<[TMDB.Results]?>(value: nil)
     
     init(dashboardUseCase: DashboardUseCaseProtocol) {
         self.dashboardUseCase = dashboardUseCase
@@ -21,26 +21,25 @@ class DashboardViewModel: BaseViewModel {
         getNowPlaying()
     }
     
-    var nowPlayings: Driver<[TMDB.Results]> {
+    var nowPlayings: Driver<[TMDB.Results]?> {
         return _nowPlayings.asDriver()
     }
     
     var nowPlayingCount: Int {
-        return _nowPlayings.value.count
+        return _nowPlayings.value?.count ?? 0
     }
     
     func nowPlaying(at index: Int) -> TMDB.Results? {
-        return _nowPlayings.value[safe: index]
+        return _nowPlayings.value?[safe: index]
     }
     
     func getNowPlaying() {
         dashboardUseCase.getNowPlaying()
             .observe(on: MainScheduler.instance)
             .subscribe { result in
-                self._nowPlayings.accept(result)
+                self._nowPlayings.accept(result.results)
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
-                print("ini error: \(error.localizedDescription)")
             }
             .disposed(by: disposeBag)
     }
