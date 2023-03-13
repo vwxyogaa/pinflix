@@ -69,7 +69,7 @@ class DetailViewController: UIViewController {
     
     private func configureContent(movie: Movie?) {
         self.titleLabel.text = movie?.title
-        self.taglineLabel.text = "#\(movie?.tagline ?? "")"
+        self.taglineLabel.text = "#\(movie?.tagline ?? "")".uppercased()
         self.overviewLabel.text = movie?.overview
         self.homepageLabel.text = movie?.homepage
         self.companiesProdLabel.text = "Production Companies: \(movie?.productionCompanies.compactMap({$0.name}).joined(separator: ", ") ?? "")"
