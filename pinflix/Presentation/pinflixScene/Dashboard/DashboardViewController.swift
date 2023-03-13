@@ -46,8 +46,12 @@ class DashboardViewController: UIViewController {
     }
     
     private func initObserver() {
-        viewModel.nowPlayings.drive(onNext: {[weak self] nowPlaying in
+        viewModel.nowPlayings.drive(onNext: { [weak self] nowPlaying in
             self?.nowPlayingCollectionView.reloadData()
+        }).disposed(by: disposeBag)
+        
+        viewModel.populars.drive(onNext: { [weak self] popular in
+            self?.popularCollectionView.reloadData()
         }).disposed(by: disposeBag)
     }
     
@@ -85,7 +89,7 @@ extension DashboardViewController: UICollectionViewDataSource, UICollectionViewD
         case nowPlayingCollectionView:
             return viewModel.nowPlayingCount
         case popularCollectionView:
-            return 10
+            return viewModel.popularCount
         case topRatedCollectionView:
             return 10
         case latestCollectionView:
@@ -104,6 +108,8 @@ extension DashboardViewController: UICollectionViewDataSource, UICollectionViewD
             return cell
         case popularCollectionView:
             guard let cell = popularCollectionView.dequeueReusableCell(withReuseIdentifier: "CardMovieCollectionViewCell", for: indexPath) as? CardMovieCollectionViewCell else { return UICollectionViewCell() }
+            let popular = viewModel.popular(at: indexPath.row)
+            cell.configureContent(content: popular)
             return cell
         case topRatedCollectionView:
             guard let cell = popularCollectionView.dequeueReusableCell(withReuseIdentifier: "CardMovieCollectionViewCell", for: indexPath) as? CardMovieCollectionViewCell else { return UICollectionViewCell() }

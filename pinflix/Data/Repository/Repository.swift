@@ -11,6 +11,7 @@ import RxSwift
 protocol RepositoryProtocol {
     // MARK: - remote
     func getNowPlaying() -> Observable<TMDB>
+    func getPopular() -> Observable<TMDB>
 }
 
 final class Repository: NSObject {
@@ -30,5 +31,9 @@ extension Repository: RepositoryProtocol {
     // MARK: - remote
     func getNowPlaying() -> Observable<TMDB> {
         return remote.getNowPlaying()
+    }
+    
+    func getPopular() -> Observable<TMDB> {
+        return remote.getPopular()
     }
 }
