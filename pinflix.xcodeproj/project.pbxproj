@@ -33,6 +33,8 @@
 		BC89444A29BB1F6600468B97 /* pinflixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC89444929BB1F6600468B97 /* pinflixUITestsLaunchTests.swift */; };
 		BC8E636329BF2054004274D4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E636129BF2054004274D4 /* DetailViewController.swift */; };
 		BC8E636429BF2054004274D4 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC8E636229BF2054004274D4 /* DetailViewController.xib */; };
+		BC8E636629BF256E004274D4 /* DetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E636529BF256E004274D4 /* DetailUseCase.swift */; };
+		BC8E636929BF25D4004274D4 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8E636829BF25D4004274D4 /* DetailViewModel.swift */; };
 		E116145E29BDAEB500001182 /* TMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116145D29BDAEB500001182 /* TMDB.swift */; };
 		E116146029BDB08300001182 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116145F29BDB08300001182 /* Movie.swift */; };
 		E116146329BDB92D00001182 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116146229BDB92D00001182 /* APIManager.swift */; };
@@ -90,6 +92,8 @@
 		BC89444929BB1F6600468B97 /* pinflixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pinflixUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BC8E636129BF2054004274D4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BC8E636229BF2054004274D4 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		BC8E636529BF256E004274D4 /* DetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUseCase.swift; sourceTree = "<group>"; };
+		BC8E636829BF25D4004274D4 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		E116145D29BDAEB500001182 /* TMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB.swift; sourceTree = "<group>"; };
 		E116145F29BDB08300001182 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		E116146229BDB92D00001182 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -312,10 +316,19 @@
 		BC8E636029BF2045004274D4 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				BC8E636729BF25CC004274D4 /* ViewModel */,
 				BC8E636129BF2054004274D4 /* DetailViewController.swift */,
 				BC8E636229BF2054004274D4 /* DetailViewController.xib */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		BC8E636729BF25CC004274D4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BC8E636829BF25D4004274D4 /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		E116145C29BDA97E00001182 /* Entities */ = {
@@ -363,6 +376,7 @@
 			isa = PBXGroup;
 			children = (
 				E116146E29BDBB7700001182 /* DashboardUseCase.swift */,
+				BC8E636529BF256E004274D4 /* DetailUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -543,12 +557,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC8E636629BF256E004274D4 /* DetailUseCase.swift in Sources */,
 				E116146329BDB92D00001182 /* APIManager.swift in Sources */,
 				BC79A54229BB23DD00A76CC4 /* UpcomingViewController.swift in Sources */,
 				E116146F29BDBB7700001182 /* DashboardUseCase.swift in Sources */,
 				E116147529BDD0BE00001182 /* DashboardViewModel.swift in Sources */,
 				E116147829BDD2A500001182 /* CollectionExtension.swift in Sources */,
 				E116146C29BDBA6E00001182 /* Repository.swift in Sources */,
+				BC8E636929BF25D4004274D4 /* DetailViewModel.swift in Sources */,
 				BC79A55A29BB591B00A76CC4 /* CardMovieCollectionViewCell.swift in Sources */,
 				E116145E29BDAEB500001182 /* TMDB.swift in Sources */,
 				BC79A53A29BB231C00A76CC4 /* TabBarViewController.swift in Sources */,

@@ -12,6 +12,11 @@ final class Injection {
         let repository = provideRepository()
         return DashboardUseCase(repository: repository)
     }
+    
+    func provideDetailUseCase() -> DetailUseCaseProtocol {
+        let repository = provideRepository()
+        return DetailUseCase(repository: repository)
+    }
 }
 
 extension Injection {

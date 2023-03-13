@@ -28,4 +28,10 @@ final class RemoteDataSource {
         let data: Observable<TMDB> = APIManager.shared.executeQuery(url: url, method: .get)
         return data
     }
+    
+    func getDetail(id: Int) -> Observable<Movie> {
+        let url = URL(string: baseUrl + "/movie/\(id)")!
+        let data: Observable<Movie> = APIManager.shared.executeQuery(url: url, method: .get)
+        return data
+    }
 }
