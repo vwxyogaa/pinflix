@@ -10,9 +10,15 @@ import RxSwift
 
 class DashboardViewController: UIViewController {
     @IBOutlet weak var searchMovieTextField: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var nowPlayingCollectionView: UICollectionView!
     @IBOutlet weak var popularCollectionView: UICollectionView!
     @IBOutlet weak var topRatedCollectionView: UICollectionView!
+    
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        return refreshControl
+    }()
     
     private let disposeBag = DisposeBag()
     var viewModel: DashboardViewModel!
@@ -41,6 +47,7 @@ class DashboardViewController: UIViewController {
     // MARK: - Helpers
     private func configureViews() {
         configureSearchTextField()
+        configureScrollView()
         configureCollectionViews()
     }
     
@@ -66,6 +73,11 @@ class DashboardViewController: UIViewController {
         )
     }
     
+    private func configureScrollView() {
+        refreshControl.addTarget(self, action: #selector(self.refreshData), for: .valueChanged)
+        scrollView.refreshControl = refreshControl
+    }
+    
     private func configureCollectionViews() {
         nowPlayingCollectionView.register(UINib(nibName: "NowPlayingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "NowPlayingCollectionViewCell")
         nowPlayingCollectionView.dataSource = self
@@ -78,6 +90,13 @@ class DashboardViewController: UIViewController {
         topRatedCollectionView.register(UINib(nibName: "CardMovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CardMovieCollectionViewCell")
         topRatedCollectionView.dataSource = self
         topRatedCollectionView.delegate = self
+    }
+    
+    // MARK: - action
+    @objc
+    private func refreshData() {
+        self.refreshControl.endRefreshing()
+        self.viewModel.refresh()
     }
 }
 

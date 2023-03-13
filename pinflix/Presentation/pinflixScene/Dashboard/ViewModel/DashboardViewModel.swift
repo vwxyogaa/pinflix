@@ -43,6 +43,24 @@ class DashboardViewModel: BaseViewModel {
         getPopular()
         getTopRated()
     }
+    
+    func refresh() {
+        nowPlayingResults = []
+        nowPlayingResultsCount = 0
+        nowPlayingPage = 1
+        
+        popularResults = []
+        popularResultsCount = 0
+        popularPage = 1
+        
+        topRatedResults = []
+        topRatedResultsCount = 0
+        topRatedPage = 1
+        
+        getNowPlaying()
+        getPopular()
+        getTopRated()
+    }
 }
 
 // MARK: - now playing
