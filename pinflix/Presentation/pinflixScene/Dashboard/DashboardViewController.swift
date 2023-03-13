@@ -75,6 +75,7 @@ class DashboardViewController: UIViewController {
             string: "Search",
             attributes: [NSAttributedString.Key.foregroundColor: grayTabBarColor]
         )
+        searchMovieTextField.delegate = self
     }
     
     private func configureScrollView() {
@@ -101,6 +102,16 @@ class DashboardViewController: UIViewController {
     private func refreshData() {
         self.refreshControl.endRefreshing()
         self.viewModel.refresh()
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension DashboardViewController: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        let searchViewController = SearchViewController()
+        searchViewController.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(searchViewController, animated: true)
+        return true
     }
 }
 

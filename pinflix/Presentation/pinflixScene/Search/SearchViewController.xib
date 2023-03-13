@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="pinflix" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="c0b-7A-LX1" id="1Wd-u1-Uar"/>
+                <outlet property="movieListCollectionView" destination="9qg-FG-CRb" id="6Qw-wp-4yT"/>
+                <outlet property="searchMovieTextField" destination="Jpb-O3-hXE" id="Bn0-cH-vO4"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sQP-tD-VgX">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jpb-O3-hXE">
+                            <rect key="frame" x="16" y="16" width="276.33333333333331" height="42"/>
+                            <color key="backgroundColor" name="GrayBgColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="BGD-2Y-ZtC"/>
+                            </constraints>
+                            <color key="textColor" name="WhiteColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0b-7A-LX1">
+                            <rect key="frame" x="300.33333333333331" y="16" width="76.666666666666686" height="42"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="8fH-wE-C0O"/>
+                            </constraints>
+                            <color key="tintColor" name="WhiteColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Cancel" titleAlignment="center"/>
+                        </button>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9qg-FG-CRb">
+                            <rect key="frame" x="16" y="74" width="361" height="669"/>
+                            <color key="backgroundColor" name="BlackColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3E9-2H-iUE">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" name="BlackColor"/>
+                    <constraints>
+                        <constraint firstItem="c0b-7A-LX1" firstAttribute="leading" secondItem="Jpb-O3-hXE" secondAttribute="trailing" constant="8" id="46F-Ve-n3o"/>
+                        <constraint firstItem="9qg-FG-CRb" firstAttribute="top" secondItem="c0b-7A-LX1" secondAttribute="bottom" constant="16" id="JN1-tC-c0n"/>
+                        <constraint firstItem="Jpb-O3-hXE" firstAttribute="leading" secondItem="sQP-tD-VgX" secondAttribute="leading" constant="16" id="Mxs-ak-8n2"/>
+                        <constraint firstAttribute="trailing" secondItem="9qg-FG-CRb" secondAttribute="trailing" constant="16" id="NoD-MW-Wg0"/>
+                        <constraint firstItem="9qg-FG-CRb" firstAttribute="leading" secondItem="sQP-tD-VgX" secondAttribute="leading" constant="16" id="UNl-nW-bjm"/>
+                        <constraint firstAttribute="bottom" secondItem="9qg-FG-CRb" secondAttribute="bottom" constant="16" id="WLK-zC-Zc5"/>
+                        <constraint firstItem="Jpb-O3-hXE" firstAttribute="top" secondItem="sQP-tD-VgX" secondAttribute="top" constant="16" id="eC6-jP-Sgt"/>
+                        <constraint firstAttribute="trailing" secondItem="c0b-7A-LX1" secondAttribute="trailing" constant="16" id="jvp-sQ-XWA"/>
+                        <constraint firstItem="c0b-7A-LX1" firstAttribute="top" secondItem="sQP-tD-VgX" secondAttribute="top" constant="16" id="vWq-zG-RB4"/>
+                        <constraint firstItem="9qg-FG-CRb" firstAttribute="top" secondItem="Jpb-O3-hXE" secondAttribute="bottom" constant="16" id="yeT-vI-YFS"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="BlackColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sQP-tD-VgX" secondAttribute="trailing" id="6Pj-Mq-dtp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sQP-tD-VgX" secondAttribute="bottom" id="dNA-Lu-OXQ"/>
+                <constraint firstItem="sQP-tD-VgX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="mms-8o-R8C"/>
+                <constraint firstItem="sQP-tD-VgX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="xZY-rt-Cys"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="-12"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="BlackColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="GrayBgColor">
+            <color red="0.16470588235294117" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="WhiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
