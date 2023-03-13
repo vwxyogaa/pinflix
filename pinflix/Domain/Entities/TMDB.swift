@@ -8,7 +8,7 @@
 import Foundation
 
 struct TMDB: Codable {
-    let dates: Dates
+    let dates: Dates?
     let results: [Results]
     let totalPages, totalResults, page: Int
 
