@@ -17,6 +17,25 @@ class DashboardViewModel: BaseViewModel {
     private let _populars = BehaviorRelay<[TMDB.Results]?>(value: nil)
     private let _topRateds = BehaviorRelay<[TMDB.Results]?>(value: nil)
     
+    // MARK: - pagination
+    // now playing
+    private var nowPlayingResults = [TMDB.Results]()
+    private var nowPlayingResultsCount = 0
+    private var nowPlayingPage = 1
+    private var nowPlayingCanLoadNextPage = false
+    
+    // popular
+    private var popularResults = [TMDB.Results]()
+    private var popularResultsCount = 0
+    private var popularPage = 1
+    private var popularCanLoadNextPage = false
+    
+    // top rated
+    private var topRatedResults = [TMDB.Results]()
+    private var topRatedResultsCount = 0
+    private var topRatedPage = 1
+    private var topRatedCanLoadNextPage = false
+    
     init(dashboardUseCase: DashboardUseCaseProtocol) {
         self.dashboardUseCase = dashboardUseCase
         super.init()
@@ -41,14 +60,30 @@ extension DashboardViewModel {
     }
     
     func getNowPlaying() {
-        dashboardUseCase.getNowPlaying()
+        dashboardUseCase.getNowPlaying(page: nowPlayingPage)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
-                self._nowPlayings.accept(result.results)
+                self.nowPlayingResults.append(contentsOf: result.results)
+                self.nowPlayingResultsCount += result.results.count
+                if self.nowPlayingResults.count == self.nowPlayingResultsCount {
+                    self.nowPlayingPage += 1
+                    self.nowPlayingCanLoadNextPage = false
+                    self._nowPlayings.accept(self.nowPlayingResults)
+                }
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
+                print(error)
             }
             .disposed(by: disposeBag)
+    }
+    
+    func loadNowPlayingNextPage(index: Int) {
+        if !nowPlayingCanLoadNextPage {
+            if (_nowPlayings.value?.count ?? 0) - 2 == index {
+                nowPlayingCanLoadNextPage = true
+                getNowPlaying()
+            }
+        }
     }
 }
 
@@ -67,14 +102,29 @@ extension DashboardViewModel {
     }
     
     func getPopular() {
-        dashboardUseCase.getPopular()
+        dashboardUseCase.getPopular(page: popularPage)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
-                self._populars.accept(result.results)
+                self.popularResults.append(contentsOf: result.results)
+                self.popularResultsCount += result.results.count
+                if self.popularResults.count == self.popularResultsCount {
+                    self.popularPage += 1
+                    self.popularCanLoadNextPage = false
+                    self._populars.accept(self.popularResults)
+                }
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
             }
             .disposed(by: disposeBag)
+    }
+    
+    func loadPopularNextPage(index: Int) {
+        if !popularCanLoadNextPage {
+            if (_populars.value?.count ?? 0) - 2 == index {
+                popularCanLoadNextPage = true
+                getPopular()
+            }
+        }
     }
 }
 
@@ -93,13 +143,28 @@ extension DashboardViewModel {
     }
     
     func getTopRated() {
-        dashboardUseCase.getTopRated()
+        dashboardUseCase.getTopRated(page: topRatedPage)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
-                self._topRateds.accept(result.results)
+                self.topRatedResults.append(contentsOf: result.results)
+                self.topRatedResultsCount += result.results.count
+                if self.topRatedResults.count == self.topRatedResultsCount {
+                    self.topRatedPage += 1
+                    self.topRatedCanLoadNextPage = false
+                    self._topRateds.accept(self.topRatedResults)
+                }
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
             }
             .disposed(by: disposeBag)
+    }
+    
+    func loadTopRatedNextPage(index: Int) {
+        if !topRatedCanLoadNextPage {
+            if (_topRateds.value?.count ?? 0) - 2 == index {
+                topRatedCanLoadNextPage = true
+                getTopRated()
+            }
+        }
     }
 }

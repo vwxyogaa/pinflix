@@ -10,9 +10,9 @@ import RxSwift
 
 protocol RepositoryProtocol {
     // MARK: - remote
-    func getNowPlaying() -> Observable<TMDB>
-    func getPopular() -> Observable<TMDB>
-    func getTopRated() -> Observable<TMDB>
+    func getNowPlaying(page: Int) -> Observable<TMDB>
+    func getPopular(page: Int) -> Observable<TMDB>
+    func getTopRated(page: Int) -> Observable<TMDB>
 }
 
 final class Repository: NSObject {
@@ -30,15 +30,15 @@ final class Repository: NSObject {
 
 extension Repository: RepositoryProtocol {
     // MARK: - remote
-    func getNowPlaying() -> Observable<TMDB> {
-        return remote.getNowPlaying()
+    func getNowPlaying(page: Int) -> Observable<TMDB> {
+        return remote.getNowPlaying(page: page)
     }
     
-    func getPopular() -> Observable<TMDB> {
-        return remote.getPopular()
+    func getPopular(page: Int) -> Observable<TMDB> {
+        return remote.getPopular(page: page)
     }
     
-    func getTopRated() -> Observable<TMDB> {
-        return remote.getTopRated()
+    func getTopRated(page: Int) -> Observable<TMDB> {
+        return remote.getTopRated(page: page)
     }
 }

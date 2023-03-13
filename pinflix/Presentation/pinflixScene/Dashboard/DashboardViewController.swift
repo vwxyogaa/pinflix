@@ -102,16 +102,19 @@ extension DashboardViewController: UICollectionViewDataSource, UICollectionViewD
             guard let cell = nowPlayingCollectionView.dequeueReusableCell(withReuseIdentifier: "NowPlayingCollectionViewCell", for: indexPath) as? NowPlayingCollectionViewCell else { return UICollectionViewCell() }
             let nowPlaying = viewModel.nowPlaying(at: indexPath.row)
             cell.configureContent(nowPlaying: nowPlaying)
+            viewModel.loadNowPlayingNextPage(index: indexPath.row)
             return cell
         case popularCollectionView:
             guard let cell = popularCollectionView.dequeueReusableCell(withReuseIdentifier: "CardMovieCollectionViewCell", for: indexPath) as? CardMovieCollectionViewCell else { return UICollectionViewCell() }
             let popular = viewModel.popular(at: indexPath.row)
             cell.configureContent(content: popular)
+            viewModel.loadPopularNextPage(index: indexPath.row)
             return cell
         case topRatedCollectionView:
             guard let cell = popularCollectionView.dequeueReusableCell(withReuseIdentifier: "CardMovieCollectionViewCell", for: indexPath) as? CardMovieCollectionViewCell else { return UICollectionViewCell() }
             let topRated = viewModel.topRated(at: indexPath.row)
             cell.configureContent(content: topRated)
+            viewModel.loadTopRatedNextPage(index: indexPath.row)
             return cell
         default:
             return UICollectionViewCell()
