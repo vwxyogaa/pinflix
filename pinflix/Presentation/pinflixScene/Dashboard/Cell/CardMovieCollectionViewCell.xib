@@ -26,7 +26,7 @@
                                 <color key="backgroundColor" name="GrayTabBarColor"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" name="GrayBgColor"/>
+                        <color key="backgroundColor" name="BlackColor"/>
                         <constraints>
                             <constraint firstItem="LBc-WO-l9R" firstAttribute="top" secondItem="1wD-Kp-8wX" secondAttribute="top" id="6LX-R9-eRO"/>
                             <constraint firstAttribute="bottom" secondItem="LBc-WO-l9R" secondAttribute="bottom" id="F8j-UC-NAC"/>
@@ -52,8 +52,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <namedColor name="GrayBgColor">
-            <color red="0.16470588235294117" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="BlackColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="GrayTabBarColor">
             <color red="0.37254901960784315" green="0.37254901960784315" blue="0.37254901960784315" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
