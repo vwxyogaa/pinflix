@@ -11,10 +11,15 @@ import RxSwift
 
 final class APIManager {
     static let shared = APIManager()
+    private let apiKey = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZmY5NzkxOTYzNGNhYjkyMmMyOTVmMmQ5YjVmZjY0YSIsInN1YiI6IjY0MDk4NTVjZjlhM2ZiMDA3YWZhOTJmYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.yzIluEWS7mkD_UtYhRvhd6ZSGYAz-eKa8hAQrxTavPk"
     
-    func executeQuery<T> (url: URL, method: HTTPMethod, params: Parameters?) -> Observable<T> where T: Decodable {
+    func executeQuery<T> (url: URL, method: HTTPMethod, params: Parameters? = nil) -> Observable<T> where T: Decodable {
         return Observable<T>.create { observer in
-            AF.request(url, method: method, parameters: params).validate().responseDecodable(of: T.self) { response in
+            let headers: HTTPHeaders = [
+                "Authorization": "Bearer \(self.apiKey)",
+                "Content-Type": "application/json;charset=utf-8"
+            ]
+            AF.request(url, method: method, parameters: params, headers: headers).validate().responseDecodable(of: T.self) { response in
                 switch response.result {
                 case .success(let value):
                     observer.onNext(value)
