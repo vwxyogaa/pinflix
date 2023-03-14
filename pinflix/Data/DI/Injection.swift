@@ -22,6 +22,11 @@ final class Injection {
         let repository = provideRepository()
         return SearchUseCase(repository: repository)
     }
+    
+    func provideUpcomingUseCase() -> UpcomingUseCaseProtocol {
+        let repository = provideRepository()
+        return UpcomingUseCase(repository: repository)
+    }
 }
 
 extension Injection {

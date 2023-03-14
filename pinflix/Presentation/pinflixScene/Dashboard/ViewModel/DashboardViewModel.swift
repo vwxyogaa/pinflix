@@ -98,7 +98,7 @@ extension DashboardViewModel {
     
     func loadNowPlayingNextPage(index: Int) {
         if !nowPlayingCanLoadNextPage {
-            if (_nowPlayings.value?.count ?? 0) - 2 == index {
+            if nowPlayingCount - 2 == index {
                 nowPlayingCanLoadNextPage = true
                 getNowPlaying()
             }
@@ -141,7 +141,7 @@ extension DashboardViewModel {
     
     func loadPopularNextPage(index: Int) {
         if !popularCanLoadNextPage {
-            if (_populars.value?.count ?? 0) - 2 == index {
+            if popularCount - 2 == index {
                 popularCanLoadNextPage = true
                 getPopular()
             }
@@ -184,7 +184,7 @@ extension DashboardViewModel {
     
     func loadTopRatedNextPage(index: Int) {
         if !topRatedCanLoadNextPage {
-            if (_topRateds.value?.count ?? 0) - 2 == index {
+            if topRatedCount - 2 == index {
                 topRatedCanLoadNextPage = true
                 getTopRated()
             }

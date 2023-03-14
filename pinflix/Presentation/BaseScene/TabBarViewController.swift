@@ -41,9 +41,11 @@ class TabBarViewController: UITabBarController {
     
     private func createUpcomingTab() -> UIViewController {
         let upcomingController = UpcomingViewController(nibName: "UpcomingViewController", bundle: nil)
-        upcomingController.tabBarItem.title = "New"
+        upcomingController.tabBarItem.title = "Upcoming"
         upcomingController.tabBarItem.image = UIImage(systemName: "play.rectangle.on.rectangle")
         upcomingController.tabBarItem.selectedImage = UIImage(systemName: "play.rectangle.on.rectangle.fill")
+        let upcomingViewModel = UpcomingViewModel(upcomingUseCase: Injection().provideUpcomingUseCase(), detailUseCase: Injection().provideDetailUseCase())
+        upcomingController.viewModel = upcomingViewModel
         return upcomingController
     }
     

@@ -6,12 +6,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UpcomingViewController" customModule="pinflix" customModuleProvider="target">
             <connections>
+                <outlet property="upcomingTableView" destination="LHu-Ms-B1g" id="TGq-px-Ece"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,18 +20,18 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSn-OE-Lus">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LHu-Ms-B1g">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <color key="backgroundColor" name="BlackColor"/>
-                </view>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="BlackColor"/>
             <constraints>
-                <constraint firstItem="SSn-OE-Lus" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9sa-Js-6OQ"/>
-                <constraint firstItem="SSn-OE-Lus" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JGL-IQ-PUM"/>
-                <constraint firstAttribute="bottom" secondItem="SSn-OE-Lus" secondAttribute="bottom" id="JMw-M4-BQm"/>
-                <constraint firstAttribute="trailing" secondItem="SSn-OE-Lus" secondAttribute="trailing" id="MSc-vL-2dp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="LHu-Ms-B1g" secondAttribute="bottom" id="2d4-1W-Hof"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LHu-Ms-B1g" secondAttribute="trailing" id="9GK-sd-TNX"/>
+                <constraint firstItem="LHu-Ms-B1g" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SUk-d7-yk5"/>
+                <constraint firstItem="LHu-Ms-B1g" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gIc-kB-i2u"/>
             </constraints>
             <point key="canvasLocation" x="132" y="-11"/>
         </view>
@@ -40,8 +40,5 @@
         <namedColor name="BlackColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
