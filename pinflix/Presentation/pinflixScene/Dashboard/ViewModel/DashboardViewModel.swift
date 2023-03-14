@@ -92,7 +92,6 @@ extension DashboardViewModel {
                 }
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
-                print(error)
             }
             .disposed(by: disposeBag)
     }

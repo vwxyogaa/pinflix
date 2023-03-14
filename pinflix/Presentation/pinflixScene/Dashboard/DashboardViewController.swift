@@ -33,11 +33,13 @@ class DashboardViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.searchMovieTextField.resignFirstResponder()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.searchMovieTextField.resignFirstResponder()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -109,6 +111,8 @@ class DashboardViewController: UIViewController {
 extension DashboardViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         let searchViewController = SearchViewController()
+        let searchViewModel = SearchViewModel(searchUseCase: Injection().provideSearchUseCase())
+        searchViewController.viewModel = searchViewModel
         searchViewController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(searchViewController, animated: true)
         return true
