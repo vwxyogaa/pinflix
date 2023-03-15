@@ -8,7 +8,7 @@
 import Foundation
 
 class Utils: NSObject {
-    static func humanDate(_ date: String) -> String {
+    static func convertDateSimple(_ date: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         if let tgl = dateFormatter.date(from: date) {
@@ -20,7 +20,19 @@ class Utils: NSObject {
         return date
     }
     
-    static func dateValidUntil(_ date: String) -> String {
+    static func convertDateToYearOnly(_ date: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        if let tgl = dateFormatter.date(from: date) {
+            dateFormatter.locale = Locale(identifier: "id_ID")
+            dateFormatter.dateFormat = "yyyy"
+            
+            return dateFormatter.string(from: tgl)
+        }
+        return date
+    }
+    
+    static func convertDateValidToDesc(_ date: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")

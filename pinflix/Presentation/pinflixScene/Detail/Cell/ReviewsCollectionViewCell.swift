@@ -37,7 +37,7 @@ class ReviewsCollectionViewCell: UICollectionViewCell {
             self.avatarPathImageView.loadImage(uri: imageUrl)
         }
         self.authorLabel.text = "A Review by \(review?.author ?? "")"
-        let createdAt = Utils.dateValidUntil(review?.createdAt ?? "")
+        let createdAt = Utils.convertDateValidToDesc(review?.createdAt ?? "")
         self.createdAtLabel.text = "Written by \(review?.author ?? "") on \(createdAt)"
         self.contentLabel.text = review?.content
     }

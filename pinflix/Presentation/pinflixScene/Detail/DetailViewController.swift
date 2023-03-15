@@ -113,13 +113,13 @@ class DetailViewController: UIViewController {
         } else {
             self.backdropImageView.loadImage(uri: imageUrl)
         }
-        self.titleLabel.text = movie?.title
-        if let voteAverageDecimal = movie?.voteAverage {
-            let voteAverage = (String(format: "%.1f", voteAverageDecimal))
-            let releaseDate = Utils.humanDate(movie?.releaseDate ?? "")
-            let runtime = Utils.minutesToHoursAndMinutes(movie?.runtime ?? 0)
-            self.categoriesLabel.text = "\(releaseDate) • ⭐️\(voteAverage) • \(runtime.hours)h \(runtime.leftMinutes)m"
-        }
+        let year = Utils.convertDateToYearOnly(movie?.releaseDate ?? "")
+        self.titleLabel.text = "\(movie?.title ?? "") (\(year))"
+        let voteAverageDecimal = movie?.voteAverage ?? 0
+        let voteAverage = (String(format: "%.1f", voteAverageDecimal))
+        let releaseDate = Utils.convertDateSimple(movie?.releaseDate ?? "-")
+        let runtime = Utils.minutesToHoursAndMinutes(movie?.runtime ?? 0)
+        self.categoriesLabel.text = "\(releaseDate) • ⭐️\(voteAverage) • \(runtime.hours)h \(runtime.leftMinutes)m"
         self.genresLabel.text = movie?.genres.compactMap({$0.name}).joined(separator: ", ")
         if let tagline = movie?.tagline, !tagline.isEmpty {
             self.taglineLabel.text = "#\(tagline)".uppercased()
