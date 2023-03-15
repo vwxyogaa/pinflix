@@ -21,6 +21,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var countriesProdLabel: UILabel!
     @IBOutlet weak var crewLabel: UILabel!
     @IBOutlet weak var castCollectionView: UICollectionView!
+    @IBOutlet weak var imagesCollectionView: UICollectionView!
     
     private let disposeBag = DisposeBag()
     var viewModel: DetailViewModel!
@@ -65,6 +66,10 @@ class DetailViewController: UIViewController {
         self.castCollectionView.register(UINib(nibName: "CastCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CastCollectionViewCell")
         self.castCollectionView.dataSource = self
         self.castCollectionView.delegate = self
+        
+        self.imagesCollectionView.register(UINib(nibName: "ImagesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImagesCollectionViewCell")
+        self.imagesCollectionView.dataSource = self
+        self.imagesCollectionView.delegate = self
     }
     
     private func initObserver() {
@@ -72,12 +77,16 @@ class DetailViewController: UIViewController {
             self?.configureContent(movie: movie)
         }).disposed(by: disposeBag)
         
-        viewModel.casts.drive(onNext: { [weak self] cast in
+        viewModel.casts.drive(onNext: { [weak self] _ in
             self?.castCollectionView.reloadData()
         }).disposed(by: disposeBag)
         
         viewModel.crew.drive(onNext: { [weak self] crew in
             self?.configureContent(crew: crew)
+        }).disposed(by: disposeBag)
+        
+        viewModel.images.drive(onNext: { [weak self] _ in
+            self?.imagesCollectionView.reloadData()
         }).disposed(by: disposeBag)
         
         viewModel.isLoading.drive(onNext: { [weak self] isLoading in
@@ -89,6 +98,7 @@ class DetailViewController: UIViewController {
         if let id = id {
             viewModel.getDetail(id: id)
             viewModel.getCredits(id: id)
+            viewModel.getImages(id: id)
         }
     }
     
@@ -131,22 +141,51 @@ class DetailViewController: UIViewController {
 // MARK: - UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 extension DetailViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.castCount
+        switch collectionView {
+        case castCollectionView:
+            return viewModel.castCount
+        case imagesCollectionView:
+            return viewModel.imageCount
+        default:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = castCollectionView.dequeueReusableCell(withReuseIdentifier: "CastCollectionViewCell", for: indexPath) as? CastCollectionViewCell else { return UICollectionViewCell() }
-        let cast = viewModel.cast(at: indexPath.row)
-        cell.configureContent(casts: cast)
-        return cell
+        switch collectionView {
+        case castCollectionView:
+            guard let cell = castCollectionView.dequeueReusableCell(withReuseIdentifier: "CastCollectionViewCell", for: indexPath) as? CastCollectionViewCell else { return UICollectionViewCell() }
+            let cast = viewModel.cast(at: indexPath.row)
+            cell.configureContent(casts: cast)
+            return cell
+        case imagesCollectionView:
+            guard let cell = imagesCollectionView.dequeueReusableCell(withReuseIdentifier: "ImagesCollectionViewCell", for: indexPath) as? ImagesCollectionViewCell else { return UICollectionViewCell() }
+            let image = viewModel.image(at: indexPath.row)
+            cell.configureContent(backdrop: image)
+            return cell
+        default:
+            return UICollectionViewCell()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 80, height: 133)
+        switch collectionView {
+        case castCollectionView:
+            return CGSize(width: 80, height: 133)
+        case imagesCollectionView:
+            return CGSize(width: 200, height: 110)
+        default:
+            return CGSize(width: 0, height: 0)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 4
+        switch collectionView {
+        case castCollectionView, imagesCollectionView:
+            return 4
+        default:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
