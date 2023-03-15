@@ -16,6 +16,7 @@ protocol RepositoryProtocol {
     func getDetail(id: Int) -> Observable<Movie>
     func search(query: String?) -> Observable<TMDB>
     func getUpcoming(page: Int) -> Observable<TMDB>
+    func getCredits(id: Int) -> Observable<Credits>
 }
 
 final class Repository: NSObject {
@@ -55,5 +56,9 @@ extension Repository: RepositoryProtocol {
     
     func getUpcoming(page: Int) -> Observable<TMDB> {
         return remote.getUpcoming(page: page)
+    }
+    
+    func getCredits(id: Int) -> Observable<Credits> {
+        return remote.getCredits(id: id)
     }
 }
