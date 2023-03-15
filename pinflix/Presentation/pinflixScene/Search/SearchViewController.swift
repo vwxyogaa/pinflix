@@ -16,6 +16,7 @@ class SearchViewController: UIViewController {
     private let disposeBag = DisposeBag()
     var viewModel: SearchViewModel!
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -38,6 +39,7 @@ class SearchViewController: UIViewController {
         return .lightContent
     }
     
+    // MARK: - Helpers
     private func configureViews() {
         configureSearchTextField()
         configureCancelButton()
@@ -82,7 +84,7 @@ class SearchViewController: UIViewController {
         movieListCollectionView.delegate = self
     }
     
-    // MARK: - action
+    // MARK: - Action
     @objc
     private func cancelButtonTapped() {
         self.navigationController?.popViewController(animated: true)

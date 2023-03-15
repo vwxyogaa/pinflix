@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: - Manage Loading View
 extension UIViewController {
     func manageLoadingActivity(isLoading: Bool) {
         if isLoading {

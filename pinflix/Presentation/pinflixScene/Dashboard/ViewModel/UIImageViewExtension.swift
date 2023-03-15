@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-// MARK: - kingfisher load image
+// MARK: - Kingfisher Load Image
 extension UIImageView {
     func loadImage(uri: String?, placeholder: UIImage? = nil) {
         guard let uri = uri, let uriImage = URL(string: uri) else { return }

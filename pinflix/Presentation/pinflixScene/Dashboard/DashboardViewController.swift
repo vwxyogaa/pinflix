@@ -99,7 +99,7 @@ class DashboardViewController: UIViewController {
         topRatedCollectionView.delegate = self
     }
     
-    // MARK: - action
+    // MARK: - Action
     @objc
     private func refreshData() {
         self.refreshControl.endRefreshing()

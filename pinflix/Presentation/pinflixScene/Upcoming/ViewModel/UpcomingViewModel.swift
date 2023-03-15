@@ -16,8 +16,7 @@ class UpcomingViewModel: BaseViewModel {
     
     private let _upcomings = BehaviorRelay<[TMDB.Results]?>(value: nil)
     
-    // MARK: - pagination
-    // upcoming
+    // MARK: - Pagination
     private var upcomingResults = [TMDB.Results]()
     private var upcomingResultsCount = 0
     private var upcomingPage = 1
@@ -32,7 +31,6 @@ class UpcomingViewModel: BaseViewModel {
 }
 
 extension UpcomingViewModel {
-    // MARK: - upcoming
     var upcomings: Driver<[TMDB.Results]?> {
         return _upcomings.asDriver()
     }

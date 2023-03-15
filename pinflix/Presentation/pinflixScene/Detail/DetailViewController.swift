@@ -23,6 +23,7 @@ class DetailViewController: UIViewController {
     var viewModel: DetailViewModel!
     var id: Int?
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureButton()
@@ -44,6 +45,7 @@ class DetailViewController: UIViewController {
         return .lightContent
     }
     
+    // MARK: - Helpers
     private func configureButton() {
         self.backButton.layer.cornerRadius = backButton.frame.height / 2
         self.backButton.layer.masksToBounds = true
@@ -52,7 +54,7 @@ class DetailViewController: UIViewController {
     }
     
     private func configureData() {
-        if let id {
+        if let id = id {
             viewModel.getDetail(id: id)
         }
     }
@@ -90,7 +92,7 @@ class DetailViewController: UIViewController {
         }
     }
     
-    // MARK: - action
+    // MARK: - Action
     @objc
     private func backButtonTapped() {
         self.navigationController?.popViewController(animated: true)

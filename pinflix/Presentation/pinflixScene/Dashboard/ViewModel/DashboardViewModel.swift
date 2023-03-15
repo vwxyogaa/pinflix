@@ -17,7 +17,7 @@ class DashboardViewModel: BaseViewModel {
     private let _populars = BehaviorRelay<[TMDB.Results]?>(value: nil)
     private let _topRateds = BehaviorRelay<[TMDB.Results]?>(value: nil)
     
-    // MARK: - pagination
+    // MARK: - Pagination
     // now playing
     private var nowPlayingResults = [TMDB.Results]()
     private var nowPlayingResultsCount = 0
@@ -63,7 +63,7 @@ class DashboardViewModel: BaseViewModel {
     }
 }
 
-// MARK: - now playing
+// MARK: - Now Playing
 extension DashboardViewModel {
     var nowPlayings: Driver<[TMDB.Results]?> {
         return _nowPlayings.asDriver()
@@ -106,7 +106,7 @@ extension DashboardViewModel {
     }
 }
 
-// MARK: - popular
+// MARK: - Popular
 extension DashboardViewModel {
     var populars: Driver<[TMDB.Results]?> {
         return _populars.asDriver()
@@ -149,7 +149,7 @@ extension DashboardViewModel {
     }
 }
 
-// MARK: - top rated
+// MARK: - Top Rated
 extension DashboardViewModel {
     var topRateds: Driver<[TMDB.Results]?> {
         return _topRateds.asDriver()

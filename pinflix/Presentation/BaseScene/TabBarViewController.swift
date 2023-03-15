@@ -58,6 +58,7 @@ class TabBarViewController: UITabBarController {
     }
 }
 
+// MARK: - UINavigationControllerDelegate
 extension UIViewController: UINavigationControllerDelegate {
     public func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         if #available(iOS 14.0, *) {

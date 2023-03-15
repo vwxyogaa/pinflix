@@ -14,6 +14,7 @@ class UpcomingViewController: UIViewController {
     private let disposeBag = DisposeBag()
     var viewModel: UpcomingViewModel!
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
