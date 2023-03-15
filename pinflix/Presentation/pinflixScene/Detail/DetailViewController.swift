@@ -22,6 +22,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var crewLabel: UILabel!
     @IBOutlet weak var castCollectionView: UICollectionView!
     @IBOutlet weak var imagesCollectionView: UICollectionView!
+    @IBOutlet weak var similarCollectionView: UICollectionView!
     
     private let disposeBag = DisposeBag()
     var viewModel: DetailViewModel!
@@ -70,6 +71,10 @@ class DetailViewController: UIViewController {
         self.imagesCollectionView.register(UINib(nibName: "ImagesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImagesCollectionViewCell")
         self.imagesCollectionView.dataSource = self
         self.imagesCollectionView.delegate = self
+        
+        self.similarCollectionView.register(UINib(nibName: "CardMovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CardMovieCollectionViewCell")
+        self.similarCollectionView.dataSource = self
+        self.similarCollectionView.delegate = self
     }
     
     private func initObserver() {
@@ -89,6 +94,10 @@ class DetailViewController: UIViewController {
             self?.imagesCollectionView.reloadData()
         }).disposed(by: disposeBag)
         
+        viewModel.similar.drive(onNext: { [weak self] _ in
+            self?.similarCollectionView.reloadData()
+        }).disposed(by: disposeBag)
+        
         viewModel.isLoading.drive(onNext: { [weak self] isLoading in
             self?.manageLoadingActivity(isLoading: isLoading)
         }).disposed(by: disposeBag)
@@ -99,6 +108,7 @@ class DetailViewController: UIViewController {
             viewModel.getDetail(id: id)
             viewModel.getCredits(id: id)
             viewModel.getImages(id: id)
+            viewModel.getSimilar(id: id)
         }
     }
     
@@ -146,6 +156,8 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
             return viewModel.castCount
         case imagesCollectionView:
             return viewModel.imageCount
+        case similarCollectionView:
+            return viewModel.similarCount
         default:
             return 0
         }
@@ -163,6 +175,11 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
             let image = viewModel.image(at: indexPath.row)
             cell.configureContent(backdrop: image)
             return cell
+        case similarCollectionView:
+            guard let cell = similarCollectionView.dequeueReusableCell(withReuseIdentifier: "CardMovieCollectionViewCell", for: indexPath) as? CardMovieCollectionViewCell else { return UICollectionViewCell() }
+            let similar = viewModel.similar(at: indexPath.row)
+            cell.configureContent(content: similar)
+            return cell
         default:
             return UICollectionViewCell()
         }
@@ -174,18 +191,29 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
             return CGSize(width: 80, height: 133)
         case imagesCollectionView:
             return CGSize(width: 200, height: 110)
+        case similarCollectionView:
+            return CGSize(width: 100, height: 150)
         default:
             return CGSize(width: 0, height: 0)
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
-        case castCollectionView, imagesCollectionView:
-            return 4
+        case similarCollectionView:
+            let detailViewController = DetailViewController()
+            let detailViewModel = DetailViewModel(detailUseCase: Injection().provideDetailUseCase())
+            detailViewController.viewModel = detailViewModel
+            detailViewController.id = viewModel.similar(at: indexPath.row)?.id
+            detailViewController.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(detailViewController, animated: true)
         default:
-            return 0
+            break
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

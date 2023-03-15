@@ -12,6 +12,7 @@ protocol DetailUseCaseProtocol {
     func getDetail(id: Int) -> Observable<Movie>
     func getCredits(id: Int) -> Observable<Credits>
     func getImages(id: Int) -> Observable<Images>
+    func getSimilar(id: Int) -> Observable<TMDB>
 }
 
 final class DetailUseCase: DetailUseCaseProtocol {
@@ -31,5 +32,9 @@ final class DetailUseCase: DetailUseCaseProtocol {
     
     func getImages(id: Int) -> Observable<Images> {
         return self.repository.getImages(id: id)
+    }
+    
+    func getSimilar(id: Int) -> Observable<TMDB> {
+        return self.repository.getSimilar(id: id)
     }
 }

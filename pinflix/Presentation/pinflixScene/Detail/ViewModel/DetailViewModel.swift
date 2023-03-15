@@ -17,6 +17,7 @@ class DetailViewModel: BaseViewModel {
     private let _casts = BehaviorRelay<[Credits.Cast]?>(value: nil)
     private let _crew = BehaviorRelay<[Credits.Cast]?>(value: nil)
     private let _images = BehaviorRelay<[Images.Backdrop]?>(value: nil)
+    private let _similar = BehaviorRelay<[TMDB.Results]?>(value: nil)
     
     init(detailUseCase: DetailUseCaseProtocol) {
         self.detailUseCase = detailUseCase
@@ -99,6 +100,34 @@ extension DetailViewModel {
             .subscribe { result in
                 self._isLoading.accept(false)
                 self._images.accept(result.backdrops)
+            } onError: { error in
+                self._errorMessage.accept(error.localizedDescription)
+            }
+            .disposed(by: disposeBag)
+    }
+}
+
+extension DetailViewModel {
+    // MARK: - Similar
+    var similar: Driver<[TMDB.Results]?> {
+        return _similar.asDriver()
+    }
+    
+    var similarCount: Int {
+        return _similar.value?.count ?? 0
+    }
+    
+    func similar(at index: Int) -> TMDB.Results? {
+        return _similar.value?[safe: index]
+    }
+    
+    func getSimilar(id: Int) {
+        self._isLoading.accept(true)
+        detailUseCase.getSimilar(id: id)
+            .observe(on: MainScheduler.instance)
+            .subscribe { result in
+                self._isLoading.accept(false)
+                self._similar.accept(result.results)
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
             }
