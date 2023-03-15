@@ -23,7 +23,8 @@ class UpcomingTableViewCell: UITableViewCell {
     }
     
     func configureContent(upcoming: TMDB.Results?) {
-        self.releaseDateLabel.text = upcoming?.releaseDate
+        let releaseDate = Utils.convertDateToMonthDayDesc(upcoming?.releaseDate ?? "-")
+        self.releaseDateLabel.text = releaseDate
         self.titleLabel.text = upcoming?.title
         self.overviewLabel.text = upcoming?.overview
         let imageUrl = "https://image.tmdb.org/t/p/original\(upcoming?.backdropPath ?? "")"

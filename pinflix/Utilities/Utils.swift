@@ -12,7 +12,6 @@ class Utils: NSObject {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         if let tgl = dateFormatter.date(from: date) {
-            dateFormatter.locale = Locale(identifier: "id_ID")
             dateFormatter.dateFormat = "dd-MM-yyyy"
             
             return dateFormatter.string(from: tgl)
@@ -24,8 +23,18 @@ class Utils: NSObject {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         if let tgl = dateFormatter.date(from: date) {
-            dateFormatter.locale = Locale(identifier: "id_ID")
             dateFormatter.dateFormat = "yyyy"
+            
+            return dateFormatter.string(from: tgl)
+        }
+        return date
+    }
+    
+    static func convertDateToMonthDayDesc(_ date: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        if let tgl = dateFormatter.date(from: date) {
+            dateFormatter.dateFormat = "MMMM dd"
             
             return dateFormatter.string(from: tgl)
         }
@@ -37,7 +46,6 @@ class Utils: NSObject {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
         if let tgl = dateFormatter.date(from: date) {
-            dateFormatter.locale = Locale(identifier: "id_ID")
             dateFormatter.dateFormat = "MMMM dd, yyyy"
             return dateFormatter.string(from: tgl)
         }
