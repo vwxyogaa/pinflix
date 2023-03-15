@@ -113,7 +113,7 @@ class DetailViewController: UIViewController {
         } else {
             self.backdropImageView.loadImage(uri: imageUrl)
         }
-        let year = Utils.convertDateToYearOnly(movie?.releaseDate ?? "")
+        let year = Utils.convertDateToYearOnly(movie?.releaseDate ?? "-")
         self.titleLabel.text = "\(movie?.title ?? "") (\(year))"
         let voteAverageDecimal = movie?.voteAverage ?? 0
         let voteAverage = (String(format: "%.1f", voteAverageDecimal))
