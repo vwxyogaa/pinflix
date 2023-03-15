@@ -174,12 +174,17 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailViewController = DetailViewController()
-        let detailViewModel = DetailViewModel(detailUseCase: Injection().provideDetailUseCase())
-        detailViewController.viewModel = detailViewModel
-        detailViewController.id = viewModel.recommendation(at: indexPath.row)?.id
-        detailViewController.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(detailViewController, animated: true)
+        switch collectionView {
+        case recommendationsCollectionView:
+            let detailViewController = DetailViewController()
+            let detailViewModel = DetailViewModel(detailUseCase: Injection().provideDetailUseCase())
+            detailViewController.viewModel = detailViewModel
+            detailViewController.id = viewModel.recommendation(at: indexPath.row)?.id
+            detailViewController.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(detailViewController, animated: true)
+        default:
+            break
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
