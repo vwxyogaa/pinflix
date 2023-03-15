@@ -12,6 +12,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var backdropImageView: UIImageView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var genresLabel: UILabel!
     @IBOutlet weak var categoriesLabel: UILabel!
     @IBOutlet weak var taglineLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
@@ -70,7 +71,18 @@ class DetailViewController: UIViewController {
     }
     
     private func configureContent(movie: Movie?) {
+        let imageUrl = "https://image.tmdb.org/t/p/original\(movie?.backdropPath ?? "")"
+        if movie?.backdropPath == nil {
+            self.backdropImageView.backgroundColor = .black
+        } else {
+            self.backdropImageView.loadImage(uri: imageUrl)
+        }
         self.titleLabel.text = movie?.title
+        self.genresLabel.text = movie?.genres.compactMap({$0.name}).joined(separator: ", ")
+        if let voteAverageDecimal = movie?.voteAverage {
+            let voteAverage = (String(format: "%.1f", voteAverageDecimal))
+            self.categoriesLabel.text = "\(movie?.releaseDate ?? "") • ⭐️\(voteAverage) • \(movie?.popularity ?? 0)"
+        }
         if let tagline = movie?.tagline, !tagline.isEmpty {
             self.taglineLabel.text = "#\(tagline)".uppercased()
         } else {
@@ -80,16 +92,6 @@ class DetailViewController: UIViewController {
         self.homepageLabel.text = movie?.homepage
         self.companiesProdLabel.text = "Production Companies: \(movie?.productionCompanies.compactMap({$0.name}).joined(separator: ", ") ?? "-")"
         self.countriesProdLabel.text = "Production Countries: \(movie?.productionCountries.compactMap({$0.name}).joined(separator: ", ") ?? "-")"
-        let imageUrl = "https://image.tmdb.org/t/p/original\(movie?.backdropPath ?? "")"
-        if movie?.backdropPath == nil {
-            self.backdropImageView.backgroundColor = .black
-        } else {
-            self.backdropImageView.loadImage(uri: imageUrl)
-        }
-        if let voteAverageDecimal = movie?.voteAverage {
-            let voteAverage = (String(format: "%.1f", voteAverageDecimal))
-            self.categoriesLabel.text = "\(movie?.releaseDate ?? "") • ⭐️\(voteAverage) • \(movie?.popularity ?? 0)"
-        }
     }
     
     // MARK: - Action
