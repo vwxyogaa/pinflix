@@ -2,7 +2,7 @@
 //  UICollectionViewExtension.swift
 //  pinflix
 //
-//  Created by Panji Yoga on 14/03/23.
+//  Created by Panji Yoga on 15/03/23.
 //
 
 import UIKit

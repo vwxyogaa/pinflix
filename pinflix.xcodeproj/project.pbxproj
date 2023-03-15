@@ -11,12 +11,15 @@
 		BC2C15C729BF3A3B0006057E /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC2C15C529BF3A3B0006057E /* SearchViewController.xib */; };
 		BC2C15CB29BF47370006057E /* SearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2C15CA29BF47370006057E /* SearchUseCase.swift */; };
 		BC2C15CE29BF4B9C0006057E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2C15CD29BF4B9C0006057E /* SearchViewModel.swift */; };
-		BC2C15D029C03EF30006057E /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2C15CF29C03EF30006057E /* UICollectionViewExtension.swift */; };
 		BC5AB7E029C054EF00C5D598 /* UpcomingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5AB7DE29C054EF00C5D598 /* UpcomingTableViewCell.swift */; };
 		BC5AB7E129C054EF00C5D598 /* UpcomingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC5AB7DF29C054EF00C5D598 /* UpcomingTableViewCell.xib */; };
 		BC5AB7E429C05AC500C5D598 /* UpcomingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5AB7E329C05AC500C5D598 /* UpcomingUseCase.swift */; };
 		BC5AB7E629C05B2E00C5D598 /* UpcomingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5AB7E529C05B2E00C5D598 /* UpcomingViewModel.swift */; };
-		BC73F87F29BF343E002C5FE7 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC73F87E29BF343E002C5FE7 /* UIViewControllerExtension.swift */; };
+		BC6FE9C929C190AA00E8F7D8 /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6FE9C829C190AA00E8F7D8 /* CollectionExtension.swift */; };
+		BC6FE9CB29C190B700E8F7D8 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6FE9CA29C190B700E8F7D8 /* UICollectionViewExtension.swift */; };
+		BC6FE9CD29C190C700E8F7D8 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6FE9CC29C190C700E8F7D8 /* UIImageViewExtension.swift */; };
+		BC6FE9CF29C190D100E8F7D8 /* UIIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6FE9CE29C190D100E8F7D8 /* UIIViewExtension.swift */; };
+		BC6FE9D129C190DC00E8F7D8 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6FE9D029C190DC00E8F7D8 /* UIViewControllerExtension.swift */; };
 		BC73F88229BF3471002C5FE7 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC73F88129BF3471002C5FE7 /* Toast.swift */; };
 		BC79A53A29BB231C00A76CC4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC79A53929BB231C00A76CC4 /* TabBarViewController.swift */; };
 		BC79A53D29BB23AC00A76CC4 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC79A53B29BB23AC00A76CC4 /* DashboardViewController.swift */; };
@@ -55,9 +58,6 @@
 		E116146F29BDBB7700001182 /* DashboardUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116146E29BDBB7700001182 /* DashboardUseCase.swift */; };
 		E116147229BDBBCE00001182 /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116147129BDBBCE00001182 /* Injection.swift */; };
 		E116147529BDD0BE00001182 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116147429BDD0BE00001182 /* DashboardViewModel.swift */; };
-		E116147829BDD2A500001182 /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116147729BDD2A500001182 /* CollectionExtension.swift */; };
-		E116147A29BDD60500001182 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116147929BDD60500001182 /* UIImageViewExtension.swift */; };
-		E116147C29BDD63D00001182 /* UIIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116147B29BDD63D00001182 /* UIIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,12 +82,15 @@
 		BC2C15C529BF3A3B0006057E /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		BC2C15CA29BF47370006057E /* SearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCase.swift; sourceTree = "<group>"; };
 		BC2C15CD29BF4B9C0006057E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
-		BC2C15CF29C03EF30006057E /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UICollectionViewExtension.swift; path = pinflix/Presentation/pinflixScene/Search/ViewModel/UICollectionViewExtension.swift; sourceTree = SOURCE_ROOT; };
 		BC5AB7DE29C054EF00C5D598 /* UpcomingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingTableViewCell.swift; sourceTree = "<group>"; };
 		BC5AB7DF29C054EF00C5D598 /* UpcomingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingTableViewCell.xib; sourceTree = "<group>"; };
 		BC5AB7E329C05AC500C5D598 /* UpcomingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingUseCase.swift; sourceTree = "<group>"; };
 		BC5AB7E529C05B2E00C5D598 /* UpcomingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewModel.swift; sourceTree = "<group>"; };
-		BC73F87E29BF343E002C5FE7 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtension.swift; path = pinflix/Presentation/pinflixScene/Detail/ViewModel/UIViewControllerExtension.swift; sourceTree = SOURCE_ROOT; };
+		BC6FE9C829C190AA00E8F7D8 /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
+		BC6FE9CA29C190B700E8F7D8 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		BC6FE9CC29C190C700E8F7D8 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		BC6FE9CE29C190D100E8F7D8 /* UIIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIIViewExtension.swift; sourceTree = "<group>"; };
+		BC6FE9D029C190DC00E8F7D8 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		BC73F88129BF3471002C5FE7 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		BC79A53929BB231C00A76CC4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		BC79A53B29BB23AC00A76CC4 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -125,9 +128,6 @@
 		E116146E29BDBB7700001182 /* DashboardUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardUseCase.swift; sourceTree = "<group>"; };
 		E116147129BDBBCE00001182 /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		E116147429BDD0BE00001182 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
-		E116147729BDD2A500001182 /* CollectionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionExtension.swift; path = pinflix/Presentation/pinflixScene/Dashboard/ViewModel/CollectionExtension.swift; sourceTree = SOURCE_ROOT; };
-		E116147929BDD60500001182 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIImageViewExtension.swift; path = pinflix/Presentation/pinflixScene/Dashboard/ViewModel/UIImageViewExtension.swift; sourceTree = SOURCE_ROOT; };
-		E116147B29BDD63D00001182 /* UIIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIIViewExtension.swift; path = pinflix/Presentation/pinflixScene/Dashboard/ViewModel/UIIViewExtension.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +193,18 @@
 				BC5AB7E529C05B2E00C5D598 /* UpcomingViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BC6FE9C729C1909500E8F7D8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BC6FE9C829C190AA00E8F7D8 /* CollectionExtension.swift */,
+				BC6FE9CA29C190B700E8F7D8 /* UICollectionViewExtension.swift */,
+				BC6FE9CC29C190C700E8F7D8 /* UIImageViewExtension.swift */,
+				BC6FE9CE29C190D100E8F7D8 /* UIIViewExtension.swift */,
+				BC6FE9D029C190DC00E8F7D8 /* UIViewControllerExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		BC73F88029BF3462002C5FE7 /* LibraryThirdParty */ = {
@@ -305,8 +317,8 @@
 		BC79A55129BB2CA700A76CC4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				BC6FE9C729C1909500E8F7D8 /* Extension */,
 				BC73F88029BF3462002C5FE7 /* LibraryThirdParty */,
-				E116147629BDD29B00001182 /* Extension */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -468,19 +480,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		E116147629BDD29B00001182 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				E116147729BDD2A500001182 /* CollectionExtension.swift */,
-				E116147929BDD60500001182 /* UIImageViewExtension.swift */,
-				E116147B29BDD63D00001182 /* UIIViewExtension.swift */,
-				BC73F87E29BF343E002C5FE7 /* UIViewControllerExtension.swift */,
-				BC2C15CF29C03EF30006057E /* UICollectionViewExtension.swift */,
-			);
-			name = Extension;
-			path = pinflix/Utilities/Extension;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -632,26 +631,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC6FE9CD29C190C700E8F7D8 /* UIImageViewExtension.swift in Sources */,
 				BC8E636629BF256E004274D4 /* DetailUseCase.swift in Sources */,
 				E116146329BDB92D00001182 /* APIManager.swift in Sources */,
-				BC73F87F29BF343E002C5FE7 /* UIViewControllerExtension.swift in Sources */,
 				BC2C15C629BF3A3B0006057E /* SearchViewController.swift in Sources */,
-				BC2C15D029C03EF30006057E /* UICollectionViewExtension.swift in Sources */,
+				BC6FE9C929C190AA00E8F7D8 /* CollectionExtension.swift in Sources */,
+				BC6FE9CB29C190B700E8F7D8 /* UICollectionViewExtension.swift in Sources */,
 				BC79A54229BB23DD00A76CC4 /* UpcomingViewController.swift in Sources */,
 				E116146F29BDBB7700001182 /* DashboardUseCase.swift in Sources */,
 				BC5AB7E029C054EF00C5D598 /* UpcomingTableViewCell.swift in Sources */,
 				E116147529BDD0BE00001182 /* DashboardViewModel.swift in Sources */,
-				E116147829BDD2A500001182 /* CollectionExtension.swift in Sources */,
 				E116146C29BDBA6E00001182 /* Repository.swift in Sources */,
 				BC8E636929BF25D4004274D4 /* DetailViewModel.swift in Sources */,
 				BC79A55A29BB591B00A76CC4 /* CardMovieCollectionViewCell.swift in Sources */,
 				E116145E29BDAEB500001182 /* TMDB.swift in Sources */,
 				BC79A53A29BB231C00A76CC4 /* TabBarViewController.swift in Sources */,
 				BC89442429BB1F6400468B97 /* AppDelegate.swift in Sources */,
+				BC6FE9CF29C190D100E8F7D8 /* UIIViewExtension.swift in Sources */,
 				BC73F88229BF3471002C5FE7 /* Toast.swift in Sources */,
-				E116147A29BDD60500001182 /* UIImageViewExtension.swift in Sources */,
 				BC8E636329BF2054004274D4 /* DetailViewController.swift in Sources */,
 				BC79A53D29BB23AC00A76CC4 /* DashboardViewController.swift in Sources */,
+				BC6FE9D129C190DC00E8F7D8 /* UIViewControllerExtension.swift in Sources */,
 				BC2C15CE29BF4B9C0006057E /* SearchViewModel.swift in Sources */,
 				E116146529BDB94C00001182 /* BaseViewModel.swift in Sources */,
 				E116146929BDB98200001182 /* RemoteDataSource.swift in Sources */,
@@ -664,7 +664,6 @@
 				E116146029BDB08300001182 /* Movie.swift in Sources */,
 				E116147229BDBBCE00001182 /* Injection.swift in Sources */,
 				BC89442629BB1F6400468B97 /* SceneDelegate.swift in Sources */,
-				E116147C29BDD63D00001182 /* UIIViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

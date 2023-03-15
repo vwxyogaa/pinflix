@@ -2,7 +2,7 @@
 //  CollectionExtension.swift
 //  pinflix
 //
-//  Created by yxgg on 12/03/23.
+//  Created by Panji Yoga on 15/03/23.
 //
 
 import Foundation
