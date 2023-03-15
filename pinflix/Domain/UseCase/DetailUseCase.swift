@@ -11,8 +11,8 @@ import RxSwift
 protocol DetailUseCaseProtocol {
     func getDetail(id: Int) -> Observable<Movie>
     func getCredits(id: Int) -> Observable<Credits>
-    func getImages(id: Int) -> Observable<Images>
-    func getSimilar(id: Int) -> Observable<TMDB>
+    func getReviews(id: Int) -> Observable<Reviews>
+    func getRecommendations(id: Int) -> Observable<Recommendations>
 }
 
 final class DetailUseCase: DetailUseCaseProtocol {
@@ -30,11 +30,11 @@ final class DetailUseCase: DetailUseCaseProtocol {
         return self.repository.getCredits(id: id)
     }
     
-    func getImages(id: Int) -> Observable<Images> {
-        return self.repository.getImages(id: id)
+    func getReviews(id: Int) -> Observable<Reviews> {
+        return self.repository.getReviews(id: id)
     }
     
-    func getSimilar(id: Int) -> Observable<TMDB> {
-        return self.repository.getSimilar(id: id)
+    func getRecommendations(id: Int) -> Observable<Recommendations> {
+        return self.repository.getRecommendations(id: id)
     }
 }

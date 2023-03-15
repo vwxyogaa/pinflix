@@ -15,9 +15,8 @@ class DetailViewModel: BaseViewModel {
     
     private let _movie = BehaviorRelay<Movie?>(value: nil)
     private let _casts = BehaviorRelay<[Credits.Cast]?>(value: nil)
-    private let _crew = BehaviorRelay<[Credits.Cast]?>(value: nil)
-    private let _images = BehaviorRelay<[Images.Backdrop]?>(value: nil)
-    private let _similar = BehaviorRelay<[TMDB.Results]?>(value: nil)
+    private let _reviews = BehaviorRelay<[Reviews.Result]?>(value: nil)
+    private let _recommendations = BehaviorRelay<[Recommendations.Result]?>(value: nil)
     
     init(detailUseCase: DetailUseCaseProtocol) {
         self.detailUseCase = detailUseCase
@@ -59,11 +58,6 @@ extension DetailViewModel {
         return _casts.value?[safe: index]
     }
     
-    // MARK: - Credit Crew
-    var crew: Driver<[Credits.Cast]?> {
-        return _crew.asDriver()
-    }
-    
     func getCredits(id: Int) {
         self._isLoading.accept(true)
         detailUseCase.getCredits(id: id)
@@ -71,7 +65,6 @@ extension DetailViewModel {
             .subscribe { result in
                 self._isLoading.accept(false)
                 self._casts.accept(result.cast)
-                self._crew.accept(result.crew)
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
             }
@@ -80,26 +73,26 @@ extension DetailViewModel {
 }
 
 extension DetailViewModel {
-    // MARK: - Images
-    var images: Driver<[Images.Backdrop]?> {
-        return _images.asDriver()
+    // MARK: - Reviews
+    var reviews: Driver<[Reviews.Result]?> {
+        return _reviews.asDriver()
     }
     
-    var imageCount: Int {
-        return _images.value?.count ?? 0
+    var reviewCount: Int {
+        return _reviews.value?.count ?? 0
     }
     
-    func image(at index: Int) -> Images.Backdrop? {
-        return _images.value?[safe: index]
+    func review(at index: Int) -> Reviews.Result? {
+        return _reviews.value?[safe: index]
     }
     
-    func getImages(id: Int) {
+    func getReviews(id: Int) {
         self._isLoading.accept(true)
-        detailUseCase.getImages(id: id)
+        detailUseCase.getReviews(id: id)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
                 self._isLoading.accept(false)
-                self._images.accept(result.backdrops)
+                self._reviews.accept(result.results)
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
             }
@@ -108,28 +101,29 @@ extension DetailViewModel {
 }
 
 extension DetailViewModel {
-    // MARK: - Similar
-    var similar: Driver<[TMDB.Results]?> {
-        return _similar.asDriver()
+    // MARK: - Recommendations
+    var recommendations: Driver<[Recommendations.Result]?> {
+        return _recommendations.asDriver()
     }
     
-    var similarCount: Int {
-        return _similar.value?.count ?? 0
+    var recommendationCount: Int {
+        return _recommendations.value?.count ?? 0
     }
     
-    func similar(at index: Int) -> TMDB.Results? {
-        return _similar.value?[safe: index]
+    func recommendation(at index: Int) -> Recommendations.Result? {
+        return _recommendations.value?[safe: index]
     }
     
-    func getSimilar(id: Int) {
+    func getRecommendations(id: Int) {
         self._isLoading.accept(true)
-        detailUseCase.getSimilar(id: id)
+        detailUseCase.getRecommendations(id: id)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
                 self._isLoading.accept(false)
-                self._similar.accept(result.results)
+                self._recommendations.accept(result.results)
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
+                print(error)
             }
             .disposed(by: disposeBag)
     }

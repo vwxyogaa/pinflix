@@ -116,7 +116,7 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = movieListCollectionView.dequeueReusableCell(withReuseIdentifier: "CardMovieCollectionViewCell", for: indexPath) as? CardMovieCollectionViewCell else { return UICollectionViewCell() }
         let movie = viewModel.movie(at: indexPath.row)
-        cell.configureContent(content: movie)
+        cell.configureContentDashboard(content: movie)
         return cell
     }
     

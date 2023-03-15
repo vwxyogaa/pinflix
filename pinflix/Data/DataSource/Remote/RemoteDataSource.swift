@@ -53,15 +53,15 @@ final class RemoteDataSource {
         return data
     }
     
-    func getImages(id: Int) -> Observable<Images> {
-        let url = URL(string: baseUrl + "/movie/\(id)/images")!
-        let data: Observable<Images> = APIManager.shared.executeQuery(url: url, method: .get)
+    func getReviews(id: Int) -> Observable<Reviews> {
+        let url = URL(string: baseUrl + "/movie/\(id)/reviews")!
+        let data: Observable<Reviews> = APIManager.shared.executeQuery(url: url, method: .get)
         return data
     }
     
-    func getSimilar(id: Int) -> Observable<TMDB> {
-        let url = URL(string: baseUrl + "/movie/\(id)/similar")!
-        let data: Observable<TMDB> = APIManager.shared.executeQuery(url: url, method: .get)
+    func getRecommendations(id: Int) -> Observable<Recommendations> {
+        let url = URL(string: baseUrl + "/movie/\(id)/recommendations")!
+        let data: Observable<Recommendations> = APIManager.shared.executeQuery(url: url, method: .get)
         return data
     }
 }

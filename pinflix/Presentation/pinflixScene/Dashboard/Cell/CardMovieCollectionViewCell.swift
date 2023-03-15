@@ -21,7 +21,12 @@ class CardMovieCollectionViewCell: UICollectionViewCell {
         self.containerView.layer.masksToBounds = true
     }
     
-    func configureContent(content: TMDB.Results?) {
+    func configureContentDashboard(content: TMDB.Results?) {
+        let imageUrl = "https://image.tmdb.org/t/p/original\(content?.posterPath ?? "")"
+        self.contentImageView.loadImage(uri: imageUrl)
+    }
+    
+    func configureContentRecommendations(content: Recommendations.Result?) {
         let imageUrl = "https://image.tmdb.org/t/p/original\(content?.posterPath ?? "")"
         self.contentImageView.loadImage(uri: imageUrl)
     }

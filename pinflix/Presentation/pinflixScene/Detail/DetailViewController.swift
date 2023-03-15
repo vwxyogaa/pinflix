@@ -12,17 +12,15 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var backdropImageView: UIImageView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var genresLabel: UILabel!
     @IBOutlet weak var categoriesLabel: UILabel!
+    @IBOutlet weak var genresLabel: UILabel!
     @IBOutlet weak var taglineLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
-    @IBOutlet weak var homepageLabel: UILabel!
     @IBOutlet weak var companiesProdLabel: UILabel!
     @IBOutlet weak var countriesProdLabel: UILabel!
-    @IBOutlet weak var crewLabel: UILabel!
     @IBOutlet weak var castCollectionView: UICollectionView!
-    @IBOutlet weak var imagesCollectionView: UICollectionView!
-    @IBOutlet weak var similarCollectionView: UICollectionView!
+    @IBOutlet weak var reviewsCollectionView: UICollectionView!
+    @IBOutlet weak var recommendationsCollectionView: UICollectionView!
     
     private let disposeBag = DisposeBag()
     var viewModel: DetailViewModel!
@@ -68,13 +66,13 @@ class DetailViewController: UIViewController {
         self.castCollectionView.dataSource = self
         self.castCollectionView.delegate = self
         
-        self.imagesCollectionView.register(UINib(nibName: "ImagesCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImagesCollectionViewCell")
-        self.imagesCollectionView.dataSource = self
-        self.imagesCollectionView.delegate = self
+        self.reviewsCollectionView.register(UINib(nibName: "ReviewsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ReviewsCollectionViewCell")
+        self.reviewsCollectionView.dataSource = self
+        self.reviewsCollectionView.delegate = self
         
-        self.similarCollectionView.register(UINib(nibName: "CardMovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CardMovieCollectionViewCell")
-        self.similarCollectionView.dataSource = self
-        self.similarCollectionView.delegate = self
+        self.recommendationsCollectionView.register(UINib(nibName: "CardMovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CardMovieCollectionViewCell")
+        self.recommendationsCollectionView.dataSource = self
+        self.recommendationsCollectionView.delegate = self
     }
     
     private func initObserver() {
@@ -86,16 +84,12 @@ class DetailViewController: UIViewController {
             self?.castCollectionView.reloadData()
         }).disposed(by: disposeBag)
         
-        viewModel.crew.drive(onNext: { [weak self] crew in
-            self?.configureContent(crew: crew)
+        viewModel.reviews.drive(onNext: { [weak self] _ in
+            self?.reviewsCollectionView.reloadData()
         }).disposed(by: disposeBag)
         
-        viewModel.images.drive(onNext: { [weak self] _ in
-            self?.imagesCollectionView.reloadData()
-        }).disposed(by: disposeBag)
-        
-        viewModel.similar.drive(onNext: { [weak self] _ in
-            self?.similarCollectionView.reloadData()
+        viewModel.recommendations.drive(onNext: { [weak self] _ in
+            self?.recommendationsCollectionView.reloadData()
         }).disposed(by: disposeBag)
         
         viewModel.isLoading.drive(onNext: { [weak self] isLoading in
@@ -107,8 +101,8 @@ class DetailViewController: UIViewController {
         if let id = id {
             viewModel.getDetail(id: id)
             viewModel.getCredits(id: id)
-            viewModel.getImages(id: id)
-            viewModel.getSimilar(id: id)
+            viewModel.getReviews(id: id)
+            viewModel.getRecommendations(id: id)
         }
     }
     
@@ -120,25 +114,19 @@ class DetailViewController: UIViewController {
             self.backdropImageView.loadImage(uri: imageUrl)
         }
         self.titleLabel.text = movie?.title
-        self.genresLabel.text = movie?.genres.compactMap({$0.name}).joined(separator: ", ")
         if let voteAverageDecimal = movie?.voteAverage {
             let voteAverage = (String(format: "%.1f", voteAverageDecimal))
-            self.categoriesLabel.text = "\(movie?.releaseDate ?? "") • ⭐️\(voteAverage) • \(movie?.popularity ?? 0)"
+            self.categoriesLabel.text = "\(movie?.releaseDate ?? "") • ⭐️\(voteAverage) • \(movie?.runtime ?? 0)"
         }
+        self.genresLabel.text = movie?.genres.compactMap({$0.name}).joined(separator: ", ")
         if let tagline = movie?.tagline, !tagline.isEmpty {
             self.taglineLabel.text = "#\(tagline)".uppercased()
         } else {
             self.taglineLabel.text = "-"
         }
         self.overviewLabel.text = movie?.overview
-        self.homepageLabel.text = movie?.homepage
         self.companiesProdLabel.text = "Production Companies: \(movie?.productionCompanies.compactMap({$0.name}).joined(separator: ", ") ?? "-")"
         self.countriesProdLabel.text = "Production Countries: \(movie?.productionCountries.compactMap({$0.name}).joined(separator: ", ") ?? "-")"
-    }
-    
-    private func configureContent(crew: [Credits.Cast]?) {
-        guard let crew = crew?.compactMap({$0.name}).prefix(10).joined(separator: ", ") else { return }
-        self.crewLabel.text = "Crew: \(crew), etc."
     }
     
     // MARK: - Action
@@ -154,10 +142,10 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
         switch collectionView {
         case castCollectionView:
             return viewModel.castCount
-        case imagesCollectionView:
-            return viewModel.imageCount
-        case similarCollectionView:
-            return viewModel.similarCount
+        case reviewsCollectionView:
+            return viewModel.reviewCount
+        case recommendationsCollectionView:
+            return viewModel.recommendationCount
         default:
             return 0
         }
@@ -170,50 +158,54 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
             let cast = viewModel.cast(at: indexPath.row)
             cell.configureContent(casts: cast)
             return cell
-        case imagesCollectionView:
-            guard let cell = imagesCollectionView.dequeueReusableCell(withReuseIdentifier: "ImagesCollectionViewCell", for: indexPath) as? ImagesCollectionViewCell else { return UICollectionViewCell() }
-            let image = viewModel.image(at: indexPath.row)
-            cell.configureContent(backdrop: image)
+        case reviewsCollectionView:
+            guard let cell = reviewsCollectionView.dequeueReusableCell(withReuseIdentifier: "ReviewsCollectionViewCell", for: indexPath) as? ReviewsCollectionViewCell else { return UICollectionViewCell() }
+            let review = viewModel.review(at: indexPath.row)
+            cell.configureContent(review: review)
             return cell
-        case similarCollectionView:
-            guard let cell = similarCollectionView.dequeueReusableCell(withReuseIdentifier: "CardMovieCollectionViewCell", for: indexPath) as? CardMovieCollectionViewCell else { return UICollectionViewCell() }
-            let similar = viewModel.similar(at: indexPath.row)
-            cell.configureContent(content: similar)
+        case recommendationsCollectionView:
+            guard let cell = recommendationsCollectionView.dequeueReusableCell(withReuseIdentifier: "CardMovieCollectionViewCell", for: indexPath) as? CardMovieCollectionViewCell else { return UICollectionViewCell() }
+            let recommendation = viewModel.recommendation(at: indexPath.row)
+            cell.configureContentRecommendations(content: recommendation)
             return cell
         default:
             return UICollectionViewCell()
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailViewController = DetailViewController()
+        let detailViewModel = DetailViewModel(detailUseCase: Injection().provideDetailUseCase())
+        detailViewController.viewModel = detailViewModel
+        detailViewController.id = viewModel.recommendation(at: indexPath.row)?.id
+        detailViewController.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView {
         case castCollectionView:
-            return CGSize(width: 80, height: 133)
-        case imagesCollectionView:
-            return CGSize(width: 200, height: 110)
-        case similarCollectionView:
+            return CGSize(width: 100, height: 172)
+        case reviewsCollectionView:
+            return CGSize(width: 361, height: 129)
+        case recommendationsCollectionView:
             return CGSize(width: 100, height: 150)
         default:
             return CGSize(width: 0, height: 0)
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        switch collectionView {
-        case similarCollectionView:
-            let detailViewController = DetailViewController()
-            let detailViewModel = DetailViewModel(detailUseCase: Injection().provideDetailUseCase())
-            detailViewController.viewModel = detailViewModel
-            detailViewController.id = viewModel.similar(at: indexPath.row)?.id
-            detailViewController.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(detailViewController, animated: true)
-        default:
-            break
-        }
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 4
+        switch collectionView {
+        case castCollectionView:
+            return 8
+        case reviewsCollectionView:
+            return 8
+        case recommendationsCollectionView:
+            return 8
+        default:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

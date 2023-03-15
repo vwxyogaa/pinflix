@@ -8,6 +8,7 @@
 import UIKit
 
 class CastCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var profilePathImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var characterLabel: UILabel!
@@ -18,6 +19,11 @@ class CastCollectionViewCell: UICollectionViewCell {
     }
     
     private func configureViews() {
+        self.containerView.layer.borderWidth = 1
+        self.containerView.layer.borderColor = UIColor(named: "GrayTabBarColor")?.cgColor
+        self.containerView.layer.cornerRadius = 10
+        self.containerView.layer.masksToBounds = true
+        
         self.profilePathImageView.layer.cornerRadius = 10
         self.profilePathImageView.layer.masksToBounds = true
     }

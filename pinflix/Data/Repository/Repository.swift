@@ -17,8 +17,8 @@ protocol RepositoryProtocol {
     func search(query: String?) -> Observable<TMDB>
     func getUpcoming(page: Int) -> Observable<TMDB>
     func getCredits(id: Int) -> Observable<Credits>
-    func getImages(id: Int) -> Observable<Images>
-    func getSimilar(id: Int) -> Observable<TMDB>
+    func getReviews(id: Int) -> Observable<Reviews>
+    func getRecommendations(id: Int) -> Observable<Recommendations>
 }
 
 final class Repository: NSObject {
@@ -64,11 +64,11 @@ extension Repository: RepositoryProtocol {
         return remote.getCredits(id: id)
     }
     
-    func getImages(id: Int) -> Observable<Images> {
-        return remote.getImages(id: id)
+    func getReviews(id: Int) -> Observable<Reviews> {
+        return remote.getReviews(id: id)
     }
     
-    func getSimilar(id: Int) -> Observable<TMDB> {
-        return remote.getSimilar(id: id)
+    func getRecommendations(id: Int) -> Observable<Recommendations> {
+        return remote.getRecommendations(id: id)
     }
 }
