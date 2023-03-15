@@ -23,9 +23,6 @@ class CastCollectionViewCell: UICollectionViewCell {
         self.containerView.layer.borderColor = UIColor(named: "GrayTabBarColor")?.cgColor
         self.containerView.layer.cornerRadius = 10
         self.containerView.layer.masksToBounds = true
-        
-        self.profilePathImageView.layer.cornerRadius = 10
-        self.profilePathImageView.layer.masksToBounds = true
     }
     
     func configureContent(casts: Credits.Cast?) {
