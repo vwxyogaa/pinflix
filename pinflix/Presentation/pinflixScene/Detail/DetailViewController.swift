@@ -18,8 +18,11 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var companiesProdLabel: UILabel!
     @IBOutlet weak var countriesProdLabel: UILabel!
+    @IBOutlet weak var castStackView: UIStackView!
     @IBOutlet weak var castCollectionView: UICollectionView!
+    @IBOutlet weak var reviewsStackView: UIStackView!
     @IBOutlet weak var reviewsCollectionView: UICollectionView!
+    @IBOutlet weak var recommendationsStackView: UIStackView!
     @IBOutlet weak var recommendationsCollectionView: UICollectionView!
     
     private let disposeBag = DisposeBag()
@@ -80,15 +83,30 @@ class DetailViewController: UIViewController {
             self?.configureContent(movie: movie)
         }).disposed(by: disposeBag)
         
-        viewModel.casts.drive(onNext: { [weak self] _ in
+        viewModel.casts.drive(onNext: { [weak self] cast in
+            if let cast = cast, !cast.isEmpty {
+                self?.castStackView.isHidden = false
+            } else {
+                self?.castStackView.isHidden = true
+            }
             self?.castCollectionView.reloadData()
         }).disposed(by: disposeBag)
         
-        viewModel.reviews.drive(onNext: { [weak self] _ in
+        viewModel.reviews.drive(onNext: { [weak self] review in
+            if let review = review, !review.isEmpty {
+                self?.reviewsStackView.isHidden = false
+            } else {
+                self?.reviewsStackView.isHidden = true
+            }
             self?.reviewsCollectionView.reloadData()
         }).disposed(by: disposeBag)
         
-        viewModel.recommendations.drive(onNext: { [weak self] _ in
+        viewModel.recommendations.drive(onNext: { [weak self] recommendation in
+            if let recommendation = recommendation, !recommendation.isEmpty {
+                self?.recommendationsStackView.isHidden = false
+            } else {
+                self?.recommendationsStackView.isHidden = true
+            }
             self?.recommendationsCollectionView.reloadData()
         }).disposed(by: disposeBag)
         
