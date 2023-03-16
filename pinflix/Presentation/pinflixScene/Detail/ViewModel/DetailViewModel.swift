@@ -17,6 +17,8 @@ class DetailViewModel: BaseViewModel {
     private let _casts = BehaviorRelay<[Credits.Cast]?>(value: nil)
     private let _reviews = BehaviorRelay<[Reviews.Result]?>(value: nil)
     private let _recommendations = BehaviorRelay<[Recommendations.Result]?>(value: nil)
+    private let _backdrops = BehaviorRelay<[Images.Backdrop]?>(value: nil)
+    private let _posters = BehaviorRelay<[Images.Backdrop]?>(value: nil)
     
     init(detailUseCase: DetailUseCaseProtocol) {
         self.detailUseCase = detailUseCase
@@ -124,6 +126,48 @@ extension DetailViewModel {
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
                 print(error)
+            }
+            .disposed(by: disposeBag)
+    }
+}
+
+extension DetailViewModel {
+    // MARK: - Backdrops
+    var backdrops: Driver<[Images.Backdrop]?> {
+        return _backdrops.asDriver()
+    }
+    
+    var backdropCount: Int {
+        return _backdrops.value?.count ?? 0
+    }
+    
+    func backdrop(at index: Int) -> Images.Backdrop? {
+        return _backdrops.value?[safe: index]
+    }
+    
+    // MARK: - Posters
+    var posters: Driver<[Images.Backdrop]?> {
+        return _posters.asDriver()
+    }
+    
+    var posterCount: Int {
+        return _posters.value?.count ?? 0
+    }
+    
+    func poster(at index: Int) -> Images.Backdrop? {
+        return _posters.value?[safe: index]
+    }
+    
+    func getImages(id: Int) {
+        self._isLoading.accept(true)
+        detailUseCase.getImages(id: id)
+            .observe(on: MainScheduler.instance)
+            .subscribe { result in
+                self._isLoading.accept(false)
+                self._backdrops.accept(result.backdrops)
+                self._posters.accept(result.posters)
+            } onError: { error in
+                self._errorMessage.accept(error.localizedDescription)
             }
             .disposed(by: disposeBag)
     }

@@ -48,11 +48,10 @@ class SearchViewController: UIViewController {
     
     private func initObserver() {
         viewModel.movies.drive(onNext: { [weak self] movie in
-            guard let movie else { return }
-            if movie.isEmpty {
-                self?.movieListCollectionView.setBackground(imageName: "icon_empty_items", messageImage: "Not Found")
-            } else {
+            if let movie = movie, !movie.isEmpty {
                 self?.movieListCollectionView.clearBackground()
+            } else {
+                self?.movieListCollectionView.setBackground(imageName: "icon_empty_items", messageImage: "Not Found")
             }
             self?.movieListCollectionView.reloadData()
         }).disposed(by: disposeBag)

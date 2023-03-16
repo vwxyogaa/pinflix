@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,8 +18,10 @@
                 <outlet property="castStackView" destination="fPE-it-RWf" id="OPy-hA-ufd"/>
                 <outlet property="categoriesLabel" destination="Cca-uo-HbO" id="CKv-uo-9a4"/>
                 <outlet property="companiesProdLabel" destination="E1x-Zh-KiL" id="7c1-Pd-eYc"/>
+                <outlet property="contentMediaView" destination="02V-h3-IcC" id="bA6-4k-QsA"/>
                 <outlet property="countriesProdLabel" destination="IRp-c1-WbB" id="QF1-CX-tjg"/>
                 <outlet property="genresLabel" destination="3nU-kX-Q6f" id="TcY-lj-d4S"/>
+                <outlet property="mediaSegmentedControl" destination="JfI-Wk-CTQ" id="7CK-qi-RXd"/>
                 <outlet property="overviewLabel" destination="tRX-Qc-b5A" id="kFd-z9-HHz"/>
                 <outlet property="recommendationsCollectionView" destination="P4s-gM-EKU" id="GE9-rY-EBq"/>
                 <outlet property="recommendationsStackView" destination="D1S-p0-BRa" id="Jn8-j9-bMU"/>
@@ -59,10 +62,10 @@
                             <rect key="frame" x="0.0" y="300" width="393" height="493"/>
                             <subviews>
                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXA-ps-Vyg">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="492.99999999999989"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="493.00000000000011"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NEl-hl-JyK">
-                                            <rect key="frame" x="16" y="8" width="361" height="757.33333333333337"/>
+                                            <rect key="frame" x="16" y="8" width="361" height="967.66666666666663"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="GJW-QM-TCS">
                                                     <rect key="frame" x="0.0" y="0.0" width="361" height="227.33333333333334"/>
@@ -118,7 +121,7 @@ kingdom of Wakanda.</string>
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UB2-yk-fFo">
-                                                    <rect key="frame" x="0.0" y="235.33333333333337" width="361" height="522"/>
+                                                    <rect key="frame" x="0.0" y="235.33333333333331" width="361" height="732.33333333333348"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fPE-it-RWf">
                                                             <rect key="frame" x="0.0" y="0.0" width="361" height="190.33333333333334"/>
@@ -168,8 +171,33 @@ kingdom of Wakanda.</string>
                                                                 </collectionView>
                                                             </subviews>
                                                         </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ejs-j9-qgJ">
+                                                            <rect key="frame" x="0.0" y="353.66666666666663" width="361" height="202.33333333333337"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Media" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2P7-ux-Ro6">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="14.333333333333334"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                    <color key="textColor" name="WhiteColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JfI-Wk-CTQ" customClass="CustomSegmentedControl" customModule="pinflix" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="18.333333333333371" width="361" height="30"/>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="30" id="dTE-ci-7yH"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="02V-h3-IcC">
+                                                                    <rect key="frame" x="0.0" y="52.333333333333371" width="361" height="150"/>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="150" id="GoW-EK-3Z2"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                        </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="D1S-p0-BRa">
-                                                            <rect key="frame" x="0.0" y="353.66666666666663" width="361" height="168.33333333333337"/>
+                                                            <rect key="frame" x="0.0" y="563.99999999999989" width="361" height="168.33333333333337"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommendations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jo4-pQ-RdX">
                                                                     <rect key="frame" x="0.0" y="0.0" width="361" height="14.333333333333334"/>
@@ -178,7 +206,7 @@ kingdom of Wakanda.</string>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="P4s-gM-EKU">
-                                                                    <rect key="frame" x="0.0" y="18.333333333333371" width="361" height="150"/>
+                                                                    <rect key="frame" x="0.0" y="18.333333333333485" width="361" height="150"/>
                                                                     <color key="backgroundColor" name="GrayBgColor"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="150" id="KDD-lN-7lT"/>
@@ -245,5 +273,8 @@ kingdom of Wakanda.</string>
         <namedColor name="WhiteColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

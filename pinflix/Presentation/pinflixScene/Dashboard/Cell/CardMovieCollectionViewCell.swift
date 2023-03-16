@@ -30,4 +30,9 @@ class CardMovieCollectionViewCell: UICollectionViewCell {
         let imageUrl = "https://image.tmdb.org/t/p/original\(content?.posterPath ?? "")"
         self.contentImageView.loadImage(uri: imageUrl)
     }
+    
+    func configureContentPosters(poster: Images.Backdrop?) {
+        let imageUrl = "https://image.tmdb.org/t/p/original\(poster?.filePath ?? "")"
+        self.contentImageView.loadImage(uri: imageUrl)
+    }
 }

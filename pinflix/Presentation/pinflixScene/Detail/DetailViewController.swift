@@ -24,6 +24,12 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var reviewsCollectionView: UICollectionView!
     @IBOutlet weak var recommendationsStackView: UIStackView!
     @IBOutlet weak var recommendationsCollectionView: UICollectionView!
+    @IBOutlet weak var mediaSegmentedControl: CustomSegmentedControl!
+    @IBOutlet weak var contentMediaView: UIView!
+    
+    private lazy var videoViewController = VideoViewController()
+    private lazy var backdropsViewController = BackdropsViewController()
+    private lazy var postersViewController = PostersViewController()
     
     private let disposeBag = DisposeBag()
     var viewModel: DetailViewModel!
@@ -55,6 +61,7 @@ class DetailViewController: UIViewController {
     private func configureViews() {
         configureButton()
         configureCollectionView()
+        configureStatsSegmentedController()
     }
     
     private func configureButton() {
@@ -76,6 +83,16 @@ class DetailViewController: UIViewController {
         self.recommendationsCollectionView.register(UINib(nibName: "CardMovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CardMovieCollectionViewCell")
         self.recommendationsCollectionView.dataSource = self
         self.recommendationsCollectionView.delegate = self
+    }
+    
+    private func configureStatsSegmentedController() {
+        mediaSegmentedControl.delegate = self
+        mediaSegmentedControl.setButtonTitles(buttonTitles: ["Video", "Backdrops", "Posters"])
+        mediaSegmentedControl.setIndex(index: 0)
+        mediaSegmentedControl.backgroundColor = UIColor(named: "GrayBgColor")
+        mediaSegmentedControl.selectorViewColor = .white
+        mediaSegmentedControl.selectorTextColor = .white
+        mediaSegmentedControl.textColor = UIColor(named: "GrayTabBarColor") ?? .lightGray
     }
     
     private func initObserver() {
@@ -110,6 +127,18 @@ class DetailViewController: UIViewController {
             self?.recommendationsCollectionView.reloadData()
         }).disposed(by: disposeBag)
         
+        viewModel.backdrops.drive(onNext: { [weak self] backdrop in
+            if let backdrop {
+                self?.backdropsViewController.mediaBackdrops = backdrop
+            }
+        }).disposed(by: disposeBag)
+        
+        viewModel.posters.drive(onNext: { [weak self] poster in
+            if let poster {
+                self?.postersViewController.mediaPosters = poster
+            }
+        }).disposed(by: disposeBag)
+        
         viewModel.isLoading.drive(onNext: { [weak self] isLoading in
             self?.manageLoadingActivity(isLoading: isLoading)
         }).disposed(by: disposeBag)
@@ -121,6 +150,7 @@ class DetailViewController: UIViewController {
             viewModel.getCredits(id: id)
             viewModel.getReviews(id: id)
             viewModel.getRecommendations(id: id)
+            viewModel.getImages(id: id)
         }
     }
     
@@ -235,5 +265,38 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+}
+
+// MARK: - CustomSegmentedControlDelegate
+extension DetailViewController: CustomSegmentedControlDelegate {
+    func change(to index: Int) {
+        removeChild()
+        switch index {
+        case 0:
+            addChildVC(videoViewController)
+        case 1:
+            addChildVC(backdropsViewController)
+        case 2:
+            addChildVC(postersViewController)
+        default: break
+        }
+    }
+    
+    private func removeChild() {
+        self.children.forEach {
+            $0.willMove(toParent: nil)
+            $0.view.removeFromSuperview()
+            $0.removeFromParent()
+        }
+    }
+    
+    private func addChildVC(_ viewController: UIViewController?) {
+        guard let viewController else { return }
+        addChild(viewController)
+        contentMediaView.addSubview(viewController.view)
+        viewController.view.frame = contentMediaView.bounds
+        viewController.view.backgroundColor = UIColor(named: "GrayBgColor")
+        viewController.didMove(toParent: self)
     }
 }

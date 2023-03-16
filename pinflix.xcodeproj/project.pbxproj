@@ -57,6 +57,16 @@
 		BC94EF0329C1E047001113BD /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC94EF0229C1E047001113BD /* Reviews.swift */; };
 		BC94EF0529C1E4EA001113BD /* Recommendations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC94EF0429C1E4EA001113BD /* Recommendations.swift */; };
 		BC94EF0729C1ECB9001113BD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC94EF0629C1ECB9001113BD /* Utils.swift */; };
+		BCF4595829C2F1CA00215434 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4595729C2F1CA00215434 /* CustomSegmentedControl.swift */; };
+		BCF4595C29C2F33200215434 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4595A29C2F33200215434 /* VideoViewController.swift */; };
+		BCF4595D29C2F33200215434 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF4595B29C2F33200215434 /* VideoViewController.xib */; };
+		BCF4596129C2F34500215434 /* BackdropsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4595F29C2F34500215434 /* BackdropsViewController.swift */; };
+		BCF4596229C2F34500215434 /* BackdropsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF4596029C2F34500215434 /* BackdropsViewController.xib */; };
+		BCF4596629C2F36C00215434 /* PostersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4596429C2F36C00215434 /* PostersViewController.swift */; };
+		BCF4596729C2F36C00215434 /* PostersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF4596529C2F36C00215434 /* PostersViewController.xib */; };
+		BCF4596B29C2F68000215434 /* BackdropCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4596929C2F68000215434 /* BackdropCollectionViewCell.swift */; };
+		BCF4596C29C2F68000215434 /* BackdropCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF4596A29C2F68000215434 /* BackdropCollectionViewCell.xib */; };
+		BCF4596F29C2F7E600215434 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4596E29C2F7E600215434 /* Images.swift */; };
 		E116145E29BDAEB500001182 /* TMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116145D29BDAEB500001182 /* TMDB.swift */; };
 		E116146029BDB08300001182 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116145F29BDB08300001182 /* Movie.swift */; };
 		E116146329BDB92D00001182 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116146229BDB92D00001182 /* APIManager.swift */; };
@@ -135,6 +145,16 @@
 		BC94EF0229C1E047001113BD /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		BC94EF0429C1E4EA001113BD /* Recommendations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendations.swift; sourceTree = "<group>"; };
 		BC94EF0629C1ECB9001113BD /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		BCF4595729C2F1CA00215434 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
+		BCF4595A29C2F33200215434 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		BCF4595B29C2F33200215434 /* VideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
+		BCF4595F29C2F34500215434 /* BackdropsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackdropsViewController.swift; sourceTree = "<group>"; };
+		BCF4596029C2F34500215434 /* BackdropsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackdropsViewController.xib; sourceTree = "<group>"; };
+		BCF4596429C2F36C00215434 /* PostersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostersViewController.swift; sourceTree = "<group>"; };
+		BCF4596529C2F36C00215434 /* PostersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostersViewController.xib; sourceTree = "<group>"; };
+		BCF4596929C2F68000215434 /* BackdropCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackdropCollectionViewCell.swift; sourceTree = "<group>"; };
+		BCF4596A29C2F68000215434 /* BackdropCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackdropCollectionViewCell.xib; sourceTree = "<group>"; };
+		BCF4596E29C2F7E600215434 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		E116145D29BDAEB500001182 /* TMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB.swift; sourceTree = "<group>"; };
 		E116145F29BDB08300001182 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		E116146229BDB92D00001182 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -238,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				BC73F88129BF3471002C5FE7 /* Toast.swift */,
+				BCF4595729C2F1CA00215434 /* CustomSegmentedControl.swift */,
 			);
 			path = LibraryThirdParty;
 			sourceTree = "<group>";
@@ -425,6 +446,7 @@
 		BC8E636029BF2045004274D4 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				BCF4595929C2F31700215434 /* SegmentedControl */,
 				BC8E636729BF25CC004274D4 /* ViewModel */,
 				BC6FE9D429C1A84600E8F7D8 /* Cell */,
 				BC8E636129BF2054004274D4 /* DetailViewController.swift */,
@@ -441,6 +463,53 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		BCF4595929C2F31700215434 /* SegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				BCF4595E29C2F33600215434 /* Video */,
+				BCF4596329C2F34C00215434 /* Backdrops */,
+				BCF4596829C2F36F00215434 /* Posters */,
+			);
+			path = SegmentedControl;
+			sourceTree = "<group>";
+		};
+		BCF4595E29C2F33600215434 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				BCF4595A29C2F33200215434 /* VideoViewController.swift */,
+				BCF4595B29C2F33200215434 /* VideoViewController.xib */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		BCF4596329C2F34C00215434 /* Backdrops */ = {
+			isa = PBXGroup;
+			children = (
+				BCF4596D29C2F68300215434 /* Cell */,
+				BCF4595F29C2F34500215434 /* BackdropsViewController.swift */,
+				BCF4596029C2F34500215434 /* BackdropsViewController.xib */,
+			);
+			path = Backdrops;
+			sourceTree = "<group>";
+		};
+		BCF4596829C2F36F00215434 /* Posters */ = {
+			isa = PBXGroup;
+			children = (
+				BCF4596429C2F36C00215434 /* PostersViewController.swift */,
+				BCF4596529C2F36C00215434 /* PostersViewController.xib */,
+			);
+			path = Posters;
+			sourceTree = "<group>";
+		};
+		BCF4596D29C2F68300215434 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BCF4596929C2F68000215434 /* BackdropCollectionViewCell.swift */,
+				BCF4596A29C2F68000215434 /* BackdropCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		E116145C29BDA97E00001182 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +518,7 @@
 				BC94EF0229C1E047001113BD /* Reviews.swift */,
 				E116145F29BDB08300001182 /* Movie.swift */,
 				BC6FE9D229C1A4F700E8F7D8 /* Credits.swift */,
+				BCF4596E29C2F7E600215434 /* Images.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -629,6 +699,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF4595D29C2F33200215434 /* VideoViewController.xib in Resources */,
 				BC79A55B29BB591B00A76CC4 /* CardMovieCollectionViewCell.xib in Resources */,
 				BC79A54329BB23DD00A76CC4 /* UpcomingViewController.xib in Resources */,
 				BC79A54829BB245F00A76CC4 /* MyMovieViewController.xib in Resources */,
@@ -639,7 +710,10 @@
 				BC6FE9D829C1A85A00E8F7D8 /* CastCollectionViewCell.xib in Resources */,
 				BC2C15C729BF3A3B0006057E /* SearchViewController.xib in Resources */,
 				BC89443329BB1F6500468B97 /* LaunchScreen.storyboard in Resources */,
+				BCF4596729C2F36C00215434 /* PostersViewController.xib in Resources */,
+				BCF4596C29C2F68000215434 /* BackdropCollectionViewCell.xib in Resources */,
 				BC89443029BB1F6500468B97 /* Assets.xcassets in Resources */,
+				BCF4596229C2F34500215434 /* BackdropsViewController.xib in Resources */,
 				BC79A53E29BB23AC00A76CC4 /* DashboardViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -673,6 +747,7 @@
 				BC94EF0729C1ECB9001113BD /* Utils.swift in Sources */,
 				BC6FE9C929C190AA00E8F7D8 /* CollectionExtension.swift in Sources */,
 				BC6FE9CB29C190B700E8F7D8 /* UICollectionViewExtension.swift in Sources */,
+				BCF4596129C2F34500215434 /* BackdropsViewController.swift in Sources */,
 				BC79A54229BB23DD00A76CC4 /* UpcomingViewController.swift in Sources */,
 				E116146F29BDBB7700001182 /* DashboardUseCase.swift in Sources */,
 				BC5AB7E029C054EF00C5D598 /* UpcomingTableViewCell.swift in Sources */,
@@ -680,19 +755,24 @@
 				E116146C29BDBA6E00001182 /* Repository.swift in Sources */,
 				BC94EF0529C1E4EA001113BD /* Recommendations.swift in Sources */,
 				BC8E636929BF25D4004274D4 /* DetailViewModel.swift in Sources */,
+				BCF4595C29C2F33200215434 /* VideoViewController.swift in Sources */,
 				BC79A55A29BB591B00A76CC4 /* CardMovieCollectionViewCell.swift in Sources */,
 				E116145E29BDAEB500001182 /* TMDB.swift in Sources */,
 				BC79A53A29BB231C00A76CC4 /* TabBarViewController.swift in Sources */,
 				BC89442429BB1F6400468B97 /* AppDelegate.swift in Sources */,
 				BC6FE9CF29C190D100E8F7D8 /* UIIViewExtension.swift in Sources */,
+				BCF4596F29C2F7E600215434 /* Images.swift in Sources */,
 				BC73F88229BF3471002C5FE7 /* Toast.swift in Sources */,
 				BC8E636329BF2054004274D4 /* DetailViewController.swift in Sources */,
 				BC79A53D29BB23AC00A76CC4 /* DashboardViewController.swift in Sources */,
+				BCF4595829C2F1CA00215434 /* CustomSegmentedControl.swift in Sources */,
 				BC6FE9D129C190DC00E8F7D8 /* UIViewControllerExtension.swift in Sources */,
+				BCF4596629C2F36C00215434 /* PostersViewController.swift in Sources */,
 				BC2C15CE29BF4B9C0006057E /* SearchViewModel.swift in Sources */,
 				BC6FE9D729C1A85A00E8F7D8 /* CastCollectionViewCell.swift in Sources */,
 				E116146529BDB94C00001182 /* BaseViewModel.swift in Sources */,
 				E116146929BDB98200001182 /* RemoteDataSource.swift in Sources */,
+				BCF4596B29C2F68000215434 /* BackdropCollectionViewCell.swift in Sources */,
 				BC79A55529BB411400A76CC4 /* NowPlayingCollectionViewCell.swift in Sources */,
 				BC5AB7E629C05B2E00C5D598 /* UpcomingViewModel.swift in Sources */,
 				BC6FE9D329C1A4F700E8F7D8 /* Credits.swift in Sources */,
