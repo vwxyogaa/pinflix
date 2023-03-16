@@ -14,6 +14,7 @@ protocol DetailUseCaseProtocol {
     func getReviews(id: Int) -> Observable<Reviews>
     func getRecommendations(id: Int) -> Observable<Recommendations>
     func getImages(id: Int) -> Observable<Images>
+    func getVideos(id: Int) -> Observable<Videos>
 }
 
 final class DetailUseCase: DetailUseCaseProtocol {
@@ -41,5 +42,9 @@ final class DetailUseCase: DetailUseCaseProtocol {
     
     func getImages(id: Int) -> Observable<Images> {
         return self.repository.getImages(id: id)
+    }
+    
+    func getVideos(id: Int) -> Observable<Videos> {
+        return self.repository.getVideos(id: id)
     }
 }

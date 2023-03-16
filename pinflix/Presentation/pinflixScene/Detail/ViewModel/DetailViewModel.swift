@@ -19,6 +19,7 @@ class DetailViewModel: BaseViewModel {
     private let _recommendations = BehaviorRelay<[Recommendations.Result]?>(value: nil)
     private let _backdrops = BehaviorRelay<[Images.Backdrop]?>(value: nil)
     private let _posters = BehaviorRelay<[Images.Backdrop]?>(value: nil)
+    private let _videos = BehaviorRelay<[Videos.Result]?>(value: nil)
     
     init(detailUseCase: DetailUseCaseProtocol) {
         self.detailUseCase = detailUseCase
@@ -168,6 +169,35 @@ extension DetailViewModel {
                 self._posters.accept(result.posters)
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
+            }
+            .disposed(by: disposeBag)
+    }
+}
+
+extension DetailViewModel {
+    // MARK: - Videos
+    var videos: Driver<[Videos.Result]?> {
+        return _videos.asDriver()
+    }
+    
+    var videoCount: Int {
+        return _videos.value?.count ?? 0
+    }
+    
+    func video(at index: Int) -> Videos.Result? {
+        return _videos.value?[safe: index]
+    }
+    
+    func getVideos(id: Int) {
+        self._isLoading.accept(true)
+        detailUseCase.getVideos(id: id)
+            .observe(on: MainScheduler.instance)
+            .subscribe { result in
+                self._isLoading.accept(false)
+                self._videos.accept(result.results)
+            } onError: { error in
+                self._errorMessage.accept(error.localizedDescription)
+                print(error)
             }
             .disposed(by: disposeBag)
     }

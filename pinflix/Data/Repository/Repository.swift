@@ -20,6 +20,7 @@ protocol RepositoryProtocol {
     func getReviews(id: Int) -> Observable<Reviews>
     func getRecommendations(id: Int) -> Observable<Recommendations>
     func getImages(id: Int) -> Observable<Images>
+    func getVideos(id: Int) -> Observable<Videos>
 }
 
 final class Repository: NSObject {
@@ -75,5 +76,9 @@ extension Repository: RepositoryProtocol {
     
     func getImages(id: Int) -> Observable<Images> {
         return remote.getImages(id: id)
+    }
+    
+    func getVideos(id: Int) -> Observable<Videos> {
+        return remote.getVideos(id: id)
     }
 }

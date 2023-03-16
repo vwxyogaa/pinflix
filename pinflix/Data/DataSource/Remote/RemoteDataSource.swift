@@ -70,4 +70,10 @@ final class RemoteDataSource {
         let data: Observable<Images> = APIManager.shared.executeQuery(url: url, method: .get)
         return data
     }
+    
+    func getVideos(id: Int) -> Observable<Videos> {
+        let url = URL(string: baseUrl + "/movie/\(id)/videos")!
+        let data: Observable<Videos> = APIManager.shared.executeQuery(url: url, method: .get)
+        return data
+    }
 }
