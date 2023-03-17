@@ -36,7 +36,7 @@ final class RemoteDataSource {
     }
     
     func search(query: String?) -> Observable<TMDB> {
-        let url = URL(string: baseUrl + "/search/movie?query=\(query ?? "")") ?? URL(fileURLWithPath: "")
+        let url = URL(string: baseUrl + "/search/movie?query=\(query ?? "")")!
         let data: Observable<TMDB> = APIManager.shared.executeQuery(url: url, method: .get)
         return data
     }

@@ -13,12 +13,12 @@ struct Images: Codable {
     let logos, posters: [Backdrop]
     
     struct Backdrop: Codable {
-        let aspectRatio: Double
-        let height: Int
+        let aspectRatio: Double?
+        let height: Int?
         let iso639_1: String?
-        let filePath: String
-        let voteAverage: Double
-        let voteCount, width: Int
+        let filePath: String?
+        let voteAverage: Double?
+        let voteCount, width: Int?
         
         enum CodingKeys: String, CodingKey {
             case aspectRatio = "aspect_ratio"

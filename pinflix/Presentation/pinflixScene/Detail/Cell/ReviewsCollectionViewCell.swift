@@ -30,8 +30,8 @@ class ReviewsCollectionViewCell: UICollectionViewCell {
     }
     
     func configureContent(review: Reviews.Result?) {
-        let imageUrl = "https://image.tmdb.org/t/p/original\(review?.authorDetails.avatarPath ?? "")"
-        if review?.authorDetails.avatarPath == nil {
+        let imageUrl = "https://image.tmdb.org/t/p/original\(review?.authorDetails?.avatarPath ?? "")"
+        if review?.authorDetails?.avatarPath == nil {
             self.avatarPathImageView.backgroundColor = .black
         } else {
             self.avatarPathImageView.loadImage(uri: imageUrl)

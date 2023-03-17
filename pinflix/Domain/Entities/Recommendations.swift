@@ -19,18 +19,18 @@ struct Recommendations: Codable {
     }
     
     struct Result: Codable {
-        let adult: Bool
+        let adult: Bool?
         let backdropPath: String?
-        let id: Int
-        let title, originalLanguage, originalTitle, overview: String
+        let id: Int?
+        let title, originalLanguage, originalTitle, overview: String?
         let posterPath: String?
-        let mediaType: MediaType
-        let genreIDS: [Int]
-        let popularity: Double
-        let releaseDate: String
-        let video: Bool
-        let voteAverage: Double
-        let voteCount: Int
+        let mediaType: MediaType?
+        let genreIDS: [Int]?
+        let popularity: Double?
+        let releaseDate: String?
+        let video: Bool?
+        let voteAverage: Double?
+        let voteCount: Int?
         
         enum CodingKeys: String, CodingKey {
             case adult

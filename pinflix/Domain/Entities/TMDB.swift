@@ -24,17 +24,17 @@ struct TMDB: Codable {
     }
     
     struct Results: Codable {
-        let genreIDS: [Int]
-        let adult: Bool
-        let backdropPath: String
-        let id: Int
-        let originalTitle: String
-        let voteAverage, popularity: Double
-        let posterPath, overview, title: String
-        let originalLanguage: String
-        let voteCount: Int
-        let releaseDate: String
-        let video: Bool
+        let genreIDS: [Int]?
+        let adult: Bool?
+        let backdropPath: String?
+        let id: Int?
+        let originalTitle: String?
+        let voteAverage, popularity: Double?
+        let posterPath, overview, title: String?
+        let originalLanguage: String?
+        let voteCount: Int?
+        let releaseDate: String?
+        let video: Bool?
 
         enum CodingKeys: String, CodingKey {
             case genreIDS = "genre_ids"

@@ -127,6 +127,13 @@ class DetailViewController: UIViewController {
             self?.recommendationsCollectionView.reloadData()
         }).disposed(by: disposeBag)
         
+        viewModel.videos.drive(onNext: { [weak self] video in
+            if let video {
+                self?.videoViewController.mediaVideos = video
+                self?.videoViewController.reloadsCollectionView()
+            }
+        }).disposed(by: disposeBag)
+        
         viewModel.backdrops.drive(onNext: { [weak self] backdrop in
             if let backdrop {
                 self?.backdropsViewController.mediaBackdrops = backdrop
@@ -151,6 +158,7 @@ class DetailViewController: UIViewController {
             viewModel.getReviews(id: id)
             viewModel.getRecommendations(id: id)
             viewModel.getImages(id: id)
+            viewModel.getVideos(id: id)
         }
     }
     
@@ -168,15 +176,15 @@ class DetailViewController: UIViewController {
         let releaseDate = Utils.convertDateSimple(movie?.releaseDate ?? "-")
         let runtime = Utils.minutesToHoursAndMinutes(movie?.runtime ?? 0)
         self.categoriesLabel.text = "\(releaseDate) • ⭐️\(voteAverage) • \(runtime.hours)h \(runtime.leftMinutes)m"
-        self.genresLabel.text = movie?.genres.compactMap({$0.name}).joined(separator: ", ")
+        self.genresLabel.text = movie?.genres?.compactMap({$0.name}).joined(separator: ", ")
         if let tagline = movie?.tagline, !tagline.isEmpty {
             self.taglineLabel.text = "#\(tagline)".uppercased()
         } else {
             self.taglineLabel.text = "-"
         }
         self.overviewLabel.text = movie?.overview
-        self.companiesProdLabel.text = "Production Companies: \(movie?.productionCompanies.compactMap({$0.name}).joined(separator: ", ") ?? "-")"
-        self.countriesProdLabel.text = "Production Countries: \(movie?.productionCountries.compactMap({$0.name}).joined(separator: ", ") ?? "-")"
+        self.companiesProdLabel.text = "Production Companies: \(movie?.productionCompanies?.compactMap({$0.name}).joined(separator: ", ") ?? "-")"
+        self.countriesProdLabel.text = "Production Countries: \(movie?.productionCountries?.compactMap({$0.name}).joined(separator: ", ") ?? "-")"
     }
     
     // MARK: - Action

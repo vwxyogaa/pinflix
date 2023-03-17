@@ -68,6 +68,8 @@
 		BCF4596C29C2F68000215434 /* BackdropCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF4596A29C2F68000215434 /* BackdropCollectionViewCell.xib */; };
 		BCF4596F29C2F7E600215434 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4596E29C2F7E600215434 /* Images.swift */; };
 		BCF4597129C3074300215434 /* Videos.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4597029C3074300215434 /* Videos.swift */; };
+		BCF4597F29C33F6600215434 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4597D29C33F6600215434 /* VideoCollectionViewCell.swift */; };
+		BCF4598029C33F6600215434 /* VideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF4597E29C33F6600215434 /* VideoCollectionViewCell.xib */; };
 		E116145E29BDAEB500001182 /* TMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116145D29BDAEB500001182 /* TMDB.swift */; };
 		E116146029BDB08300001182 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116145F29BDB08300001182 /* Movie.swift */; };
 		E116146329BDB92D00001182 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116146229BDB92D00001182 /* APIManager.swift */; };
@@ -157,6 +159,8 @@
 		BCF4596A29C2F68000215434 /* BackdropCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BackdropCollectionViewCell.xib; sourceTree = "<group>"; };
 		BCF4596E29C2F7E600215434 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		BCF4597029C3074300215434 /* Videos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Videos.swift; sourceTree = "<group>"; };
+		BCF4597D29C33F6600215434 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		BCF4597E29C33F6600215434 /* VideoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCollectionViewCell.xib; sourceTree = "<group>"; };
 		E116145D29BDAEB500001182 /* TMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDB.swift; sourceTree = "<group>"; };
 		E116145F29BDB08300001182 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		E116146229BDB92D00001182 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -478,6 +482,7 @@
 		BCF4595E29C2F33600215434 /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				BCF4598129C33F6900215434 /* Cell */,
 				BCF4595A29C2F33200215434 /* VideoViewController.swift */,
 				BCF4595B29C2F33200215434 /* VideoViewController.xib */,
 			);
@@ -508,6 +513,15 @@
 			children = (
 				BCF4596929C2F68000215434 /* BackdropCollectionViewCell.swift */,
 				BCF4596A29C2F68000215434 /* BackdropCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		BCF4598129C33F6900215434 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BCF4597D29C33F6600215434 /* VideoCollectionViewCell.swift */,
+				BCF4597E29C33F6600215434 /* VideoCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -703,6 +717,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCF4595D29C2F33200215434 /* VideoViewController.xib in Resources */,
+				BCF4598029C33F6600215434 /* VideoCollectionViewCell.xib in Resources */,
 				BC79A55B29BB591B00A76CC4 /* CardMovieCollectionViewCell.xib in Resources */,
 				BC79A54329BB23DD00A76CC4 /* UpcomingViewController.xib in Resources */,
 				BC79A54829BB245F00A76CC4 /* MyMovieViewController.xib in Resources */,
@@ -761,6 +776,7 @@
 				BCF4595C29C2F33200215434 /* VideoViewController.swift in Sources */,
 				BC79A55A29BB591B00A76CC4 /* CardMovieCollectionViewCell.swift in Sources */,
 				E116145E29BDAEB500001182 /* TMDB.swift in Sources */,
+				BCF4597F29C33F6600215434 /* VideoCollectionViewCell.swift in Sources */,
 				BC79A53A29BB231C00A76CC4 /* TabBarViewController.swift in Sources */,
 				BC89442429BB1F6400468B97 /* AppDelegate.swift in Sources */,
 				BC6FE9CF29C190D100E8F7D8 /* UIIViewExtension.swift in Sources */,
