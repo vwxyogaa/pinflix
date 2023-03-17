@@ -55,6 +55,10 @@ class SearchViewController: UIViewController {
             }
             self?.movieListCollectionView.reloadData()
         }).disposed(by: disposeBag)
+        
+        viewModel.isLoading.drive(onNext: { [weak self] isLoading in
+            self?.manageLoadingActivity(isLoading: isLoading)
+        }).disposed(by: disposeBag)
     }
     
     private func configureSearchTextField() {
