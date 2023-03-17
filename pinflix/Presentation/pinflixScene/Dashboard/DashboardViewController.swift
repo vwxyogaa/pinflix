@@ -12,8 +12,11 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var searchMovieTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var nowPlayingCollectionView: UICollectionView!
+    @IBOutlet weak var nowPlayingCollectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var popularCollectionView: UICollectionView!
+    @IBOutlet weak var popularCollectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var topRatedCollectionView: UICollectionView!
+    @IBOutlet weak var topRatedCollectionViewHeight: NSLayoutConstraint!
     
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -28,6 +31,13 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
         configureViews()
         initObserver()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        nowPlayingCollectionViewHeight.constant = nowPlayingCollectionView.frame.height
+        popularCollectionViewHeight.constant = popularCollectionView.frame.height
+        topRatedCollectionViewHeight.constant = topRatedCollectionView.frame.height
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -190,11 +200,17 @@ extension DashboardViewController: UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView {
         case nowPlayingCollectionView:
-            return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+            let width = nowPlayingCollectionView.frame.width
+            let height = nowPlayingCollectionView.frame.height
+            return CGSize(width: width, height: height)
         case popularCollectionView:
-            return CGSize(width: 100, height: 150)
+            let width = popularCollectionView.frame.width / 3.5
+            let height = popularCollectionView.frame.height
+            return CGSize(width: width, height: height)
         case topRatedCollectionView:
-            return CGSize(width: 100, height: 150)
+            let width = topRatedCollectionView.frame.width / 3.5
+            let height = topRatedCollectionView.frame.height
+            return CGSize(width: width, height: height)
         default:
             return CGSize(width: 0, height: 0)
         }
@@ -208,19 +224,6 @@ extension DashboardViewController: UICollectionViewDataSource, UICollectionViewD
             return 8
         case topRatedCollectionView:
             return 8
-        default:
-            return 0
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        switch collectionView {
-        case nowPlayingCollectionView:
-            return 0
-        case popularCollectionView:
-            return 0
-        case topRatedCollectionView:
-            return 0
         default:
             return 0
         }

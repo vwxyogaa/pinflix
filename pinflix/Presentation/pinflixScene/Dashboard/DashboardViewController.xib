@@ -13,10 +13,13 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DashboardViewController" customModule="pinflix" customModuleProvider="target">
             <connections>
                 <outlet property="nowPlayingCollectionView" destination="2w1-Xd-j96" id="Q7r-Dx-eWp"/>
+                <outlet property="nowPlayingCollectionViewHeight" destination="5nm-Ws-fLa" id="Nuc-5m-3ot"/>
                 <outlet property="popularCollectionView" destination="5Ng-dJ-wTS" id="t1e-5E-6pe"/>
+                <outlet property="popularCollectionViewHeight" destination="vky-dY-JZj" id="58z-iz-2uu"/>
                 <outlet property="scrollView" destination="OaD-jW-ZvI" id="2dx-42-41P"/>
                 <outlet property="searchMovieTextField" destination="fKR-oe-bcZ" id="mYL-yt-Qxw"/>
                 <outlet property="topRatedCollectionView" destination="oMp-h3-zYG" id="ixh-Ac-NlX"/>
+                <outlet property="topRatedCollectionViewHeight" destination="V3i-0H-0vk" id="S1f-m5-iRu"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
