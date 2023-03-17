@@ -133,7 +133,7 @@ extension DetailViewModel {
 }
 
 extension DetailViewModel {
-    // MARK: - Backdrops
+    // MARK: - Images Backdrops
     var backdrops: Driver<[Images.Backdrop]?> {
         return _backdrops.asDriver()
     }
@@ -146,7 +146,7 @@ extension DetailViewModel {
         return _backdrops.value?[safe: index]
     }
     
-    // MARK: - Posters
+    // MARK: - Images Posters
     var posters: Driver<[Images.Backdrop]?> {
         return _posters.asDriver()
     }
