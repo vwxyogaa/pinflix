@@ -27,6 +27,7 @@
                 <outlet property="recommendationsStackView" destination="D1S-p0-BRa" id="Jn8-j9-bMU"/>
                 <outlet property="reviewsCollectionView" destination="eN2-XO-fii" id="I63-8t-cvA"/>
                 <outlet property="reviewsStackView" destination="6Ob-ys-PnH" id="sEa-AW-Oun"/>
+                <outlet property="saveButton" destination="Rkc-Y5-Gcr" id="KRU-7Q-gij"/>
                 <outlet property="taglineLabel" destination="Sdd-cU-XTN" id="PDs-oO-1b9"/>
                 <outlet property="titleLabel" destination="rzq-6Z-w8a" id="bpB-Ap-ggZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -47,6 +48,17 @@
                                 <constraint firstAttribute="height" constant="300" id="yDT-Hv-rz7"/>
                             </constraints>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rkc-Y5-Gcr">
+                            <rect key="frame" x="309" y="16" width="30" height="30"/>
+                            <color key="backgroundColor" name="GrayBgColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="qsv-5y-5cK"/>
+                                <constraint firstAttribute="width" constant="30" id="xaD-M7-a0G"/>
+                            </constraints>
+                            <color key="tintColor" name="WhiteColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQn-sS-iVs">
                             <rect key="frame" x="347" y="16" width="30" height="30"/>
                             <color key="backgroundColor" name="GrayBgColor"/>
@@ -62,7 +74,7 @@
                             <rect key="frame" x="0.0" y="300" width="393" height="493"/>
                             <subviews>
                                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXA-ps-Vyg">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="493.00000000000011"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="493"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="NEl-hl-JyK">
                                             <rect key="frame" x="16" y="8" width="361" height="967.66666666666663"/>
@@ -242,7 +254,9 @@ kingdom of Wakanda.</string>
                         <constraint firstItem="cQn-sS-iVs" firstAttribute="top" secondItem="Yv8-sZ-tWI" secondAttribute="top" constant="16" id="6x7-qS-AVo"/>
                         <constraint firstAttribute="trailing" secondItem="cQn-sS-iVs" secondAttribute="trailing" constant="16" id="77g-Td-6Tr"/>
                         <constraint firstAttribute="trailing" secondItem="Yv8-sZ-tWI" secondAttribute="trailing" id="L20-5K-d6q"/>
+                        <constraint firstItem="Rkc-Y5-Gcr" firstAttribute="top" secondItem="SqD-hQ-45M" secondAttribute="top" constant="16" id="U4v-S3-DKe"/>
                         <constraint firstAttribute="bottom" secondItem="Ow9-Fb-YVX" secondAttribute="bottom" id="akj-L3-F0B"/>
+                        <constraint firstItem="cQn-sS-iVs" firstAttribute="leading" secondItem="Rkc-Y5-Gcr" secondAttribute="trailing" constant="8" id="g9E-2n-4mc"/>
                         <constraint firstItem="Ow9-Fb-YVX" firstAttribute="top" secondItem="Yv8-sZ-tWI" secondAttribute="bottom" id="odV-uX-owy"/>
                         <constraint firstAttribute="trailing" secondItem="Ow9-Fb-YVX" secondAttribute="trailing" id="suq-h9-dT9"/>
                         <constraint firstItem="Yv8-sZ-tWI" firstAttribute="leading" secondItem="SqD-hQ-45M" secondAttribute="leading" id="tGS-Be-UNd"/>
@@ -263,6 +277,7 @@ kingdom of Wakanda.</string>
         </view>
     </objects>
     <resources>
+        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <namedColor name="BlackColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

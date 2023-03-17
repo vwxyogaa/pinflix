@@ -10,6 +10,7 @@ import RxSwift
 
 class DetailViewController: UIViewController {
     @IBOutlet weak var backdropImageView: UIImageView!
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var categoriesLabel: UILabel!
@@ -69,6 +70,10 @@ class DetailViewController: UIViewController {
         self.backButton.layer.masksToBounds = true
         self.backButton.setTitle("", for: .normal)
         self.backButton.addTarget(self, action: #selector(self.backButtonTapped), for: .touchUpInside)
+        
+        self.saveButton.layer.cornerRadius = backButton.frame.height / 2
+        self.saveButton.layer.masksToBounds = true
+        self.saveButton.setTitle("", for: .normal)
     }
     
     private func configureCollectionView() {
