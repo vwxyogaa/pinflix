@@ -28,8 +28,12 @@ class VideoViewController: UIViewController {
         self.videosCollectionView.delegate = self
     }
     
-    private func videoUrl(key: String?){
-        let url = URL(string: "https://www.youtube.com/watch?v=\(key ?? "")")!
+    private func videoUrl(key: String?) {
+        let urlString = "https://www.youtube.com/watch?v=\(key ?? "")"
+        guard let url = URL(string: urlString) else {
+            print("video url not found")
+            return
+        }
         self.playerView = AVPlayer(url: url)
         playerView?.play()
         avPlayerController.player = playerView
