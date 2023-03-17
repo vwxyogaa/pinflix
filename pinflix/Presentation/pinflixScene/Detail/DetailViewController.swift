@@ -21,10 +21,13 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var countriesProdLabel: UILabel!
     @IBOutlet weak var castStackView: UIStackView!
     @IBOutlet weak var castCollectionView: UICollectionView!
+    @IBOutlet weak var castCollectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var reviewsStackView: UIStackView!
     @IBOutlet weak var reviewsCollectionView: UICollectionView!
+    @IBOutlet weak var reviewsCollectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var recommendationsStackView: UIStackView!
     @IBOutlet weak var recommendationsCollectionView: UICollectionView!
+    @IBOutlet weak var recommendationsCollectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var mediaSegmentedControl: CustomSegmentedControl!
     @IBOutlet weak var contentMediaView: UIView!
     
@@ -42,6 +45,13 @@ class DetailViewController: UIViewController {
         configureViews()
         initObserver()
         configureData()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        castCollectionViewHeight.constant = castCollectionView.frame.height
+        reviewsCollectionViewHeight.constant = reviewsCollectionView.frame.height
+        recommendationsCollectionViewHeight.constant = recommendationsCollectionView.frame.height
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -253,11 +263,17 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView {
         case castCollectionView:
-            return CGSize(width: 100, height: 172)
+            let width = castCollectionView.frame.width / 3.61
+            let height = castCollectionView.frame.height
+            return CGSize(width: width, height: height)
         case reviewsCollectionView:
-            return CGSize(width: 361, height: 129)
+            let width = reviewsCollectionView.frame.width
+            let height = reviewsCollectionView.frame.height
+            return CGSize(width: width, height: height)
         case recommendationsCollectionView:
-            return CGSize(width: 100, height: 150)
+            let width = recommendationsCollectionView.frame.width / 3.61
+            let height = recommendationsCollectionView.frame.height
+            return CGSize(width: width, height: height)
         default:
             return CGSize(width: 0, height: 0)
         }

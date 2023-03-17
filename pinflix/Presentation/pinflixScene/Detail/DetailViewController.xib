@@ -15,6 +15,7 @@
                 <outlet property="backButton" destination="cQn-sS-iVs" id="lOx-QT-y2h"/>
                 <outlet property="backdropImageView" destination="Yv8-sZ-tWI" id="70R-wD-TEj"/>
                 <outlet property="castCollectionView" destination="8Ep-8k-P70" id="Qe4-XY-ecK"/>
+                <outlet property="castCollectionViewHeight" destination="AKZ-Ps-IFI" id="FSa-Pv-D0v"/>
                 <outlet property="castStackView" destination="fPE-it-RWf" id="OPy-hA-ufd"/>
                 <outlet property="categoriesLabel" destination="Cca-uo-HbO" id="CKv-uo-9a4"/>
                 <outlet property="companiesProdLabel" destination="E1x-Zh-KiL" id="7c1-Pd-eYc"/>
@@ -24,8 +25,10 @@
                 <outlet property="mediaSegmentedControl" destination="JfI-Wk-CTQ" id="7CK-qi-RXd"/>
                 <outlet property="overviewLabel" destination="tRX-Qc-b5A" id="kFd-z9-HHz"/>
                 <outlet property="recommendationsCollectionView" destination="P4s-gM-EKU" id="GE9-rY-EBq"/>
+                <outlet property="recommendationsCollectionViewHeight" destination="KDD-lN-7lT" id="h2M-kw-gh4"/>
                 <outlet property="recommendationsStackView" destination="D1S-p0-BRa" id="Jn8-j9-bMU"/>
                 <outlet property="reviewsCollectionView" destination="eN2-XO-fii" id="I63-8t-cvA"/>
+                <outlet property="reviewsCollectionViewHeight" destination="NcE-gV-gdf" id="oVw-RJ-nCm"/>
                 <outlet property="reviewsStackView" destination="6Ob-ys-PnH" id="sEa-AW-Oun"/>
                 <outlet property="saveButton" destination="Rkc-Y5-Gcr" id="KRU-7Q-gij"/>
                 <outlet property="taglineLabel" destination="Sdd-cU-XTN" id="PDs-oO-1b9"/>
