@@ -30,11 +30,10 @@ class ReviewsCollectionViewCell: UICollectionViewCell {
     }
     
     func configureContent(review: Reviews.Result?) {
-        let imageUrl = "https://image.tmdb.org/t/p/original\(review?.authorDetails?.avatarPath ?? "")"
-        if review?.authorDetails?.avatarPath == nil {
-            self.avatarPathImageView.backgroundColor = .black
+        if let avatarPathImage = review?.authorDetails?.avatarPathImage, !avatarPathImage.isEmpty {
+            self.avatarPathImageView.loadImage(uri: avatarPathImage)
         } else {
-            self.avatarPathImageView.loadImage(uri: imageUrl)
+            self.avatarPathImageView.backgroundColor = .black
         }
         self.authorLabel.text = "A Review by \(review?.author ?? "")"
         let createdAt = Utils.convertDateValidToDesc(review?.createdAt ?? "")

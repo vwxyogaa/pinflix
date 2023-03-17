@@ -22,7 +22,6 @@ class BackdropCollectionViewCell: UICollectionViewCell {
     }
     
     func configureContentBackdrops(backdrop: Images.Backdrop?) {
-        let imageUrl = "https://image.tmdb.org/t/p/original\(backdrop?.filePath ?? "")"
-        self.backdropImageView.loadImage(uri: imageUrl)
+        self.backdropImageView.loadImage(uri: backdrop?.filePathImage)
     }
 }

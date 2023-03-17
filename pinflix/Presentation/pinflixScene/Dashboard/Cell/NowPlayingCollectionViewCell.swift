@@ -25,7 +25,6 @@ class NowPlayingCollectionViewCell: UICollectionViewCell {
     }
     
     func configureContent(nowPlaying: TMDB.Results?) {
-        let imageUrl = "https://image.tmdb.org/t/p/original\(nowPlaying?.posterPath ?? "")"
-        self.nowPlayingImageView.loadImage(uri: imageUrl)
+        self.nowPlayingImageView.loadImage(uri: nowPlaying?.posterPathImage)
     }
 }

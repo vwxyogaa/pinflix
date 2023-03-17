@@ -54,12 +54,3 @@ struct Credits: Codable {
         }
     }
 }
-
-extension Credits.Cast {
-    var profilePathImage: String {
-        get {
-            guard let profilePath = profilePath else { return "" }
-            return "https://image.tmdb.org/t/p/original\(profilePath)"
-        }
-    }
-}

@@ -27,11 +27,10 @@ class UpcomingTableViewCell: UITableViewCell {
         self.releaseDateLabel.text = releaseDate
         self.titleLabel.text = upcoming?.title
         self.overviewLabel.text = upcoming?.overview
-        let imageUrl = "https://image.tmdb.org/t/p/original\(upcoming?.backdropPath ?? "")"
-        if upcoming?.posterPath == nil {
-            self.backdropPathImageView.backgroundColor = .black
+        if let backdropPathImage = upcoming?.backdropPathImage, !backdropPathImage.isEmpty {
+            self.backdropPathImageView.loadImage(uri: backdropPathImage)
         } else {
-            self.backdropPathImageView.loadImage(uri: imageUrl)
+            self.backdropPathImageView.backgroundColor = .black
         }
         if let voteAverageDecimal = upcoming?.voteAverage {
             let voteAverage = (String(format: "%.1f", voteAverageDecimal))

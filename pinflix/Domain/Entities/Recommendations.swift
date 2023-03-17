@@ -54,12 +54,3 @@ struct Recommendations: Codable {
         }
     }
 }
-
-extension Recommendations.Result {
-    var posterPathImage: String {
-        get {
-            guard let posterPath = posterPath else { return "" }
-            return "https://image.tmdb.org/t/p/original\(posterPath)"
-        }
-    }
-}

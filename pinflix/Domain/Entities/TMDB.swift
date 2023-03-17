@@ -53,19 +53,3 @@ struct TMDB: Codable {
         }
     }
 }
-
-extension TMDB.Results {
-    var posterPathImage: String {
-        get {
-            guard let posterPath = posterPath else { return "" }
-            return "https://image.tmdb.org/t/p/original\(posterPath)"
-        }
-    }
-    
-    var backdropPathImage: String {
-        get {
-            guard let backdropPath = backdropPath else { return "" }
-            return "https://image.tmdb.org/t/p/original\(backdropPath)"
-        }
-    }
-}

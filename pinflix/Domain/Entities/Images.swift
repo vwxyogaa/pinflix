@@ -31,12 +31,3 @@ struct Images: Codable {
         }
     }
 }
-
-extension Images.Backdrop {
-    var filePathImage: String {
-        get {
-            guard let filePath = filePath else { return "" }
-            return "https://image.tmdb.org/t/p/original\(filePath)"
-        }
-    }
-}

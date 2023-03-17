@@ -26,11 +26,10 @@ class CastCollectionViewCell: UICollectionViewCell {
     }
     
     func configureContent(casts: Credits.Cast?) {
-        let imageUrl = "https://image.tmdb.org/t/p/original\(casts?.profilePath ?? "")"
-        if casts?.profilePath == nil {
-            self.profilePathImageView.backgroundColor = .black
+        if let profilePathImage = casts?.profilePathImage, !profilePathImage.isEmpty {
+            self.profilePathImageView.loadImage(uri: profilePathImage)
         } else {
-            self.profilePathImageView.loadImage(uri: imageUrl)
+            self.profilePathImageView.backgroundColor = .black
         }
         self.nameLabel.text = casts?.name
         self.characterLabel.text = casts?.character

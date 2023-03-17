@@ -47,12 +47,3 @@ struct Reviews: Codable {
         }
     }
 }
-
-extension Reviews.Result.AuthorDetails {
-    var avatarPathImage: String {
-        get {
-            guard let avatarPath = avatarPath else { return "" }
-            return "https://image.tmdb.org/t/p/original\(avatarPath)"
-        }
-    }
-}

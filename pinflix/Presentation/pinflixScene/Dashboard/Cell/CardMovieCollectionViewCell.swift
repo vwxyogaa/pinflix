@@ -22,17 +22,14 @@ class CardMovieCollectionViewCell: UICollectionViewCell {
     }
     
     func configureContentDashboard(content: TMDB.Results?) {
-        let imageUrl = "https://image.tmdb.org/t/p/original\(content?.posterPath ?? "")"
-        self.contentImageView.loadImage(uri: imageUrl)
+        self.contentImageView.loadImage(uri: content?.posterPathImage)
     }
     
     func configureContentRecommendations(content: Recommendations.Result?) {
-        let imageUrl = "https://image.tmdb.org/t/p/original\(content?.posterPath ?? "")"
-        self.contentImageView.loadImage(uri: imageUrl)
+        self.contentImageView.loadImage(uri: content?.posterPathImage)
     }
     
     func configureContentPosters(poster: Images.Backdrop?) {
-        let imageUrl = "https://image.tmdb.org/t/p/original\(poster?.filePath ?? "")"
-        self.contentImageView.loadImage(uri: imageUrl)
+        self.contentImageView.loadImage(uri: poster?.filePathImage)
     }
 }
