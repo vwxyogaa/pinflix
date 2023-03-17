@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoViewController" customModule="pinflix" customModuleProvider="target">
             <connections>
-                <outlet property="videoCollectionView" destination="FV3-kq-l6w" id="4dX-kI-ylE"/>
+                <outlet property="videosCollectionView" destination="FV3-kq-l6w" id="8br-Gy-rBF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
