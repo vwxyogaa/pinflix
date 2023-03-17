@@ -11,6 +11,11 @@ import RxSwift
 class UpcomingViewController: UIViewController {
     @IBOutlet weak var upcomingTableView: UITableView!
     
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        return refreshControl
+    }()
+    
     private let disposeBag = DisposeBag()
     var viewModel: UpcomingViewModel!
     
@@ -45,10 +50,16 @@ class UpcomingViewController: UIViewController {
         viewModel.upcomings.drive(onNext: { [weak self] upcoming in
             self?.upcomingTableView.reloadData()
         }).disposed(by: disposeBag)
+        
+        viewModel.isLoading.drive(onNext: { [weak self] isLoading in
+            self?.manageLoadingActivity(isLoading: isLoading)
+        }).disposed(by: disposeBag)
     }
     
     private func configureTableView() {
         upcomingTableView.register(UINib(nibName: "UpcomingTableViewCell", bundle: nil), forCellReuseIdentifier: "UpcomingTableViewCell")
+        refreshControl.addTarget(self, action: #selector(self.refreshData), for: .valueChanged)
+        upcomingTableView.refreshControl = refreshControl
         if #available(iOS 15.0, *) {
             upcomingTableView.sectionHeaderTopPadding = 0
         } else {
@@ -56,6 +67,13 @@ class UpcomingViewController: UIViewController {
         }
         upcomingTableView.dataSource = self
         upcomingTableView.delegate = self
+    }
+    
+    // MARK: - Action
+    @objc
+    private func refreshData() {
+        self.refreshControl.endRefreshing()
+        self.viewModel.refresh()
     }
 }
 

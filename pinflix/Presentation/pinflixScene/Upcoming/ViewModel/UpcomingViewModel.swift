@@ -28,6 +28,13 @@ class UpcomingViewModel: BaseViewModel {
         super.init()
         getUpcoming()
     }
+    
+    func refresh() {
+        upcomingResults = []
+        upcomingResultsCount = 0
+        upcomingPage = 1
+        getUpcoming()
+    }
 }
 
 extension UpcomingViewModel {
