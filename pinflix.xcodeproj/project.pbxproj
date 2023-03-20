@@ -65,7 +65,7 @@
 		BCBB4AC529C83144009C2A31 /* DataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB4AC429C83144009C2A31 /* DataMapper.swift */; };
 		BCBB4AC729C83A94009C2A31 /* MyMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB4AC629C83A94009C2A31 /* MyMovieViewModel.swift */; };
 		BCBB4ACA29C844F0009C2A31 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB4AC929C844F0009C2A31 /* Reachability.swift */; };
-		BCBB4ACC29C85053009C2A31 /* CenteredCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB4ACB29C85053009C2A31 /* CenteredCollectionViewFlowLayout.swift */; };
+		BCBB4ACE29C85584009C2A31 /* CenteredCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB4ACD29C85584009C2A31 /* CenteredCollectionViewFlowLayout.swift */; };
 		BCF4595829C2F1CA00215434 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4595729C2F1CA00215434 /* CustomSegmentedControl.swift */; };
 		BCF4595C29C2F33200215434 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4595A29C2F33200215434 /* VideoViewController.swift */; };
 		BCF4595D29C2F33200215434 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF4595B29C2F33200215434 /* VideoViewController.xib */; };
@@ -165,7 +165,7 @@
 		BCBB4AC429C83144009C2A31 /* DataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMapper.swift; sourceTree = "<group>"; };
 		BCBB4AC629C83A94009C2A31 /* MyMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMovieViewModel.swift; sourceTree = "<group>"; };
 		BCBB4AC929C844F0009C2A31 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		BCBB4ACB29C85053009C2A31 /* CenteredCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CenteredCollectionViewFlowLayout.swift; path = "../../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/pinflix/pinflix/Utilities/LibraryThirdParty/CenteredCollectionViewFlowLayout.swift"; sourceTree = "<group>"; };
+		BCBB4ACD29C85584009C2A31 /* CenteredCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteredCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		BCF4595729C2F1CA00215434 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		BCF4595A29C2F33200215434 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		BCF4595B29C2F33200215434 /* VideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
@@ -287,7 +287,7 @@
 			children = (
 				BC73F88129BF3471002C5FE7 /* Toast.swift */,
 				BCF4595729C2F1CA00215434 /* CustomSegmentedControl.swift */,
-				BCBB4ACB29C85053009C2A31 /* CenteredCollectionViewFlowLayout.swift */,
+				BCBB4ACD29C85584009C2A31 /* CenteredCollectionViewFlowLayout.swift */,
 			);
 			path = LibraryThirdParty;
 			sourceTree = "<group>";
@@ -823,7 +823,6 @@
 				BC2C15C629BF3A3B0006057E /* SearchViewController.swift in Sources */,
 				BC94EF0729C1ECB9001113BD /* Utils.swift in Sources */,
 				BC6FE9C929C190AA00E8F7D8 /* CollectionExtension.swift in Sources */,
-				BCBB4ACC29C85053009C2A31 /* CenteredCollectionViewFlowLayout.swift in Sources */,
 				BC6FE9CB29C190B700E8F7D8 /* UICollectionViewExtension.swift in Sources */,
 				BCF4596129C2F34500215434 /* BackdropsViewController.swift in Sources */,
 				BC79A54229BB23DD00A76CC4 /* UpcomingViewController.swift in Sources */,
@@ -855,6 +854,7 @@
 				E116146529BDB94C00001182 /* BaseViewModel.swift in Sources */,
 				E116146929BDB98200001182 /* RemoteDataSource.swift in Sources */,
 				BCF4596B29C2F68000215434 /* BackdropCollectionViewCell.swift in Sources */,
+				BCBB4ACE29C85584009C2A31 /* CenteredCollectionViewFlowLayout.swift in Sources */,
 				BC79A55529BB411400A76CC4 /* NowPlayingCollectionViewCell.swift in Sources */,
 				BC5AB7E629C05B2E00C5D598 /* UpcomingViewModel.swift in Sources */,
 				BC6FE9D329C1A4F700E8F7D8 /* Credits.swift in Sources */,
