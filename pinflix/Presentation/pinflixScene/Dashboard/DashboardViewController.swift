@@ -97,8 +97,14 @@ class DashboardViewController: UIViewController {
     
     private func configureCollectionViews() {
         nowPlayingCollectionView.register(UINib(nibName: "NowPlayingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "NowPlayingCollectionViewCell")
+        nowPlayingCollectionView.decelerationRate = UIScrollView.DecelerationRate.fast
         nowPlayingCollectionView.dataSource = self
         nowPlayingCollectionView.delegate = self
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.nowPlayingCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0),
+                                                      at: .centeredHorizontally,
+                                                      animated: true)
+        }
         
         popularCollectionView.register(UINib(nibName: "CardMovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CardMovieCollectionViewCell")
         popularCollectionView.dataSource = self
@@ -200,7 +206,7 @@ extension DashboardViewController: UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView {
         case nowPlayingCollectionView:
-            let width = nowPlayingCollectionView.frame.width
+            let width = nowPlayingCollectionView.frame.width * 0.9
             let height = nowPlayingCollectionView.frame.height
             return CGSize(width: width, height: height)
         case popularCollectionView:
