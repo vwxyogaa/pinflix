@@ -9,6 +9,7 @@ pinflix is an application that displays movies from now playing, popular, top ra
 * [UIKit](https://developer.apple.com/documentation/uikit)
 * [Alamofire](https://github.com/Alamofire/Alamofire)
 * [Kingfisher](https://github.com/onevcat/Kingfisher)
+* [RealmSwift](https://realm.io/realm-swift/)
 * [Netfox](https://github.com/kasketis/netfox)
 * [RxSwift](https://github.com/ReactiveX/RxSwift)
 
