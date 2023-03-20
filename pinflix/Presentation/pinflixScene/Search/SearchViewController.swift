@@ -132,7 +132,7 @@ extension SearchViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = movieListCollectionView.frame.width / 3.15
+        let width = movieListCollectionView.frame.width / 3.2
         let height = movieListCollectionView.frame.height / 4
         return CGSize(width: width, height: height)
     }

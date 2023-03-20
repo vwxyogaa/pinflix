@@ -295,7 +295,7 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView {
         case castCollectionView:
-            let width = castCollectionView.frame.width / 3.61
+            let width = castCollectionView.frame.width / 3.6
             let height = castCollectionView.frame.height
             return CGSize(width: width, height: height)
         case reviewsCollectionView:
@@ -303,7 +303,7 @@ extension DetailViewController: UICollectionViewDataSource, UICollectionViewDele
             let height = reviewsCollectionView.frame.height
             return CGSize(width: width, height: height)
         case recommendationsCollectionView:
-            let width = recommendationsCollectionView.frame.width / 3.61
+            let width = recommendationsCollectionView.frame.width / 3.6
             let height = recommendationsCollectionView.frame.height
             return CGSize(width: width, height: height)
         default:

@@ -64,7 +64,7 @@ extension VideoViewController: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = videosCollectionView.frame.width / 1.44
+        let width = videosCollectionView.frame.width
         let height = videosCollectionView.frame.height
         return CGSize(width: width, height: height)
     }

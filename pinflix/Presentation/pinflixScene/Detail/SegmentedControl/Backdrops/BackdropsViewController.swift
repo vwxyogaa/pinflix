@@ -40,7 +40,7 @@ extension BackdropsViewController: UICollectionViewDataSource, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = backdropsCollectionView.frame.width / 1.44
+        let width = backdropsCollectionView.frame.width / 1.4
         let height = backdropsCollectionView.frame.height
         return CGSize(width: width, height: height)
     }

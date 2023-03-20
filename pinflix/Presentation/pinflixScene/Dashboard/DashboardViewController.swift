@@ -204,11 +204,11 @@ extension DashboardViewController: UICollectionViewDataSource, UICollectionViewD
             let height = nowPlayingCollectionView.frame.height
             return CGSize(width: width, height: height)
         case popularCollectionView:
-            let width = popularCollectionView.frame.width / 3.61
+            let width = popularCollectionView.frame.width / 3.6
             let height = popularCollectionView.frame.height
             return CGSize(width: width, height: height)
         case topRatedCollectionView:
-            let width = topRatedCollectionView.frame.width / 3.61
+            let width = topRatedCollectionView.frame.width / 3.6
             let height = topRatedCollectionView.frame.height
             return CGSize(width: width, height: height)
         default:

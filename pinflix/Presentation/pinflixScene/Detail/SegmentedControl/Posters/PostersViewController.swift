@@ -40,7 +40,7 @@ extension PostersViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = postersCollectionView.frame.width / 3.61
+        let width = postersCollectionView.frame.width / 3.6
         let height = postersCollectionView.frame.height
         return CGSize(width: width, height: height)
     }
