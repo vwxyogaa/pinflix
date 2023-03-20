@@ -54,6 +54,8 @@ class TabBarViewController: UITabBarController {
         myMovieController.tabBarItem.title = "MyMovie"
         myMovieController.tabBarItem.image = UIImage(systemName: "bookmark")
         myMovieController.tabBarItem.selectedImage = UIImage(systemName: "bookmark.fill")
+        let myMovieViewModel = MyMovieViewModel(myMovieUseCase: Injection().provideMyMovieUseCase())
+        myMovieController.viewModel = myMovieViewModel
         return myMovieController
     }
 }

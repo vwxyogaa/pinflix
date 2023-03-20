@@ -58,3 +58,12 @@ extension Images.Backdrop {
         }
     }
 }
+
+extension Movie {
+    var posterPathImage: String? {
+        get {
+            guard let posterPath else { return "" }
+            return Constants.baseImageUrl + Constants.imagePath.w500 + posterPath
+        }
+    }
+}

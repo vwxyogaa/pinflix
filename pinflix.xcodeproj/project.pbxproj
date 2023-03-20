@@ -57,6 +57,14 @@
 		BC94EF0329C1E047001113BD /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC94EF0229C1E047001113BD /* Reviews.swift */; };
 		BC94EF0529C1E4EA001113BD /* Recommendations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC94EF0429C1E4EA001113BD /* Recommendations.swift */; };
 		BC94EF0729C1ECB9001113BD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC94EF0629C1ECB9001113BD /* Utils.swift */; };
+		BCBB4ABA29C81F2F009C2A31 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = BCBB4AB929C81F2F009C2A31 /* Realm */; };
+		BCBB4ABC29C81F2F009C2A31 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BCBB4ABB29C81F2F009C2A31 /* RealmSwift */; };
+		BCBB4ABE29C81FEA009C2A31 /* ObjMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB4ABD29C81FEA009C2A31 /* ObjMovieModel.swift */; };
+		BCBB4AC129C825A6009C2A31 /* LocaleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB4AC029C825A6009C2A31 /* LocaleDataSource.swift */; };
+		BCBB4AC329C82B1E009C2A31 /* MyMovieUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB4AC229C82B1E009C2A31 /* MyMovieUseCase.swift */; };
+		BCBB4AC529C83144009C2A31 /* DataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB4AC429C83144009C2A31 /* DataMapper.swift */; };
+		BCBB4AC729C83A94009C2A31 /* MyMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB4AC629C83A94009C2A31 /* MyMovieViewModel.swift */; };
+		BCBB4ACA29C844F0009C2A31 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB4AC929C844F0009C2A31 /* Reachability.swift */; };
 		BCF4595829C2F1CA00215434 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4595729C2F1CA00215434 /* CustomSegmentedControl.swift */; };
 		BCF4595C29C2F33200215434 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF4595A29C2F33200215434 /* VideoViewController.swift */; };
 		BCF4595D29C2F33200215434 /* VideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCF4595B29C2F33200215434 /* VideoViewController.xib */; };
@@ -150,6 +158,12 @@
 		BC94EF0229C1E047001113BD /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
 		BC94EF0429C1E4EA001113BD /* Recommendations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendations.swift; sourceTree = "<group>"; };
 		BC94EF0629C1ECB9001113BD /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		BCBB4ABD29C81FEA009C2A31 /* ObjMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjMovieModel.swift; sourceTree = "<group>"; };
+		BCBB4AC029C825A6009C2A31 /* LocaleDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleDataSource.swift; sourceTree = "<group>"; };
+		BCBB4AC229C82B1E009C2A31 /* MyMovieUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMovieUseCase.swift; sourceTree = "<group>"; };
+		BCBB4AC429C83144009C2A31 /* DataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMapper.swift; sourceTree = "<group>"; };
+		BCBB4AC629C83A94009C2A31 /* MyMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMovieViewModel.swift; sourceTree = "<group>"; };
+		BCBB4AC929C844F0009C2A31 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		BCF4595729C2F1CA00215434 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		BCF4595A29C2F33200215434 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		BCF4595B29C2F33200215434 /* VideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoViewController.xib; sourceTree = "<group>"; };
@@ -181,7 +195,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCBB4ABA29C81F2F009C2A31 /* Realm in Frameworks */,
 				BC79A56129BB5E7900A76CC4 /* Kingfisher in Frameworks */,
+				BCBB4ABC29C81F2F009C2A31 /* RealmSwift in Frameworks */,
 				BC79A55E29BB5E6300A76CC4 /* Alamofire in Frameworks */,
 				BC79A56929BB5EAB00A76CC4 /* RxSwift in Frameworks */,
 				BC79A56729BB5EAB00A76CC4 /* RxCocoa in Frameworks */,
@@ -298,6 +314,7 @@
 		BC79A54929BB246100A76CC4 /* MyMovie */ = {
 			isa = PBXGroup;
 			children = (
+				BCBB4AC829C83A97009C2A31 /* ViewModel */,
 				BC79A54529BB245F00A76CC4 /* MyMovieViewController.swift */,
 				BC79A54629BB245F00A76CC4 /* MyMovieViewController.xib */,
 			);
@@ -379,6 +396,8 @@
 				BC73F88029BF3462002C5FE7 /* LibraryThirdParty */,
 				BC94EF0629C1ECB9001113BD /* Utils.swift */,
 				BCF4598529C46B1100215434 /* Constants.swift */,
+				BCBB4AC429C83144009C2A31 /* DataMapper.swift */,
+				BCBB4AC929C844F0009C2A31 /* Reachability.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -474,6 +493,22 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		BCBB4ABF29C82541009C2A31 /* Locale */ = {
+			isa = PBXGroup;
+			children = (
+				BCBB4AC029C825A6009C2A31 /* LocaleDataSource.swift */,
+			);
+			path = Locale;
+			sourceTree = "<group>";
+		};
+		BCBB4AC829C83A97009C2A31 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BCBB4AC629C83A94009C2A31 /* MyMovieViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		BCF4595929C2F31700215434 /* SegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -549,6 +584,7 @@
 				BC6FE9D229C1A4F700E8F7D8 /* Credits.swift */,
 				BCF4596E29C2F7E600215434 /* Images.swift */,
 				BCF4597029C3074300215434 /* Videos.swift */,
+				BCBB4ABD29C81FEA009C2A31 /* ObjMovieModel.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -564,6 +600,7 @@
 		E116146629BDB96D00001182 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				BCBB4ABF29C82541009C2A31 /* Locale */,
 				E116146729BDB97700001182 /* Remote */,
 			);
 			path = DataSource;
@@ -593,6 +630,7 @@
 				BC8E636529BF256E004274D4 /* DetailUseCase.swift */,
 				BC2C15CA29BF47370006057E /* SearchUseCase.swift */,
 				BC5AB7E329C05AC500C5D598 /* UpcomingUseCase.swift */,
+				BCBB4AC229C82B1E009C2A31 /* MyMovieUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -635,6 +673,8 @@
 				BC79A56329BB5E8700A76CC4 /* netfox */,
 				BC79A56629BB5EAB00A76CC4 /* RxCocoa */,
 				BC79A56829BB5EAB00A76CC4 /* RxSwift */,
+				BCBB4AB929C81F2F009C2A31 /* Realm */,
+				BCBB4ABB29C81F2F009C2A31 /* RealmSwift */,
 			);
 			productName = pinflix;
 			productReference = BC89442029BB1F6400468B97 /* pinflix.app */;
@@ -713,6 +753,7 @@
 				BC79A55F29BB5E7900A76CC4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				BC79A56229BB5E8700A76CC4 /* XCRemoteSwiftPackageReference "netfox" */,
 				BC79A56529BB5EAB00A76CC4 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				BCBB4AB829C81F2F009C2A31 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = BC89442129BB1F6400468B97 /* Products */;
 			projectDirPath = "";
@@ -774,6 +815,7 @@
 				BC94EF0029C1DA9D001113BD /* ReviewsCollectionViewCell.swift in Sources */,
 				BC6FE9CD29C190C700E8F7D8 /* UIImageViewExtension.swift in Sources */,
 				BC8E636629BF256E004274D4 /* DetailUseCase.swift in Sources */,
+				BCBB4AC729C83A94009C2A31 /* MyMovieViewModel.swift in Sources */,
 				E116146329BDB92D00001182 /* APIManager.swift in Sources */,
 				BC2C15C629BF3A3B0006057E /* SearchViewController.swift in Sources */,
 				BC94EF0729C1ECB9001113BD /* Utils.swift in Sources */,
@@ -788,7 +830,9 @@
 				BC94EF0529C1E4EA001113BD /* Recommendations.swift in Sources */,
 				BC8E636929BF25D4004274D4 /* DetailViewModel.swift in Sources */,
 				BCF4595C29C2F33200215434 /* VideoViewController.swift in Sources */,
+				BCBB4ACA29C844F0009C2A31 /* Reachability.swift in Sources */,
 				BC79A55A29BB591B00A76CC4 /* CardMovieCollectionViewCell.swift in Sources */,
+				BCBB4AC129C825A6009C2A31 /* LocaleDataSource.swift in Sources */,
 				E116145E29BDAEB500001182 /* TMDB.swift in Sources */,
 				BCF4597F29C33F6600215434 /* VideoCollectionViewCell.swift in Sources */,
 				BC79A53A29BB231C00A76CC4 /* TabBarViewController.swift in Sources */,
@@ -796,6 +840,7 @@
 				BC6FE9CF29C190D100E8F7D8 /* UIIViewExtension.swift in Sources */,
 				BCF4596F29C2F7E600215434 /* Images.swift in Sources */,
 				BC73F88229BF3471002C5FE7 /* Toast.swift in Sources */,
+				BCBB4AC329C82B1E009C2A31 /* MyMovieUseCase.swift in Sources */,
 				BC8E636329BF2054004274D4 /* DetailViewController.swift in Sources */,
 				BC79A53D29BB23AC00A76CC4 /* DashboardViewController.swift in Sources */,
 				BCF4595829C2F1CA00215434 /* CustomSegmentedControl.swift in Sources */,
@@ -812,11 +857,13 @@
 				BCF4597129C3074300215434 /* Videos.swift in Sources */,
 				BC2C15CB29BF47370006057E /* SearchUseCase.swift in Sources */,
 				BC89442E29BB1F6400468B97 /* pinflix.xcdatamodeld in Sources */,
+				BCBB4AC529C83144009C2A31 /* DataMapper.swift in Sources */,
 				BC79A54729BB245F00A76CC4 /* MyMovieViewController.swift in Sources */,
 				BCF4598429C46AA200215434 /* AttributeImages.swift in Sources */,
 				BC94EF0329C1E047001113BD /* Reviews.swift in Sources */,
 				BC5AB7E429C05AC500C5D598 /* UpcomingUseCase.swift in Sources */,
 				E116146029BDB08300001182 /* Movie.swift in Sources */,
+				BCBB4ABE29C81FEA009C2A31 /* ObjMovieModel.swift in Sources */,
 				BCF4598629C46B1100215434 /* Constants.swift in Sources */,
 				E116147229BDBBCE00001182 /* Injection.swift in Sources */,
 				BC89442629BB1F6400468B97 /* SceneDelegate.swift in Sources */,
@@ -1185,6 +1232,14 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		BCBB4AB829C81F2F009C2A31 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.37.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1212,6 +1267,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BC79A56529BB5EAB00A76CC4 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		BCBB4AB929C81F2F009C2A31 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCBB4AB829C81F2F009C2A31 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		BCBB4ABB29C81F2F009C2A31 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCBB4AB829C81F2F009C2A31 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 

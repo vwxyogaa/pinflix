@@ -6,12 +6,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyMovieViewController" customModule="pinflix" customModuleProvider="target">
             <connections>
+                <outlet property="myMovieCollectionView" destination="C1l-8h-f2X" id="prC-EX-1ed"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,27 +21,54 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgc-9b-lxL">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="C1l-8h-f2X">
+                            <rect key="frame" x="16" y="41" width="361" height="710"/>
+                            <color key="backgroundColor" name="BlackColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rl3-HK-Rw6">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Movie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUG-kX-5nv">
+                            <rect key="frame" x="16" y="16" width="361" height="17"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                            <color key="textColor" name="WhiteColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <color key="backgroundColor" name="BlackColor"/>
+                    <constraints>
+                        <constraint firstItem="C1l-8h-f2X" firstAttribute="leading" secondItem="hgc-9b-lxL" secondAttribute="leading" constant="16" id="4Jb-zy-hQV"/>
+                        <constraint firstAttribute="trailing" secondItem="xUG-kX-5nv" secondAttribute="trailing" constant="16" id="5gd-AP-py6"/>
+                        <constraint firstItem="C1l-8h-f2X" firstAttribute="top" secondItem="xUG-kX-5nv" secondAttribute="bottom" constant="8" id="F6J-0T-Wmq"/>
+                        <constraint firstAttribute="trailing" secondItem="C1l-8h-f2X" secondAttribute="trailing" constant="16" id="TOw-32-yKY"/>
+                        <constraint firstItem="xUG-kX-5nv" firstAttribute="leading" secondItem="hgc-9b-lxL" secondAttribute="leading" constant="16" id="X3h-2G-Ro4"/>
+                        <constraint firstItem="xUG-kX-5nv" firstAttribute="top" secondItem="hgc-9b-lxL" secondAttribute="top" constant="16" id="lKC-v5-M3f"/>
+                    </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" name="BlackColor"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="hgc-9b-lxL" secondAttribute="trailing" id="Jre-gc-GeK"/>
-                <constraint firstItem="hgc-9b-lxL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Mbe-iJ-PLW"/>
-                <constraint firstAttribute="bottom" secondItem="hgc-9b-lxL" secondAttribute="bottom" id="hLh-Ar-lC2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="C1l-8h-f2X" secondAttribute="bottom" constant="8" id="KT0-N3-ONg"/>
+                <constraint firstItem="hgc-9b-lxL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Mbe-iJ-PLW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hgc-9b-lxL" secondAttribute="bottom" id="hLh-Ar-lC2"/>
                 <constraint firstItem="hgc-9b-lxL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="llZ-st-R44"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="-11"/>
+            <point key="canvasLocation" x="130.53435114503816" y="-11.267605633802818"/>
         </view>
     </objects>
     <resources>
         <namedColor name="BlackColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="WhiteColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

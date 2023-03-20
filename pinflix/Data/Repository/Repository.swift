@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 protocol RepositoryProtocol {
-    // MARK: - remote
+    // MARK: - Remote
     func getNowPlaying(page: Int) -> Observable<TMDB>
     func getPopular(page: Int) -> Observable<TMDB>
     func getTopRated(page: Int) -> Observable<TMDB>
@@ -21,23 +21,30 @@ protocol RepositoryProtocol {
     func getRecommendations(id: Int) -> Observable<Recommendations>
     func getImages(id: Int) -> Observable<Images>
     func getVideos(id: Int) -> Observable<Videos>
+    // MARK: - Locale
+    func checkMovieInCollection(id: Int) -> Observable<Bool>
+    func addToCollection(movie: Movie) -> Observable<Bool>
+    func deleteFromCollection(id: Int) -> Observable<Bool>
+    func getCollection() -> Observable<[Movie]>
 }
 
 final class Repository: NSObject {
-    typealias MovieInstance = (RemoteDataSource) -> Repository
+    typealias MovieInstance = (RemoteDataSource, LocaleDataSource) -> Repository
     fileprivate let remote: RemoteDataSource
+    fileprivate let locale: LocaleDataSource
     
-    init(remote: RemoteDataSource) {
+    init(remote: RemoteDataSource, locale: LocaleDataSource) {
         self.remote = remote
+        self.locale = locale
     }
     
-    static let sharedInstance: MovieInstance = { remote in
-        return Repository(remote: remote)
+    static let sharedInstance: MovieInstance = { remote, locale in
+        return Repository(remote: remote, locale: locale)
     }
 }
 
 extension Repository: RepositoryProtocol {
-    // MARK: - remote
+    // MARK: - Remote
     func getNowPlaying(page: Int) -> Observable<TMDB> {
         return remote.getNowPlaying(page: page)
     }
@@ -80,5 +87,22 @@ extension Repository: RepositoryProtocol {
     
     func getVideos(id: Int) -> Observable<Videos> {
         return remote.getVideos(id: id)
+    }
+    // MARK: - Locale
+    func checkMovieInCollection(id: Int) -> Observable<Bool> {
+        return locale.checkMovieInCollection(id: id)
+    }
+    
+    func addToCollection(movie: Movie) -> Observable<Bool> {
+        return locale.addToCollection(movie: DataMapper.mapMovieModelToObj(data: movie))
+    }
+    
+    func deleteFromCollection(id: Int) -> Observable<Bool> {
+        return locale.deleteFromCollection(id: id)
+    }
+    
+    func getCollection() -> Observable<[Movie]> {
+        return locale.getCollection()
+            .map { DataMapper.mapListObjMovieToListModel(array: $0) }
     }
 }

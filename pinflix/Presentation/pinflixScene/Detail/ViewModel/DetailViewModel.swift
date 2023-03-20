@@ -20,6 +20,7 @@ class DetailViewModel: BaseViewModel {
     private let _backdrops = BehaviorRelay<[Images.Backdrop]?>(value: nil)
     private let _posters = BehaviorRelay<[Images.Backdrop]?>(value: nil)
     private let _videos = BehaviorRelay<[Videos.Result]?>(value: nil)
+    private let _isSaved = BehaviorRelay<Bool>(value: false)
     
     init(detailUseCase: DetailUseCaseProtocol) {
         self.detailUseCase = detailUseCase
@@ -198,6 +199,49 @@ extension DetailViewModel {
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
                 print(error)
+            }
+            .disposed(by: disposeBag)
+    }
+}
+
+extension DetailViewModel {
+    // MARK: - isSaved
+    var isSaved: Driver<Bool> {
+        return _isSaved.asDriver()
+    }
+    
+    func checkMovieInCollection(id: Int?) {
+        guard let id else { return }
+        detailUseCase.checkMovieInCollection(id: id)
+            .observe(on: MainScheduler.instance)
+            .subscribe { result in
+                self._isSaved.accept(result)
+            } onError: { error in
+                self._errorMessage.accept(error.localizedDescription)
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    func addToCollection() {
+        guard let movie = _movie.value else { return }
+        detailUseCase.addToCollection(movie: movie)
+            .observe(on: MainScheduler.instance)
+            .subscribe { result in
+                self._isSaved.accept(result)
+            } onError: { error in
+                self._errorMessage.accept(error.localizedDescription)
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    func deleteFromCollection() {
+        guard let id = _movie.value?.id else { return }
+        detailUseCase.deleteFromCollection(id: id)
+            .observe(on: MainScheduler.instance)
+            .subscribe { result in
+                self._isSaved.accept(!result)
+            } onError: { error in
+                self._errorMessage.accept(error.localizedDescription)
             }
             .disposed(by: disposeBag)
     }

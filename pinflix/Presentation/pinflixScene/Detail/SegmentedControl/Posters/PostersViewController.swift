@@ -35,7 +35,7 @@ extension PostersViewController: UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = postersCollectionView.dequeueReusableCell(withReuseIdentifier: "CardMovieCollectionViewCell", for: indexPath) as? CardMovieCollectionViewCell else { return UICollectionViewCell() }
         let poster = mediaPosters[indexPath.row]
-        cell.configureContentPosters(poster: poster)
+        cell.configureContentPosters(content: poster)
         return cell
     }
     

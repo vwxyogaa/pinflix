@@ -29,7 +29,11 @@ class CardMovieCollectionViewCell: UICollectionViewCell {
         self.contentImageView.loadImage(uri: content?.posterPathImage)
     }
     
-    func configureContentPosters(poster: Images.Backdrop?) {
-        self.contentImageView.loadImage(uri: poster?.filePathImage)
+    func configureContentPosters(content: Images.Backdrop?) {
+        self.contentImageView.loadImage(uri: content?.filePathImage)
+    }
+    
+    func configureContentMyMovie(content: Movie?) {
+        self.contentImageView.loadImage(uri: content?.posterPathImage)
     }
 }

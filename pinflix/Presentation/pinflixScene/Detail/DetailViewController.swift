@@ -84,6 +84,8 @@ class DetailViewController: UIViewController {
         self.saveButton.layer.cornerRadius = backButton.frame.height / 2
         self.saveButton.layer.masksToBounds = true
         self.saveButton.setTitle("", for: .normal)
+        self.saveButton.tintColor = .white
+        self.saveButton.addTarget(self, action: #selector(self.saveButtonTapped), for: .touchUpInside)
     }
     
     private func configureCollectionView() {
@@ -161,6 +163,10 @@ class DetailViewController: UIViewController {
             }
         }).disposed(by: disposeBag)
         
+        viewModel.isSaved.drive(onNext: { [weak self] isSaved in
+            self?.updateSavedButton(isSaved)
+        }).disposed(by: disposeBag)
+        
         viewModel.isLoading.drive(onNext: { [weak self] isLoading in
             self?.manageLoadingActivity(isLoading: isLoading)
         }).disposed(by: disposeBag)
@@ -174,6 +180,7 @@ class DetailViewController: UIViewController {
             viewModel.getRecommendations(id: id)
             viewModel.getImages(id: id)
             viewModel.getVideos(id: id)
+            viewModel.checkMovieInCollection(id: id)
         }
     }
     
@@ -202,10 +209,35 @@ class DetailViewController: UIViewController {
         self.countriesProdLabel.text = "Production Countries: \(movie?.productionCountries?.compactMap({$0.name}).joined(separator: ", ") ?? "-")"
     }
     
+    private func updateSavedButton(_ isSaved: Bool) {
+        if isSaved {
+            saveButton.tag = 1
+            saveButton.setTitle("", for: .normal)
+            saveButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            saveButton.tintColor = .red
+            saveButton.backgroundColor = UIColor(named: "GrayBgColor")
+        } else {
+            saveButton.tag = 0
+            saveButton.setTitle("", for: .normal)
+            saveButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            saveButton.tintColor = .white
+            saveButton.backgroundColor = UIColor(named: "GrayBgColor")
+        }
+    }
+    
     // MARK: - Action
     @objc
     private func backButtonTapped() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc
+    private func saveButtonTapped(_ sender: UIButton) {
+        if sender.tag == 0 {
+            self.viewModel.addToCollection()
+        } else {
+            self.viewModel.deleteFromCollection()
+        }
     }
 }
 
