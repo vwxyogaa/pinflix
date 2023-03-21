@@ -13,6 +13,7 @@ class UpcomingViewController: UIViewController {
     
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = .white
         return refreshControl
     }()
     

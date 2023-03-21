@@ -11,6 +11,12 @@ import RxSwift
 class MyMovieViewController: UIViewController {
     @IBOutlet weak var myMovieCollectionView: UICollectionView!
     
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = .white
+        return refreshControl
+    }()
+    
     private let disposeBag = DisposeBag()
     var viewModel: MyMovieViewModel!
     
@@ -43,13 +49,22 @@ class MyMovieViewController: UIViewController {
     // MARK: - Helpers
     private func configureCollectionView() {
         myMovieCollectionView.register(UINib(nibName: "CardMovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CardMovieCollectionViewCell")
+        refreshControl.addTarget(self, action: #selector(self.refreshData), for: .valueChanged)
+        myMovieCollectionView.refreshControl = refreshControl
+        refreshControl.beginRefreshing()
         myMovieCollectionView.dataSource = self
         myMovieCollectionView.delegate = self
     }
     
     private func initObserver() {
-        viewModel.movies.drive(onNext: { [weak self] _ in
+        viewModel.movies.drive(onNext: { [weak self] movie in
+            if !movie.isEmpty {
+                self?.myMovieCollectionView.clearBackground()
+            } else {
+                self?.myMovieCollectionView.setBackground(imageName: "icon_empty_items", messageImage: "You don't have favorite movie yet")
+            }
             self?.myMovieCollectionView.reloadData()
+            self?.refreshControl.endRefreshing()
         }).disposed(by: disposeBag)
     }
     
@@ -58,6 +73,11 @@ class MyMovieViewController: UIViewController {
         let ok = UIAlertAction(title: "OK", style: .default)
         dialogMessage.addAction(ok)
         self.present(dialogMessage, animated: true, completion: nil)
+    }
+    
+    @objc
+    private func refreshData() {
+        viewModel.refresh()
     }
 }
 

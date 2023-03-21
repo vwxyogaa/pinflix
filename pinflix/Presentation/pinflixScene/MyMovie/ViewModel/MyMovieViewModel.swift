@@ -30,6 +30,10 @@ class MyMovieViewModel: BaseViewModel {
         return _movies.value[safe: index]
     }
     
+    func refresh() {
+        getMyCollection()
+    }
+    
     func getMyCollection() {
         myMovieUseCase.getCollection()
             .observe(on: MainScheduler.instance)
