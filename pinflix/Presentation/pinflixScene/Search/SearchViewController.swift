@@ -72,7 +72,8 @@ class SearchViewController: UIViewController {
         searchMovieTextField.rx.text
             .debounce(.milliseconds(300), scheduler: MainScheduler.instance)
             .subscribe(onNext: { value in
-                self.viewModel.search(query: value)
+                let query = value?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+                self.viewModel.search(query: query)
             })
             .disposed(by: disposeBag)
     }
