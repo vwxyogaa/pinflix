@@ -35,9 +35,10 @@ class VideoViewController: UIViewController {
             return
         }
         self.playerView = AVPlayer(url: url)
-        playerView?.play()
         avPlayerController.player = playerView
-        present(avPlayerController, animated: true, completion: nil)
+        present(avPlayerController, animated: true) {
+            self.avPlayerController.player?.play()
+        }
     }
     
     func reloadsCollectionView(){
