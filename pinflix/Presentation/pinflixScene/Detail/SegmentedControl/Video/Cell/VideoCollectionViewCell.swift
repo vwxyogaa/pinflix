@@ -6,11 +6,11 @@
 //
 
 import UIKit
+import WebKit
 
 class VideoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet weak var videoImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var webView: WKWebView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +24,10 @@ class VideoCollectionViewCell: UICollectionViewCell {
         self.containerView.layer.masksToBounds = true    }
     
     func configureContent(content: Videos.Result?) {
-        self.nameLabel.text = content?.name
+        guard let youtubeURL = URL(string: "https://www.youtube.com/embed/\(content?.key ?? "")") else {
+            print("video url not found")
+            return
+        }
+        webView.load(URLRequest(url: youtubeURL))
     }
 }

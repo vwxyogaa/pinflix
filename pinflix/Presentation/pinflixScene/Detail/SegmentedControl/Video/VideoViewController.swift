@@ -12,8 +12,6 @@ class VideoViewController: UIViewController {
     @IBOutlet weak var videosCollectionView: UICollectionView!
     
     var mediaVideos = [Videos.Result]()
-    var avPlayerController = AVPlayerViewController()
-    var playerView: AVPlayer?
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -28,21 +26,10 @@ class VideoViewController: UIViewController {
         self.videosCollectionView.delegate = self
     }
     
-    private func videoUrl(key: String?) {
-        let urlString = "https://www.youtube.com/watch?v=\(key ?? "")"
-        guard let url = URL(string: urlString) else {
-            print("video url not found")
-            return
-        }
-        self.playerView = AVPlayer(url: url)
-        avPlayerController.player = playerView
-        present(avPlayerController, animated: true) {
-            self.avPlayerController.player?.play()
-        }
-    }
-    
     func reloadsCollectionView(){
-        videosCollectionView.reloadData()
+        if videosCollectionView != nil {
+            videosCollectionView.reloadData()
+        }
     }
 }
 
@@ -57,11 +44,6 @@ extension VideoViewController: UICollectionViewDataSource, UICollectionViewDeleg
         let video = mediaVideos[indexPath.row]
         cell.configureContent(content: video)
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let key = mediaVideos[indexPath.row].key
-        self.videoUrl(key: key)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
