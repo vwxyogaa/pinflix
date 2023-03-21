@@ -66,6 +66,10 @@ class MyMovieViewController: UIViewController {
             self?.myMovieCollectionView.reloadData()
             self?.refreshControl.endRefreshing()
         }).disposed(by: disposeBag)
+        
+        viewModel.isLoading.drive(onNext: { [weak self] isLoading in
+            self?.manageLoadingActivity(isLoading: isLoading)
+        }).disposed(by: disposeBag)
     }
     
     private func alertNoConnection() {

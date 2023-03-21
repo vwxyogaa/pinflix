@@ -35,9 +35,11 @@ class MyMovieViewModel: BaseViewModel {
     }
     
     func getMyCollection() {
+        self._isLoading.accept(true)
         myMovieUseCase.getCollection()
             .observe(on: MainScheduler.instance)
             .subscribe { result in
+                self._isLoading.accept(false)
                 self._movies.accept(result)
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
