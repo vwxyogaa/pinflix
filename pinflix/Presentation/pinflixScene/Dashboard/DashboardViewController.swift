@@ -97,10 +97,10 @@ class DashboardViewController: UIViewController {
     
     private func configureCollectionViews() {
         nowPlayingCollectionView.register(UINib(nibName: "NowPlayingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "NowPlayingCollectionViewCell")
-        nowPlayingCollectionView.decelerationRate = UIScrollView.DecelerationRate.fast
+        nowPlayingCollectionView.decelerationRate = .fast
         nowPlayingCollectionView.dataSource = self
         nowPlayingCollectionView.delegate = self
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.nowPlayingCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0),
                                                       at: .centeredHorizontally,
                                                       animated: true)
