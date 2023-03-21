@@ -21,7 +21,8 @@ class VideoCollectionViewCell: UICollectionViewCell {
         self.containerView.layer.borderWidth = 1
         self.containerView.layer.borderColor = UIColor(named: "GrayTabBarColor")?.cgColor
         self.containerView.layer.cornerRadius = 10
-        self.containerView.layer.masksToBounds = true    }
+        self.containerView.layer.masksToBounds = true
+    }
     
     func configureContent(content: Videos.Result?) {
         guard let youtubeURL = URL(string: "https://www.youtube.com/embed/\(content?.key ?? "")") else {
