@@ -5,8 +5,6 @@
 //  Created by yxgg on 12/03/23.
 //
 
-import Foundation
-
 struct Movie: Codable {
     let adult: Bool?
     let backdropPath: String?

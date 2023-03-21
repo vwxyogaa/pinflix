@@ -5,7 +5,6 @@
 //  Created by Panji Yoga on 13/03/23.
 //
 
-import Foundation
 import RxSwift
 
 protocol SearchUseCaseProtocol {

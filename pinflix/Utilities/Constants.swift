@@ -5,8 +5,6 @@
 //  Created by Panji Yoga on 17/03/23.
 //
 
-import Foundation
-
 struct Constants {
     static let baseMovieUrl = "https://api.themoviedb.org/3"
     static let moviePath = "/movie"

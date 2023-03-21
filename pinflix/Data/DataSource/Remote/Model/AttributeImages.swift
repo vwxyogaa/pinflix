@@ -5,8 +5,6 @@
 //  Created by Panji Yoga on 17/03/23.
 //
 
-import Foundation
-
 extension TMDB.Results {
     var posterPathImage: String? {
         get {

@@ -5,7 +5,6 @@
 //  Created by yxgg on 12/03/23.
 //
 
-import Foundation
 import RealmSwift
 
 final class Injection {

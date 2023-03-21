@@ -88,6 +88,7 @@ extension Repository: RepositoryProtocol {
     func getVideos(id: Int) -> Observable<Videos> {
         return remote.getVideos(id: id)
     }
+    
     // MARK: - Locale
     func checkMovieInCollection(id: Int) -> Observable<Bool> {
         return locale.checkMovieInCollection(id: id)

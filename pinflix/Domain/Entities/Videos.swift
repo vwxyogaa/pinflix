@@ -5,8 +5,6 @@
 //  Created by Panji Yoga on 16/03/23.
 //
 
-import Foundation
-
 struct Videos: Codable {
     let id: Int
     let results: [Result]

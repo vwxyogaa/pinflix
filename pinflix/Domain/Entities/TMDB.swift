@@ -5,8 +5,6 @@
 //  Created by yxgg on 12/03/23.
 //
 
-import Foundation
-
 struct TMDB: Codable {
     let dates: Dates?
     let results: [Results]

@@ -66,7 +66,6 @@ extension UIViewController: UINavigationControllerDelegate {
         if #available(iOS 14.0, *) {
             viewController.navigationItem.backButtonDisplayMode = .minimal
         } else {
-            // Fallback on earlier versions
             viewController.navigationItem.backButtonTitle = ""
         }
         viewController.navigationController?.navigationBar.tintColor = .white

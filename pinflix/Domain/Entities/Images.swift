@@ -5,8 +5,6 @@
 //  Created by Panji Yoga on 16/03/23.
 //
 
-import Foundation
-
 struct Images: Codable {
     let backdrops: [Backdrop]
     let id: Int

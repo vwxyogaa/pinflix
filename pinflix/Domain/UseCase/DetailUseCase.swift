@@ -5,7 +5,6 @@
 //  Created by Panji Yoga on 13/03/23.
 //
 
-import Foundation
 import RxSwift
 
 protocol DetailUseCaseProtocol {
@@ -28,6 +27,7 @@ final class DetailUseCase: DetailUseCaseProtocol {
     init(repository: RepositoryProtocol) {
         self.repository = repository
     }
+    
     // MARK: - Remote
     func getDetail(id: Int) -> Observable<Movie> {
         return self.repository.getDetail(id: id)
@@ -52,6 +52,7 @@ final class DetailUseCase: DetailUseCaseProtocol {
     func getVideos(id: Int) -> Observable<Videos> {
         return self.repository.getVideos(id: id)
     }
+    
     // MARK: - Locale
     func checkMovieInCollection(id: Int) -> Observable<Bool> {
         return repository.checkMovieInCollection(id: id)

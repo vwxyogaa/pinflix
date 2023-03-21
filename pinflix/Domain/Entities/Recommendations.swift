@@ -5,8 +5,6 @@
 //  Created by Panji Yoga on 15/03/23.
 //
 
-import Foundation
-
 struct Recommendations: Codable {
     let page: Int
     let results: [Result]
