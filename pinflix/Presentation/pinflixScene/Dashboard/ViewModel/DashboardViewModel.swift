@@ -81,7 +81,6 @@ extension DashboardViewModel {
         dashboardUseCase.getNowPlaying(page: nowPlayingPage)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
-                self._isLoading.accept(false)
                 self.nowPlayingResults.append(contentsOf: result.results)
                 self.nowPlayingResultsCount += result.results.count
                 if self.nowPlayingResults.count == self.nowPlayingResultsCount {
@@ -91,6 +90,8 @@ extension DashboardViewModel {
                 }
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
+            } onCompleted: {
+                self._isLoading.accept(false)
             }
             .disposed(by: disposeBag)
     }
@@ -124,7 +125,6 @@ extension DashboardViewModel {
         dashboardUseCase.getPopular(page: popularPage)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
-                self._isLoading.accept(false)
                 self.popularResults.append(contentsOf: result.results)
                 self.popularResultsCount += result.results.count
                 if self.popularResults.count == self.popularResultsCount {
@@ -134,6 +134,8 @@ extension DashboardViewModel {
                 }
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
+            } onCompleted: {
+                self._isLoading.accept(false)
             }
             .disposed(by: disposeBag)
     }
@@ -167,7 +169,6 @@ extension DashboardViewModel {
         dashboardUseCase.getTopRated(page: topRatedPage)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
-                self._isLoading.accept(false)
                 self.topRatedResults.append(contentsOf: result.results)
                 self.topRatedResultsCount += result.results.count
                 if self.topRatedResults.count == self.topRatedResultsCount {
@@ -177,6 +178,8 @@ extension DashboardViewModel {
                 }
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
+            } onCompleted: {
+                self._isLoading.accept(false)
             }
             .disposed(by: disposeBag)
     }

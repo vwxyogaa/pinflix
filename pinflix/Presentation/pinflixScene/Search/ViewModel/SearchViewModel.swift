@@ -36,10 +36,11 @@ class SearchViewModel: BaseViewModel {
         searchUseCase.search(query: query)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
-                self._isLoading.accept(false)
                 self._movies.accept(result.results)
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
+            } onCompleted: {
+                self._isLoading.accept(false)
             }
             .disposed(by: disposeBag)
     }

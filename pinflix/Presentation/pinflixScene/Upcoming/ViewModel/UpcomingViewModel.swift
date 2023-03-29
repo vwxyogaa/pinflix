@@ -54,7 +54,6 @@ extension UpcomingViewModel {
         upcomingUseCase.getUpcoming(page: upcomingPage)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
-                self._isLoading.accept(false)
                 self.upcomingResults.append(contentsOf: result.results)
                 self.upcomingResultsCount += result.results.count
                 if self.upcomingResults.count == self.upcomingResultsCount {
@@ -64,6 +63,8 @@ extension UpcomingViewModel {
                 }
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
+            } onCompleted: {
+                self._isLoading.accept(false)
             }
             .disposed(by: disposeBag)
     }

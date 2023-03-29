@@ -38,10 +38,11 @@ extension DetailViewModel {
         detailUseCase.getDetail(id: id)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
-                self._isLoading.accept(false)
                 self._movie.accept(result)
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
+            } onCompleted: {
+                self._isLoading.accept(false)
             }
             .disposed(by: disposeBag)
     }
@@ -66,10 +67,11 @@ extension DetailViewModel {
         detailUseCase.getCredits(id: id)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
-                self._isLoading.accept(false)
                 self._casts.accept(result.cast)
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
+            } onCompleted: {
+                self._isLoading.accept(false)
             }
             .disposed(by: disposeBag)
     }
@@ -94,10 +96,11 @@ extension DetailViewModel {
         detailUseCase.getReviews(id: id)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
-                self._isLoading.accept(false)
                 self._reviews.accept(result.results)
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
+            } onCompleted: {
+                self._isLoading.accept(false)
             }
             .disposed(by: disposeBag)
     }
@@ -122,11 +125,12 @@ extension DetailViewModel {
         detailUseCase.getRecommendations(id: id)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
-                self._isLoading.accept(false)
                 self._recommendations.accept(result.results)
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
                 print(error)
+            } onCompleted: {
+                self._isLoading.accept(false)
             }
             .disposed(by: disposeBag)
     }
@@ -164,11 +168,12 @@ extension DetailViewModel {
         detailUseCase.getImages(id: id)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
-                self._isLoading.accept(false)
                 self._backdrops.accept(result.backdrops)
                 self._posters.accept(result.posters)
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
+            } onCompleted: {
+                self._isLoading.accept(false)
             }
             .disposed(by: disposeBag)
     }
@@ -193,11 +198,12 @@ extension DetailViewModel {
         detailUseCase.getVideos(id: id)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
-                self._isLoading.accept(false)
                 self._videos.accept(result.results)
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
                 print(error)
+            } onCompleted: {
+                self._isLoading.accept(false)
             }
             .disposed(by: disposeBag)
     }
@@ -210,6 +216,7 @@ extension DetailViewModel {
     }
     
     func checkMovieInCollection(id: Int?) {
+        self._isLoading.accept(true)
         guard let id else { return }
         detailUseCase.checkMovieInCollection(id: id)
             .observe(on: MainScheduler.instance)
@@ -217,11 +224,14 @@ extension DetailViewModel {
                 self._isSaved.accept(result)
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
+            } onCompleted: {
+                self._isLoading.accept(false)
             }
             .disposed(by: disposeBag)
     }
     
     func addToCollection() {
+        self._isLoading.accept(true)
         guard let movie = _movie.value else { return }
         detailUseCase.addToCollection(movie: movie)
             .observe(on: MainScheduler.instance)
@@ -229,11 +239,14 @@ extension DetailViewModel {
                 self._isSaved.accept(result)
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
+            } onCompleted: {
+                self._isLoading.accept(false)
             }
             .disposed(by: disposeBag)
     }
     
     func deleteFromCollection() {
+        self._isLoading.accept(true)
         guard let id = _movie.value?.id else { return }
         detailUseCase.deleteFromCollection(id: id)
             .observe(on: MainScheduler.instance)
@@ -241,6 +254,8 @@ extension DetailViewModel {
                 self._isSaved.accept(!result)
             } onError: { error in
                 self._errorMessage.accept(error.localizedDescription)
+            } onCompleted: {
+                self._isLoading.accept(false)
             }
             .disposed(by: disposeBag)
     }
