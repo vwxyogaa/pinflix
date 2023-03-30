@@ -15,7 +15,8 @@ class BaseViewModel {
     var isLoading: Driver<Bool> {
         return _isLoading.asDriver()
     }
-    var errorMessage: String? {
-        return _errorMessage.value
+    
+    var errorMessage: Driver<String?> {
+        return _errorMessage.asDriver()
     }
 }

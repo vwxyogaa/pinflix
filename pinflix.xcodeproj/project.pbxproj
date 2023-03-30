@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC0E274229D55A1E00758F11 /* TTGSnackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0E274129D55A1E00758F11 /* TTGSnackbar.swift */; };
 		BC2C15C629BF3A3B0006057E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2C15C429BF3A3B0006057E /* SearchViewController.swift */; };
 		BC2C15C729BF3A3B0006057E /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC2C15C529BF3A3B0006057E /* SearchViewController.xib */; };
 		BC2C15CB29BF47370006057E /* SearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2C15CA29BF47370006057E /* SearchUseCase.swift */; };
@@ -110,6 +111,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC0E274129D55A1E00758F11 /* TTGSnackbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTGSnackbar.swift; sourceTree = "<group>"; };
 		BC2C15C429BF3A3B0006057E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BC2C15C529BF3A3B0006057E /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		BC2C15CA29BF47370006057E /* SearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCase.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				BC73F88129BF3471002C5FE7 /* Toast.swift */,
 				BCF4595729C2F1CA00215434 /* CustomSegmentedControl.swift */,
 				BCBB4ACD29C85584009C2A31 /* CenteredCollectionViewFlowLayout.swift */,
+				BC0E274129D55A1E00758F11 /* TTGSnackbar.swift */,
 			);
 			path = LibraryThirdParty;
 			sourceTree = "<group>";
@@ -834,6 +837,7 @@
 				BC8E636929BF25D4004274D4 /* DetailViewModel.swift in Sources */,
 				BCF4595C29C2F33200215434 /* VideoViewController.swift in Sources */,
 				BCBB4ACA29C844F0009C2A31 /* Reachability.swift in Sources */,
+				BC0E274229D55A1E00758F11 /* TTGSnackbar.swift in Sources */,
 				BC79A55A29BB591B00A76CC4 /* CardMovieCollectionViewCell.swift in Sources */,
 				BCBB4AC129C825A6009C2A31 /* LocaleDataSource.swift in Sources */,
 				E116145E29BDAEB500001182 /* TMDB.swift in Sources */,

@@ -59,6 +59,10 @@ class SearchViewController: UIViewController {
         viewModel.isLoading.drive(onNext: { [weak self] isLoading in
             self?.manageLoadingActivity(isLoading: isLoading)
         }).disposed(by: disposeBag)
+        
+        viewModel.errorMessage.drive(onNext: { [weak self] errorMessage in
+            self?.showErrorSnackBar(message: errorMessage)
+        }).disposed(by: disposeBag)
     }
     
     private func configureSearchTextField() {

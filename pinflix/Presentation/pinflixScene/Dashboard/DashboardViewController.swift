@@ -69,15 +69,19 @@ class DashboardViewController: UIViewController {
             self?.manageLoadingActivity(isLoading: isLoading)
         }).disposed(by: disposeBag)
         
-        viewModel.nowPlayings.drive(onNext: { [weak self] nowPlaying in
+        viewModel.errorMessage.drive(onNext: { [weak self] errorMessage in
+            self?.showErrorSnackBar(message: errorMessage)
+        }).disposed(by: disposeBag)
+        
+        viewModel.nowPlayings.drive(onNext: { [weak self] _ in
             self?.nowPlayingCollectionView.reloadData()
         }).disposed(by: disposeBag)
         
-        viewModel.populars.drive(onNext: { [weak self] popular in
+        viewModel.populars.drive(onNext: { [weak self] _ in
             self?.popularCollectionView.reloadData()
         }).disposed(by: disposeBag)
         
-        viewModel.topRateds.drive(onNext: { [weak self] topRated in
+        viewModel.topRateds.drive(onNext: { [weak self] _ in
             self?.topRatedCollectionView.reloadData()
         }).disposed(by: disposeBag)
     }

@@ -48,12 +48,16 @@ class UpcomingViewController: UIViewController {
     }
     
     private func initObserver() {
-        viewModel.upcomings.drive(onNext: { [weak self] upcoming in
+        viewModel.upcomings.drive(onNext: { [weak self] _ in
             self?.upcomingTableView.reloadData()
         }).disposed(by: disposeBag)
         
         viewModel.isLoading.drive(onNext: { [weak self] isLoading in
             self?.manageLoadingActivity(isLoading: isLoading)
+        }).disposed(by: disposeBag)
+        
+        viewModel.errorMessage.drive(onNext: { [weak self] errorMessage in
+            self?.showErrorSnackBar(message: errorMessage)
         }).disposed(by: disposeBag)
     }
     
