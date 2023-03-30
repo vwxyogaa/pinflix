@@ -81,8 +81,8 @@ extension DashboardViewModel {
         dashboardUseCase.getNowPlaying(page: nowPlayingPage)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
-                self.nowPlayingResults.append(contentsOf: result.results)
-                self.nowPlayingResultsCount += result.results.count
+                self.nowPlayingResults.append(contentsOf: result.results ?? [])
+                self.nowPlayingResultsCount += result.results?.count ?? 0
                 if self.nowPlayingResults.count == self.nowPlayingResultsCount {
                     self.nowPlayingPage += 1
                     self.nowPlayingCanLoadNextPage = false
@@ -125,8 +125,8 @@ extension DashboardViewModel {
         dashboardUseCase.getPopular(page: popularPage)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
-                self.popularResults.append(contentsOf: result.results)
-                self.popularResultsCount += result.results.count
+                self.popularResults.append(contentsOf: result.results ?? [])
+                self.popularResultsCount += result.results?.count ?? 0
                 if self.popularResults.count == self.popularResultsCount {
                     self.popularPage += 1
                     self.popularCanLoadNextPage = false
@@ -169,8 +169,8 @@ extension DashboardViewModel {
         dashboardUseCase.getTopRated(page: topRatedPage)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
-                self.topRatedResults.append(contentsOf: result.results)
-                self.topRatedResultsCount += result.results.count
+                self.topRatedResults.append(contentsOf: result.results ?? [])
+                self.topRatedResultsCount += result.results?.count ?? 0
                 if self.topRatedResults.count == self.topRatedResultsCount {
                     self.topRatedPage += 1
                     self.topRatedCanLoadNextPage = false

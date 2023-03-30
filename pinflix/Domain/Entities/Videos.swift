@@ -6,8 +6,8 @@
 //
 
 struct Videos: Codable {
-    let id: Int
-    let results: [Result]
+    let id: Int?
+    let results: [Result]?
     
     struct Result: Codable {
         let iso639_1, iso3166_1, name, key: String?

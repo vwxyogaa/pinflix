@@ -6,9 +6,9 @@
 //
 
 struct Recommendations: Codable {
-    let page: Int
-    let results: [Result]
-    let totalPages, totalResults: Int
+    let page: Int?
+    let results: [Result]?
+    let totalPages, totalResults: Int?
     
     enum CodingKeys: String, CodingKey {
         case page, results

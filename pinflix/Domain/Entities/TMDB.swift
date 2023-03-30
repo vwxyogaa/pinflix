@@ -7,8 +7,8 @@
 
 struct TMDB: Codable {
     let dates: Dates?
-    let results: [Results]
-    let totalPages, totalResults, page: Int
+    let results: [Results]?
+    let totalPages, totalResults, page: Int?
 
     enum CodingKeys: String, CodingKey {
         case dates, results
@@ -18,7 +18,7 @@ struct TMDB: Codable {
     }
     
     struct Dates: Codable {
-        let maximum, minimum: String
+        let maximum, minimum: String?
     }
     
     struct Results: Codable {

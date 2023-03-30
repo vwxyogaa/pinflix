@@ -6,9 +6,9 @@
 //
 
 struct Images: Codable {
-    let backdrops: [Backdrop]
-    let id: Int
-    let logos, posters: [Backdrop]
+    let backdrops: [Backdrop]?
+    let id: Int?
+    let logos, posters: [Backdrop]?
     
     struct Backdrop: Codable {
         let aspectRatio: Double?

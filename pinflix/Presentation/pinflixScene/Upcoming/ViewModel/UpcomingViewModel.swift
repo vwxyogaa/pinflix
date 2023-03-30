@@ -54,8 +54,8 @@ extension UpcomingViewModel {
         upcomingUseCase.getUpcoming(page: upcomingPage)
             .observe(on: MainScheduler.instance)
             .subscribe { result in
-                self.upcomingResults.append(contentsOf: result.results)
-                self.upcomingResultsCount += result.results.count
+                self.upcomingResults.append(contentsOf: result.results ?? [])
+                self.upcomingResultsCount += result.results?.count ?? 0
                 if self.upcomingResults.count == self.upcomingResultsCount {
                     self.upcomingPage += 1
                     self.upcomingCanLoadNextPage = false
