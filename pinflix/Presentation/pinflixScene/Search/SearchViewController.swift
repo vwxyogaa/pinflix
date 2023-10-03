@@ -66,10 +66,9 @@ class SearchViewController: UIViewController {
     }
     
     private func configureSearchTextField() {
-        guard let grayTabBarColor = UIColor(named: "GrayTabBarColor") else { return }
         searchMovieTextField.attributedPlaceholder = NSAttributedString(
             string: "Search",
-            attributes: [NSAttributedString.Key.foregroundColor: grayTabBarColor]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.grayTabBarFlix]
         )
         searchMovieTextField.clearButtonMode = .whileEditing
         searchMovieTextField.delegate = self

@@ -20,7 +20,7 @@ class DashboardViewController: UIViewController {
     
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = .white
+        refreshControl.tintColor = .whiteFlix
         return refreshControl
     }()
     
@@ -87,10 +87,9 @@ class DashboardViewController: UIViewController {
     }
     
     private func configureSearchTextField() {
-        guard let grayTabBarColor = UIColor(named: "GrayTabBarColor") else { return }
         searchMovieTextField.attributedPlaceholder = NSAttributedString(
             string: "Search",
-            attributes: [NSAttributedString.Key.foregroundColor: grayTabBarColor]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.grayTabBarFlix]
         )
         searchMovieTextField.delegate = self
     }

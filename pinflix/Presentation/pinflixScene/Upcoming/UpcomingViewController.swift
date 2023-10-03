@@ -13,7 +13,7 @@ class UpcomingViewController: UIViewController {
     
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = .white
+        refreshControl.tintColor = .whiteFlix
         return refreshControl
     }()
     
@@ -111,8 +111,8 @@ extension UpcomingViewController: UITableViewDataSource, UITableViewDelegate {
         label.frame = CGRect.init(x: 16, y: 5, width: headerView.frame.width - 10, height: headerView.frame.height - 10)
         label.text = "Upcoming"
         label.font = .systemFont(ofSize: 14, weight: .semibold)
-        label.textColor = .white
-        headerView.backgroundColor = .black
+        label.textColor = .whiteFlix
+        headerView.backgroundColor = .blackFlix
         headerView.addSubview(label)
         return headerView
     }

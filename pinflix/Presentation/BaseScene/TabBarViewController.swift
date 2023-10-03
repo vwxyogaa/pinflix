@@ -8,18 +8,26 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
-    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        makeTabBar()
+        configureViews()
     }
     
-    func makeTabBar() -> TabBarViewController {
+    // MARK: - Methods
+    private func configureViews() {
+        tabBar.backgroundColor = .grayBgFlix
+        tabBar.tintColor = .whiteFlix
+        tabBar.unselectedItemTintColor = .grayTabBarFlix
+    }
+    
+    func makeTabBar() {
         self.viewControllers = [
             makeNavigation(viewController: createDashboardTab()),
             makeNavigation(viewController: createUpcomingTab()),
             makeNavigation(viewController: createMyMovieTab())
         ]
-        return self
     }
     
     private func makeNavigation(viewController: UIViewController) -> UINavigationController {
@@ -68,6 +76,6 @@ extension UIViewController: UINavigationControllerDelegate {
         } else {
             viewController.navigationItem.backButtonTitle = ""
         }
-        viewController.navigationController?.navigationBar.tintColor = .white
+        viewController.navigationController?.navigationBar.tintColor = .whiteFlix
     }
 }

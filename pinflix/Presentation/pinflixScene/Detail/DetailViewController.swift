@@ -84,7 +84,7 @@ class DetailViewController: UIViewController {
         self.saveButton.layer.cornerRadius = backButton.frame.height / 2
         self.saveButton.layer.masksToBounds = true
         self.saveButton.setTitle("", for: .normal)
-        self.saveButton.tintColor = .white
+        self.saveButton.tintColor = .whiteFlix
         self.saveButton.addTarget(self, action: #selector(self.saveButtonTapped), for: .touchUpInside)
     }
     
@@ -106,10 +106,10 @@ class DetailViewController: UIViewController {
         mediaSegmentedControl.delegate = self
         mediaSegmentedControl.setButtonTitles(buttonTitles: ["Video", "Backdrops", "Posters"])
         mediaSegmentedControl.setIndex(index: 0)
-        mediaSegmentedControl.backgroundColor = UIColor(named: "GrayBgColor")
-        mediaSegmentedControl.selectorViewColor = .white
-        mediaSegmentedControl.selectorTextColor = .white
-        mediaSegmentedControl.textColor = UIColor(named: "GrayTabBarColor") ?? .lightGray
+        mediaSegmentedControl.backgroundColor = .grayBgFlix
+        mediaSegmentedControl.selectorViewColor = .whiteFlix
+        mediaSegmentedControl.selectorTextColor = .whiteFlix
+        mediaSegmentedControl.textColor = .grayTabBarFlix
     }
     
     private func initObserver() {
@@ -191,7 +191,7 @@ class DetailViewController: UIViewController {
     private func configureContent(movie: Movie?) {
         let imageUrl = "https://image.tmdb.org/t/p/original\(movie?.backdropPath ?? "")"
         if movie?.backdropPath == nil {
-            self.backdropImageView.backgroundColor = .black
+            self.backdropImageView.backgroundColor = .blackFlix
         } else {
             self.backdropImageView.loadImage(uri: imageUrl)
         }
@@ -219,13 +219,13 @@ class DetailViewController: UIViewController {
             saveButton.setTitle("", for: .normal)
             saveButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
             saveButton.tintColor = .red
-            saveButton.backgroundColor = UIColor(named: "GrayBgColor")
+            saveButton.backgroundColor = .grayBgFlix
         } else {
             saveButton.tag = 0
             saveButton.setTitle("", for: .normal)
             saveButton.setImage(UIImage(systemName: "heart"), for: .normal)
-            saveButton.tintColor = .white
-            saveButton.backgroundColor = UIColor(named: "GrayBgColor")
+            saveButton.tintColor = .whiteFlix
+            saveButton.backgroundColor = .grayBgFlix
         }
     }
     
@@ -357,7 +357,7 @@ extension DetailViewController: CustomSegmentedControlDelegate {
         addChild(viewController)
         contentMediaView.addSubview(viewController.view)
         viewController.view.frame = contentMediaView.bounds
-        viewController.view.backgroundColor = UIColor(named: "GrayBgColor")
+        viewController.view.backgroundColor = .grayBgFlix
         viewController.didMove(toParent: self)
     }
 }

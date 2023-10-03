@@ -17,7 +17,7 @@ class CustomSegmentedControl: UIView {
     private var buttons: [UIButton]!
     private var selectorView: UIView!
     
-    var textColor: UIColor = .black
+    var textColor: UIColor = .blackFlix
     var selectorViewColor: UIColor = .red
     var selectorTextColor: UIColor = .red
     
@@ -32,7 +32,7 @@ class CustomSegmentedControl: UIView {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        self.backgroundColor = UIColor(named: "GrayColor")
+        self.backgroundColor = .grayFlix
         updateView()
     }
     

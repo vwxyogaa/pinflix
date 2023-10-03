@@ -20,7 +20,7 @@ class CastCollectionViewCell: UICollectionViewCell {
     
     private func configureViews() {
         self.containerView.layer.borderWidth = 1
-        self.containerView.layer.borderColor = UIColor(named: "GrayTabBarColor")?.cgColor
+        self.containerView.layer.borderColor = UIColor.grayTabBarFlix.cgColor
         self.containerView.layer.cornerRadius = 10
         self.containerView.layer.masksToBounds = true
     }
@@ -29,7 +29,7 @@ class CastCollectionViewCell: UICollectionViewCell {
         if let profilePathImage = casts?.profilePathImage, !profilePathImage.isEmpty {
             self.profilePathImageView.loadImage(uri: profilePathImage)
         } else {
-            self.profilePathImageView.backgroundColor = .black
+            self.profilePathImageView.backgroundColor = .blackFlix
         }
         self.nameLabel.text = casts?.name
         self.characterLabel.text = casts?.character

@@ -30,7 +30,7 @@ class UpcomingTableViewCell: UITableViewCell {
         if let backdropPathImage = upcoming?.backdropPathImage, !backdropPathImage.isEmpty {
             self.backdropPathImageView.loadImage(uri: backdropPathImage)
         } else {
-            self.backdropPathImageView.backgroundColor = .black
+            self.backdropPathImageView.backgroundColor = .blackFlix
         }
         if let voteAverageDecimal = upcoming?.voteAverage {
             let voteAverage = (String(format: "%.1f", voteAverageDecimal))

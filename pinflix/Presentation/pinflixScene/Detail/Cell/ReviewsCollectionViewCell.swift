@@ -21,7 +21,7 @@ class ReviewsCollectionViewCell: UICollectionViewCell {
 
     private func configureViews() {
         self.containerView.layer.borderWidth = 1
-        self.containerView.layer.borderColor = UIColor(named: "GrayTabBarColor")?.cgColor
+        self.containerView.layer.borderColor = UIColor.grayTabBarFlix.cgColor
         self.containerView.layer.cornerRadius = 10
         self.containerView.layer.masksToBounds = true
         
@@ -33,7 +33,7 @@ class ReviewsCollectionViewCell: UICollectionViewCell {
         if let avatarPathImage = review?.authorDetails?.avatarPathImage, !avatarPathImage.isEmpty {
             self.avatarPathImageView.loadImage(uri: avatarPathImage)
         } else {
-            self.avatarPathImageView.backgroundColor = .black
+            self.avatarPathImageView.backgroundColor = .blackFlix
         }
         self.authorLabel.text = "A Review by \(review?.author ?? "")"
         let createdAt = Utils.convertDateValidToDesc(review?.createdAt ?? "")

@@ -19,7 +19,7 @@ class VideoCollectionViewCell: UICollectionViewCell {
     
     private func configureViews() {
         self.containerView.layer.borderWidth = 1
-        self.containerView.layer.borderColor = UIColor(named: "GrayTabBarColor")?.cgColor
+        self.containerView.layer.borderColor = UIColor.grayTabBarFlix.cgColor
         self.containerView.layer.cornerRadius = 10
         self.containerView.layer.masksToBounds = true
     }

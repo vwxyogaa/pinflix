@@ -13,7 +13,7 @@ class MyMovieViewController: UIViewController {
     
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = .white
+        refreshControl.tintColor = .whiteFlix
         return refreshControl
     }()
     
