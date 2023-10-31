@@ -1,8 +1,8 @@
 # Pinflix #
 pinflix is an application that displays movies from now playing, popular, top rated, upcoming, information, and reviews of the film, and movie recommendations.
 
-### Screenshots ###
-<img src="screenshots/1.png" width="200"> <img src="screenshots/2.png" width="200"> <img src="screenshots/3.png" width="200"> <img src="screenshots/4.png" width="200">
+### Design Pattern & Architecture Pattern ###
+MVVM(Model View ViewModel) + Clean Architecture
 
 ### Tech & Dependencies ###
 * [Swift](https://developer.apple.com/swift/)
@@ -15,3 +15,6 @@ pinflix is an application that displays movies from now playing, popular, top ra
 
 ### API ###
 * [TMDB](https://www.themoviedb.org/documentation/api)
+
+### Screenshots ###
+![pinflix](https://github.com/vwxyogaa/pinflix/assets/86284991/c68f8a4d-ff82-46db-9ba7-a82bbf6eaf25)
